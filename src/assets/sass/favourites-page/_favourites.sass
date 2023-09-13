@@ -1,0 +1,30 @@
+.favourites
+  @include section-indent-margin
+  &__title-inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 60px
+
+  &__title
+    @include section-title(inherit,0,40px)
+
+  &__button-inner
+    display: flex
+    align-items: center
+    gap: 20px
+
+  &__button
+    @include button
+    @include button-padding
+    &--clear
+      background:  rgba(122, 160, 75, 0.10)
+      color: $title-second-color
+
+  &__card-wrapper
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    gap: 20px
+    & > .card
+      width: calc(33.33% - 14px)

@@ -1,0 +1,55 @@
+<section class="contacts">
+  <div class="container">
+    <div class="contacts__map">
+      <div class="contacts__item">
+        <h1 class="contacts__title">Контакты</h1>
+        <h3 class="contacts__subtitle">Центральный офис</h3>
+        <div class="contacts__info-wrapper">
+          <div class="contacts__info-inner">
+            <div class="contacts__info-item">
+              <p class="contacts__info-subtitle">Телефон</p>
+              <div class="contacts__icon-inner">
+                <a class="contacts__link" href="tel:{{data.email}}">{{data.email}}</a>
+                <svg class="contacts__icon" data-copy>
+                  <use xlink:href="./assets/images/svg/set.svg#copy"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="contacts__info-item">
+              <p class="contacts__info-subtitle">Офис:</p>
+              <div class="contacts__icon-inner">
+                <p class="contacts__text-content">Нижний Новгород, д. Ржавка, ул. Горная, 44. Выставка домов</p>
+              </div>
+            </div>
+          </div>
+          <div class="contacts__info-inner">
+            <div class="contacts__info-item">
+              <p class="contacts__info-subtitle">Телефон</p>
+              <div class="contacts__icon-inner">
+                <a class="contacts__link" href="tel:{{data.phoneHref}}">{{data.phone}}</a>
+                <svg class="contacts__icon" data-copy>
+                  <use xlink:href="./assets/images/svg/set.svg#copy"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="contacts__info-item">
+              <p class="contacts__info-subtitle">Режим работы:</p>
+              <div class="contacts__icon-inner">
+                <p class="contacts__text-content">с 9.00 до 19.00 без выходных</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <a class="contacts__link-button" href="#">Заказать звонок</a>
+      </div>
+      <div class="contacts__item contacts__map-inner" data-map-target>
+        <h2 class="contacts__title contacts__title--color">Нижний Новгород</h2>
+        <div class="contacts__map-preloader">
+          <iframe class="contacts__map-yandex" data-map src="" width="100%" height="100%" frameborder="0" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3Af21fbe778f40def84d0d0c5251ac8511c3ad60bf25690c8cb5a191468bece9f1&amp;source=constructor"
+                  data-bg="./assets/images/map/map-back.jpg" data-bg-webp="./assets/images/map/map-back.webp"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

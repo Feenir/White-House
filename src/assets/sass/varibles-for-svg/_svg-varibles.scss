@@ -1,0 +1,36 @@
+:root {
+  .catalog-main-icon-color {
+    --color-main-catalog: #535353;
+
+
+  }
+
+  .catalog__item:hover .catalog-main-icon-color {
+    --color-main-catalog: #B99D7B;
+  }
+
+  .catalog-main-small-icon-color {
+    --color-small-main-catalog: #B99D7B;
+  }
+
+  .catalog__item:hover .catalog-main-small-icon-color {
+    --color-small-main-catalog: #FFF;
+  }
+
+  .category-icon-color {
+    --category-icon-color: #B99D7B;
+  }
+
+  .category__item:hover .category-icon-color {
+    --category-icon-color: #FFF;
+  }
+
+  .material-store-icon {
+    --material-color: #B99D7B;
+  }
+
+.material__trigger-inner.tabs-active   .material-store-icon {
+  --material-color: #fff;
+}
+
+}

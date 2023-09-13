@@ -1,0 +1,68 @@
+.catalog-project
+  @include section-indent-margin
+  &__title
+    @include section-title(inherit,32px,40px)
+    @include text-position
+
+  &__card-inner
+    display: flex
+    flex-wrap: wrap
+    gap: 40px 20px
+
+  &__card
+    width: calc(33.33% - 14px)
+
+  &__filter-inner
+    display: flex
+    margin-bottom: 40px
+    gap: 20px
+
+  &__filter-type
+    @include text-custom(12px,400,rgba(83, 83, 83, .5))
+    margin-bottom: 6px
+    margin-left: 20px
+
+  &__custom-select
+    display: flex
+    min-width: 233px
+    min-height: 44px
+    & .itc-select__toggle
+      display: flex
+      border-radius: 600px
+      padding: 0 20px
+      background: rgba(122, 160, 75, 0.10)
+      border: none
+      color: rgba(122, 160, 75, 1)
+      &:after
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5' fill='none'%3E%3Cpath d='M1 1L4.75 4L8.5 1' stroke='%237AA04B'/%3E%3C/svg%3E")
+        background-size: 12px 6px
+        background-repeat: no-repeat
+        background-position: right center
+        width: 12px
+        height: 6px
+
+  &__price-label
+    position: relative
+    display: flex
+    align-items: center
+    border-radius: 600px
+    background: rgba(122, 160, 75, 0.10)
+    max-width: 182px
+    min-height: 44px
+    padding-left: 10px
+    &:before
+      position: absolute
+      content: ''
+      width: 1px
+      height: 100%
+      background: rgba(122, 160, 75, .1)
+      top: 0
+      left: 50%
+
+
+  &__number
+    max-width: 91px
+    padding-left: 10px
+    color: rgba(122, 160, 75, 1)
+    &::placeholder
+      color: rgba(122, 160, 75, .4)

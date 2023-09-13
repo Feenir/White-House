@@ -1,0 +1,36 @@
+.advantages
+  @include section-indent-margin
+  &__title
+    @include text-position
+    @include section-title
+
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    gap: 20px
+
+  &__item
+    width: calc(25% - 15px)
+    border-radius: 12px
+    background: #FCF7F4
+
+  &__img
+    background-image: url("../images/advantages/advantages-1.jpg")
+    @supports (background-image: url("../images/advantages/advantages-1.webp"))
+      background-image: url("../images/advantages/advantages-1.webp")
+    height: 150px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    overflow: hidden
+
+  &__text-inner
+    padding: 30px
+
+  &__subtitle
+    @include text-subtitle(inherit, 16px)
+    margin-bottom: 20px
+
+  &__text
+    @include text
+

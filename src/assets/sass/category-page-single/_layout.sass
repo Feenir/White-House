@@ -1,0 +1,104 @@
+.layout
+  @include section-indent-margin
+
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    padding: 50px
+    border-radius: 12px
+    background: #FCF7F4
+
+  &__swiper-container
+    position: relative
+
+  &__item
+    max-width: 568px
+    &:nth-child(2)
+      max-width: 328px
+      margin-right: 55px
+
+  &__title
+    @include section-title(inherit,30px,40px)
+    &--position
+      @include text-position
+
+  &__text
+    margin-bottom: 30px
+
+  &__house-info-wrapper
+    display: flex
+    gap: 0 50px
+    margin-bottom: 30px
+
+  &__house-info-inner
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: calc(25% - 15px)
+    max-width: 100px
+
+  &__house-info
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    width: 100px
+    height: 100px
+    border-radius: 6px
+    background: rgba(122, 160, 75, .1)
+    @include text-custom(18px,400,$title-second-color)
+    margin-bottom: 10px
+
+  &__house-info-text
+    text-align: center
+
+  &__table
+    display: flex
+    flex-direction: column
+
+  &__table-item
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding-bottom: 13px
+    border-bottom: 1px solid rgba(83, 83, 83, .1)
+    &:not(:last-child)
+      margin-bottom: 13px
+
+  &__table-info
+    &--color
+      @extend .material__content-house-info
+
+  &__plan-text
+    margin-top: 40px
+    text-align: center
+    @include text-subtitle
+
+  &__slider-button
+    top: calc(50% - 64px)
+    &--next
+      right: -74px
+    &--prev
+      left: -74px
+
+  &__plus-inner
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background-color: $title-second-color
+    right: -80px
+    bottom: 10px
+
+  &__plus-icon
+    max-width: 22px
+    max-height: 22px
+
+
+
+
+

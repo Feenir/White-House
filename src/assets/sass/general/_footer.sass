@@ -1,0 +1,168 @@
+.footer
+  background: #242424
+  &__logo-wrapper
+    position: relative
+    padding: 50px 0
+    &:before, &:after
+      position: absolute
+      content: ''
+      width: 100%
+      height: 1px
+      background: #FFF
+      opacity: 0.2
+      max-width: 500px
+      top: calc(50% - 1px )
+      pointer-events: none
+    &:before
+      left: 0
+    &:after
+      right: 0
+
+  &__logo
+    margin: 0 auto
+    display: block
+
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    padding-bottom: 96px
+    border-bottom: 1px solid rgba(255,255,255, .2)
+
+  &__list-inner
+    &:first-child, &:nth-child(4)
+      margin-right: 70px
+    &:nth-child(2), &:nth-child(3)
+      margin-right: 50px
+
+  &__item
+    white-space: nowrap
+    @include text(#fff)
+    &:not(:last-child)
+      margin-bottom: 20px
+    &--last
+      color: $title-second-color
+      text-decoration: underline
+      & > .footer__link
+        color: $title-second-color
+  &__link
+    @extend .footer__item
+    padding-bottom: 20px
+
+  &__list-title
+    @include text-custom(14px, 400, $title-second-color)
+    margin-bottom: 22px
+
+  &__info-inner
+    position: relative
+    display: flex
+    flex-direction: column
+    padding-left: 54px
+    margin-bottom: 30px
+    &:before
+      position: absolute
+      content: ''
+      display: block
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 21px
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      background-color: $title-second-color
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+    &:first-of-type
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M13.6182 3.66626C14.7483 3.97021 15.7788 4.56578 16.6063 5.39332C17.4339 6.22086 18.0294 7.25132 18.3334 8.38148' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.9277 6.24341C13.6058 6.42578 14.2241 6.78312 14.7206 7.27964C15.2172 7.77617 15.5745 8.39444 15.7569 9.07254' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.04002 10.7345C8.73155 12.1483 9.87755 13.2891 11.2945 13.9742C11.3981 14.0233 11.5128 14.0446 11.6272 14.0359C11.7416 14.0273 11.8518 13.989 11.9469 13.9248L14.0332 12.5336C14.1254 12.4721 14.2316 12.4346 14.342 12.4244C14.4525 12.4143 14.5637 12.4318 14.6656 12.4755L18.5687 14.1483C18.7013 14.2046 18.812 14.3025 18.8841 14.4272C18.9562 14.5519 18.9859 14.6967 18.9686 14.8397C18.8452 15.805 18.3742 16.6923 17.6438 17.3354C16.9133 17.9784 15.9735 18.3332 15.0003 18.3333C11.9945 18.3333 9.11186 17.1392 6.98645 15.0138C4.86104 12.8884 3.66699 10.0057 3.66699 6.99992C3.66704 6.02673 4.02182 5.08693 4.66489 4.35648C5.30797 3.62604 6.19524 3.15503 7.16058 3.03167C7.30359 3.01436 7.44835 3.044 7.57305 3.11612C7.69776 3.18824 7.79564 3.29893 7.85197 3.43152L9.52617 7.33801C9.56948 7.43906 9.58712 7.54924 9.57754 7.65876C9.56795 7.76827 9.53143 7.87371 9.47123 7.9657L8.08487 10.084C8.02177 10.1793 7.98447 10.2893 7.9766 10.4033C7.96874 10.5174 7.99059 10.6315 8.04002 10.7345V10.7345Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    &:nth-of-type(2)
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M19 5.00024L11 12.3336L3 5.00024' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 5.00024H19V16.3336C19 16.5104 18.9298 16.68 18.8047 16.805C18.6797 16.93 18.5101 17.0002 18.3333 17.0002H3.66667C3.48986 17.0002 3.32029 16.93 3.19526 16.805C3.07024 16.68 3 16.5104 3 16.3336V5.00024Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.54545 11.0002L3.20557 16.8118' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18.7946 16.8119L12.4546 11.0002' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+
+  &__info-text
+    @include text-custom(12px)
+    color: #FFFFFF
+
+  &__info
+    color: #FFFFFF
+    margin-bottom: 6px
+
+  &__social-list
+    display: flex
+    align-items: center
+    gap: 10px
+    &--messenger
+      margin-bottom: 20px
+    &--network
+      & .footer__social-item:first-child
+        background: #E943C4
+      & .footer__social-item:nth-child(2)
+        background: #FC4D4D
+      & .footer__social-item:nth-child(3)
+        background: #7591D9
+
+  &__social-item
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    &:first-child
+      background: #7CB3E5
+    &:nth-child(2)
+      background: #6AC068
+    &:last-child
+      background: #D775D9
+
+  &__social-item-link
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
+
+  &__social-icon
+    max-height: 16px
+    max-width: 16px
+
+  &__social-text
+    margin-bottom: 12px
+    @include text-custom(10px, 400, #FFF)
+
+  &__middle-inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 40px 0
+    border-bottom: 1px solid rgba(255,255,255, .2)
+
+  &__middle-text
+    max-width: 815px
+    @include text-custom(14px,400,#fff)
+    line-height: 1.4
+    & span
+      color: $title-second-color
+
+  &__yandex-link
+    border-radius: 6px
+    background-color: #FFF
+    width: 160px
+    height: 60px
+    background-image: url("../images/similar/yandex-rewiews.png")
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 85%
+
+  &__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 30px 0
+
+  &__bottom-link
+    @include text-custom(14px, 400, rgba(255, 255 ,255 , .5))
+
+

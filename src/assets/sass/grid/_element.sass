@@ -1,0 +1,150 @@
+.meta
+  color: #FFF
+  font-size: 12px
+  font-weight: 400
+  line-height: 1
+  text-transform: uppercase
+  padding: 8px 15px
+  border-radius: $border-radius
+  max-width: fit-content
+  &--new
+    background: $title-second-color
+  &--hit
+    background: #B99D7B
+  &--sale
+    background: #E99242
+
+.favorite
+  position: relative
+  max-width: 30px
+  max-height: 30px
+  border-radius: 50%
+  z-index: 1000
+  cursor: progress
+  &__icon
+    max-width: 30px
+    max-height: 30px
+
+.slider-button
+  width: $swiper-button-size
+  height: $swiper-button-size
+  border-radius: 50%
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='none'%3E%3Ccircle cx='18' cy='18' r='18' transform='rotate(-180 18 18)' fill='%237AA04B'/%3E%3Cpath d='M16.5609 22.3199L20.1738 18.7071C20.5643 18.3165 20.5643 17.6834 20.1738 17.2928L16.5609 13.6799' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
+  background-position: center
+  background-repeat: no-repeat
+  margin-top: 0
+  top: 0
+  z-index: 100
+  &--prev
+    transform: rotate(180deg)
+  &:after
+    display: none
+
+.card
+  overflow: hidden
+  border-radius: 12px
+  background: #FCF7F4
+  position: relative
+  max-width: 390px
+  &:hover
+    & .card__house-top:after, .card__house-top:before
+      opacity: 1
+  &__house-top
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-image: url("../images/hit/hit-2.jpg")
+    @supports (background-image: url("../images/hit/hit-2.webp"))
+      background-image: url("../images/hit/hit-2.webp")
+
+    min-height: 280px
+    &:before, &:after
+      pointer-events: none
+      opacity: 0
+      transition: opacity .4s
+    &:before
+      position: absolute
+      content: ''
+      inset: 0
+      background: linear-gradient(0deg, rgba(68, 68, 68, 0.50) 0%, rgba(68, 68, 68, 0.50) 100%), linear-gradient(180deg, rgba(51, 51, 51, 0.30) 0%, rgba(51, 51, 51, 0.00) 33.21%)
+    &:after
+      position: absolute
+      content: ''
+      width: 72px
+      height: 72px
+      border-radius: 50%
+      background-color: $title-second-color
+      inset: calc(50% - 36px)
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M26.9985 27V14.4424C26.9985 14.303 26.9694 14.1652 26.9131 14.0378C26.8567 13.9104 26.7743 13.7962 26.6712 13.7024L16.6705 4.61054C16.4865 4.44318 16.2466 4.35046 15.9978 4.35046C15.749 4.35047 15.5092 4.44322 15.3251 4.61058L5.3258 13.7024C5.22272 13.7962 5.14036 13.9104 5.084 14.0378C5.02765 14.1652 4.99854 14.303 4.99854 14.4423V27' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.99854 27H29.9985' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18.998 26.999V19.999C18.998 19.7337 18.8927 19.4794 18.7052 19.2919C18.5176 19.1043 18.2633 18.999 17.998 18.999H13.998C13.7328 18.999 13.4785 19.1043 13.2909 19.2919C13.1034 19.4794 12.998 19.7337 12.998 19.999V26.999' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 32px
+
+  &__meta-inner
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 20px 20px 0 20px
+
+  &__meta-box
+    display: flex
+    align-items: center
+    gap: 6px
+    margin-right: auto
+
+  &__house-subtitle
+    @include text-custom(12px ,400, #fff)
+    @include text-position
+    padding: 6px 15px
+    border-radius: 12px 12px 0px 0px
+    background: rgba(255, 255, 255, 0.30)
+    backdrop-filter: blur(10px)
+    max-width: fit-content
+    margin: 0 auto
+
+  &__house-title
+    @include text-position
+    @include text-subtitle(#fff)
+    padding: 12px 0
+    background: rgba(122, 160, 75, 0.30)
+    backdrop-filter: blur(10px)
+
+  &__house-bottom
+    display: flex
+    padding: 20px
+    gap: 30px
+
+  &__metre
+    @include text-subtitle($title-second-color)
+
+  &__price-now
+    @include text-subtitle(#B99D7B)
+    &--next
+      color: rgba(177, 100, 100, 1)
+
+  &__price-month
+    @include text-custom
+    opacity: .5
+    margin-top: 6px
+
+  &__link
+    position: absolute
+    width: 100%
+    height: 100%
+    bottom: 0
+
+.custom-select
+  & .itc-select__toggle
+    @include text-custom(14px)
+    font-style: normal
+    border-radius: 60px
+    border: 1px solid #B99D7B
+    &:after
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='16' transform='rotate(-90 16 16)' fill='%23B99D7B'/%3E%3Cpath d='M12.1602 14.7205L15.2931 17.8534C15.6836 18.244 16.3167 18.244 16.7073 17.8534L19.8402 14.7205' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
+      width: 32px
+      height: 32px

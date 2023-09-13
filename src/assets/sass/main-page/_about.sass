@@ -1,0 +1,44 @@
+.about
+  position: relative
+  background: linear-gradient(180deg, rgba(185, 157, 123, 0.00) 0%, #B99D7B 100%)
+  max-width: 2560px
+  margin: 0 auto
+  &:before
+    position: absolute
+    content: ''
+    background-image: url("../images/about/about.png")
+    @supports (background-image: url("../images/about/about.webp"))
+      background-image: url("../images/about/about.webp")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    width: 924px
+    height: 600px
+    bottom: 0
+    left: 0
+    pointer-events: none
+  &__title
+    @include title-in-section
+
+  &__wrapper
+    position: relative
+    display: flex
+    justify-content: flex-end
+
+  &__inner
+    max-width: 590px
+    padding-bottom: 170px
+
+  &__text-inner
+    margin-bottom: 50px
+    padding-left: 20px
+    border-left: 4px solid #B99D7B
+
+  &__text
+    @include text
+    &:not(:last-child)
+      margin-bottom: 14px
+
+  &__button
+    @include button
+    @include button-padding

@@ -1,0 +1,50 @@
+.catalog
+  @include section-indent-margin
+
+  &__title
+    @include section-title
+    @include text-position
+
+  &__wrapper
+    display: flex
+    gap: 20px
+
+  &__item
+    display: flex
+    flex-direction: column
+    width: calc(25% - 5px)
+    padding: 30px
+    border-radius: 12px
+    background: #FCF7F4
+    border: 1px solid #FCF7F4
+    transition: border .4s
+    &:hover
+      border-color: #B99D7B
+      & .catalog__icon-inner
+        background-color: rgba(185, 157, 123, 1)
+
+  &__icon-inner
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    background-color: rgba(185, 157, 123, .1)
+    transition: background .4s
+
+  &__icon-main
+    margin: 0 auto 74px auto
+    max-width: 166px
+    max-height: 123px
+
+  &__small-icon
+    max-width: 20px
+    max-height: 20px
+
+  &__text
+    @include text-subtitle
+    margin-bottom: 12px
+
+  &__link
+    @include text-custom(16px, 400, $title-second-color)

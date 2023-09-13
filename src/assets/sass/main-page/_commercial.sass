@@ -1,0 +1,116 @@
+.commercial
+  @include section-indent-margin
+  &__wrapper
+    position: relative
+    padding: 50px
+    border-radius: 12px
+    background: linear-gradient(180deg, #96BB69 0%, $title-second-color 100%)
+    &:before
+      position: absolute
+      content: ''
+      background-repeat: no-repeat
+      height: 434px
+      width: 440px
+      background-position: right bottom
+      background-size: 100%
+      right: 0
+      bottom: 0
+      border-bottom-right-radius: 12px
+      pointer-events: none
+    &--main
+      &:before
+        background-image: url("../images/commercial/commercial-1.png")
+        @supports (background-image: url("../images/commercial/commercial-1.webp"))
+          background-image: url("../images/commercial/commercial-1.webp")
+    &--categories
+      &:before
+        background-image: url("../images/commercial/commercial-2.png")
+        @supports (background-image: url("../images/commercial/commercial-2.webp"))
+          background-image: url("../images/commercial/commercial-2.webp")
+        background-size: contain
+    &--category-single
+      &:before
+        background-image: url("../images/commercial/commercial-3.png")
+        @supports (background-image: url("../images/commercial/commercial-3.webp"))
+          background-image: url("../images/commercial/commercial-3.webp")
+        background-size: contain
+    &--catalog
+      &:before
+        background-image: url("../images/commercial/commercial-4.png")
+        @supports (background-image: url("../images/commercial/commercial-4.webp"))
+          background-image: url("../images/commercial/commercial-4.webp")
+    &--favourites
+      &:before
+        background-image: url("../images/commercial/commercial-5.png")
+        @supports (background-image: url("../images/commercial/commercial-5.webp"))
+          background-image: url("../images/commercial/commercial-5.webp")
+
+  &__title
+    @include section-title(#FFF, 20px, 30px)
+
+  &__text
+    @include text(#FFF)
+    margin-bottom: 50px
+    max-width: 614px
+
+  &__form
+    display: flex
+    flex-direction: column
+
+  &__label
+    border-radius: 60px
+    background: rgba(255, 255, 255, 0.10)
+    margin-right: 16px
+
+  &__input
+    padding: 20px 24px
+    color: #FFFFFF
+    &::placeholder
+      color: inherit
+      opacity: 1
+
+  &__form-wrapper
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+
+  &__checkbox-inner
+    display: flex
+    align-items: center
+    cursor: pointer
+
+  &__fake-checkbox
+    position: relative
+    display: inline-block
+    min-width: 14px
+    min-height: 14px
+    border-radius: 4px
+    border: 1px solid #FFFFFF
+    margin-right: 10px
+    &:before
+      display: block
+      content: ''
+      inset: 0
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='15' viewBox='0 0 14 15' fill='none'%3E%3Cpath d='M11.375 4L5.25 11L2.625 8.375' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      transition: opacity .4s
+      width: 12px
+      height: 12px
+      opacity: 0
+
+  &__checkbox
+    &:checked + .commercial__fake-checkbox:before
+      opacity: 1
+
+  &__politic-inner
+    @include text-custom(14px,400,#fff)
+
+  &__politic
+    @extend .commercial__politic-inner
+    text-decoration: underline
+
+  &__button
+    @include button(16px, $main-color, #FFF)
+    @include button-padding()

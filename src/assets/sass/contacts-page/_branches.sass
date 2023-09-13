@@ -1,0 +1,39 @@
+.branches
+  @include section-indent-margin
+  &__title
+    @include section-title
+    @include text-position
+
+  &__map-yandex
+    border-radius: 10px
+    border: 1px solid #B99D7B
+    overflow: hidden
+    min-height: 238px
+
+  &__subtitle
+    @include text-subtitle($title-second-color)
+    @include text-position
+    margin-bottom: 20px
+
+  &__address
+    @include text-custom(14px)
+    @include text-position
+    max-width: 240px
+    margin: 20px auto 16px auto
+
+  &__link
+    display: block
+    @include text-position
+    @include text-custom(14px,inherit,$title-second-color)
+    &:first-of-type
+      margin-bottom: 10px
+
+  &__swiper-container
+    position: relative
+
+  &__slider-button
+    top: calc(50% - 60px)
+    &--next
+      right: -80px
+    &--prev
+      left: -80px

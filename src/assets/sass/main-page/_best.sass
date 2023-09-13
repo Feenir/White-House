@@ -1,0 +1,34 @@
+.best
+  &--more
+    & .card__house-top
+      justify-content: flex-end
+      min-height: 248px
+    & .best__slide:hover
+      & .card__house-top:after, .card__house-top:before
+        display: none
+    & .best__slider-button
+      top: calc(50% - 76px)
+  @include section-indent-margin
+  &__title
+    @include text-position
+    @include section-title
+
+  &__slide
+    overflow: hidden
+    border-radius: 12px
+
+
+  &__swiper-container
+    position: relative
+
+  &__slider-button
+    top: calc(50% - 78px)
+    &--next
+      right: calc(-50px - ($swiper-button-size / 2))
+    &--prev
+      left: calc(-50px - ($swiper-button-size / 2))
+
+  &__link
+    @include button
+    @include button-padding()
+    margin: 40px auto 0 auto

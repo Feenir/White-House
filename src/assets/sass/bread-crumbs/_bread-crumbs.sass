@@ -1,0 +1,17 @@
+.bread-crumbs
+  display: flex
+  padding: 182px 0 68px 0
+
+  &__item
+    position: relative
+    @include text-custom(12px,400, #333)
+    &:not(:first-child)
+      &:before
+        content: '-'
+        margin: 0 3px 0 6px
+    &:last-child
+      color: $title-second-color
+
+  &__link
+    @include text-custom(12px,400, #333)
+

@@ -1,0 +1,103 @@
+.hero
+  position: relative
+  background: linear-gradient(180deg, #FCF7F4 0%, #EFE3DB 100%)
+  border-bottom-left-radius: $border-radius
+  max-width: 2560px
+  margin: 0 auto
+  @include section-indent-margin
+  //&:before
+  //  position: absolute
+  //  content: ''
+  //  width: 996px
+  //  height: 996px
+  //  background: radial-gradient(50% 50% at 50% 50%, #FFFCFB 0%, rgba(255, 252, 251, 0.00) 100%)
+  //  top: -20%
+  //  right: -10%
+  //  z-index: 10
+  //  pointer-events: none
+  & .swiper-lazy-preloader
+    margin-left: 0
+    margin-top: 0
+    left: calc(70% + 30px)
+  &__wrapper
+    padding: 238px 0 176px calc((100% - 1200px)/2)
+
+  &__title
+    margin-bottom: 36px
+
+  &__list
+    margin-bottom: 36px
+
+  &__list-item
+    @include li-custom
+    @include text-custom(18px, 400)
+    &:not(:last-child)
+      margin-bottom: 32px
+
+  &__link
+    @include button
+    @include button-padding()
+
+  &__swiper-text-pagination.swiper-pagination
+    position: absolute
+    display: flex
+    align-items: center
+    bottom: 90px
+    left: calc((100% - 1200px)/2)
+    & .swiper-pagination-bullet
+      width: 10px
+      height: 10px
+      background-color: rgba(122, 160, 75, .2)
+      opacity: 1
+      transition: all .4s
+    & .swiper-pagination-bullet-active
+      background-color: rgba(122, 160, 75, 1)
+      width: 16px
+      height: 16px
+
+  &__swiper-img
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 1168px
+    height: 716px
+
+  &__swiper-text-slide
+    opacity: 0!important
+    background-color: inherit
+    &.swiper-slide-active
+      opacity: 1!important
+
+  &__round-inner
+    position: absolute
+    bottom: -5px
+    right: calc((100% - 1250px)/2)
+    z-index: 100
+
+  &__round
+    max-width: 300px
+    max-height: 80px
+
+  &__round-text-inner
+    position: absolute
+    cursor: pointer
+    top: 50%
+    left: calc(52%)
+    transform: translate(-50%, -50%)
+    &:before
+      position: absolute
+      content: ''
+      width: 42px
+      height: 42px
+      border-radius: 50%
+      left: -42px
+      top: 50%
+      transform: translateY(-50%)
+      background-color: rgba(122, 160, 75, 1)
+
+  &__round-subtitle
+    @include text-custom(16px, 500)
+    margin-bottom: 6px
+  &__round-text
+    @include text-custom(12px,400, rgba(83, 83, 83, .5))
+

@@ -1,0 +1,46 @@
+.tile
+  position: relative
+  margin-top: -100px
+  @include section-indent-margin
+  z-index: 10
+  &__inner
+    display: flex
+    align-items: stretch
+    gap: 20px
+
+  &__item
+    position: relative
+    width: calc(33.33% - 8px)
+    border-radius: 20px
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.05)
+    padding: 178px 30px 30px 30px
+    background-position: center top 30px
+    overflow: hidden
+    background-repeat: no-repeat
+    background-size: 45%
+    &:before
+      position: absolute
+      content: ''
+      inset: 0
+      background: linear-gradient(180deg, #FFF 0%, #FFF 100%)
+      z-index: -1
+    &:first-child
+      background-image: url("../images/tile/tile-1.png")
+      @supports (background-image: url("../images/tile/tile-1.webp"))
+        background-image: url("../images/tile/tile-1.webp")
+    &:nth-child(2)
+      background-image: url("../images/tile/tile-2.png")
+      @supports (background-image: url("../images/tile/tile-2.webp"))
+        background-image: url("../images/tile/tile-2.webp")
+    &:nth-child(3)
+      background-image: url("../images/tile/tile-3.png")
+      @supports (background-image: url("../images/tile/tile-3.webp"))
+        background-image: url("../images/tile/tile-3.webp")
+
+
+  &__item-subtitle
+    @include text-subtitle
+    margin-bottom: 14px
+
+  &__item-text
+    @include text
