@@ -1,0 +1,156 @@
+.form-vacancy
+  @include section-indent-margin
+
+  &__wrapper
+    position: relative
+    border-radius: 12px
+    background-image: url("../images/vacancy/vacancy-form.png")
+    @supports (background-image: url("../images/vacancy/vacancy-form.webp"))
+      background-image: url("../images/vacancy/vacancy-form.webp")
+    background-position: right 140px bottom
+    background-size: 23%
+    background-repeat: no-repeat
+    padding: 50px
+    overflow: hidden
+    &:before
+      position: absolute
+      content: ''
+      inset: 0
+      background: linear-gradient(180deg, #96BB69 0%, #7AA04B 100%)
+      pointer-events: none
+      z-index: -1
+    @media #{$tablet}
+      padding: 20px 24px 300px 24px
+      background-size: 180px
+    @media #{$tablet-small}
+      background-position: center bottom
+
+  &__title
+    @include text-custom(30px,600,#fff)
+    margin-bottom: 20px
+    @media #{$tablet}
+      align-items: center
+      font-size: 20px
+      margin: 0 auto 20px auto
+      text-align: center
+
+  &__text
+    @include text-custom(16px,400,#fff)
+    margin-bottom: 30px
+    max-width: 610px
+    line-height: 1.4
+    @media #{$tablet}
+      align-items: center
+      font-size: 14px
+      max-width: 100%
+      margin: 0 auto 30px auto
+      text-align: center
+
+  &__info-inner
+    display: flex
+    gap: 16px
+    margin-bottom: 16px
+    @media #{$mobile}
+      flex-direction: column
+
+  &__label
+    display: flex
+    align-items: center
+    border-radius: 20px
+    background: rgba(255, 255, 255, 0.10)
+    min-height: 56px
+    width: 100%
+    max-width: 306px
+    @media #{$tablet}
+      max-width: 100%
+
+  &__input
+    @include text-custom(14px,400,#fff)
+    padding-left: 20px
+    &::-webkit-input-placeholder
+      opacity: 1
+
+  &__body
+    max-width: fit-content
+
+  &__textarea-inner
+    display: block
+    position: relative
+    border-radius: 20px
+    background: rgba(255, 255, 255, 0.10)
+    width: 100%
+    min-height: 98px
+    margin-bottom: 20px
+    @media #{$tablet-small}
+      min-height: 124px
+
+  &__textarea
+    background: border-box
+    @include text-custom(14px,400,#fff)
+    padding-left: 20px
+    padding-top: 20px
+    width: 100%
+    &::-webkit-input-placeholder
+      opacity: 1
+
+  &__file-inner
+    position: absolute
+    right: 20px
+    bottom: 12px
+
+  &__file-inner
+    position: absolute
+    right: 20px
+    bottom: 12px
+
+  &__file
+    position: absolute
+    width: 1px
+    height: 1px
+    pointer-events: none
+    opacity: 0
+    visibility: hidden
+
+  &__fake-file
+    @include text-custom(12px,400,#fff)
+    display: flex
+    align-items: center
+    cursor: pointer
+    &:before
+      content: ''
+      display: block
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M11.4155 2.87988C10.0357 1.5 7.78859 1.5 6.41017 2.87988L2.58693 6.70019C2.56203 6.7251 2.54884 6.75879 2.54884 6.79394C2.54884 6.8291 2.56203 6.86279 2.58693 6.88769L3.12745 7.42822C3.15216 7.45282 3.18561 7.46663 3.22047 7.46663C3.25534 7.46663 3.28878 7.45282 3.31349 7.42822L7.13673 3.60791C7.61134 3.1333 8.24269 2.87256 8.91359 2.87256C9.58449 2.87256 10.2158 3.1333 10.689 3.60791C11.1636 4.08252 11.4243 4.71387 11.4243 5.3833C11.4243 6.0542 11.1636 6.68408 10.689 7.15869L6.79249 11.0537L6.16115 11.6851C5.57081 12.2754 4.61134 12.2754 4.02101 11.6851C3.73537 11.3994 3.57863 11.02 3.57863 10.6157C3.57863 10.2114 3.73537 9.83203 4.02101 9.54639L7.88673 5.68213C7.98488 5.58545 8.11378 5.53125 8.25148 5.53125H8.25294C8.39064 5.53125 8.51808 5.58545 8.61476 5.68213C8.7129 5.78027 8.76564 5.90918 8.76564 6.04687C8.76564 6.1831 8.71144 6.31201 8.61476 6.40869L5.45509 9.56543C5.43019 9.59033 5.41701 9.62402 5.41701 9.65918C5.41701 9.69434 5.43019 9.72803 5.45509 9.75293L5.99562 10.2935C6.02033 10.3181 6.05377 10.3319 6.08864 10.3319C6.1235 10.3319 6.15695 10.3181 6.18165 10.2935L9.33986 7.13525C9.63136 6.84375 9.79103 6.45703 9.79103 6.04541C9.79103 5.63379 9.6299 5.2456 9.33986 4.95557C8.73781 4.35352 7.75929 4.35498 7.15724 4.95557L6.78224 5.33203L3.29298 8.81982C3.05616 9.05525 2.86844 9.33536 2.7407 9.64389C2.61296 9.95243 2.54775 10.2833 2.54884 10.6172C2.54884 11.2954 2.81398 11.9326 3.29298 12.4116C3.78956 12.9067 4.43995 13.1543 5.09035 13.1543C5.74074 13.1543 6.39113 12.9067 6.88624 12.4116L11.4155 7.88525C12.082 7.21728 12.4512 6.32812 12.4512 5.3833C12.4527 4.43701 12.0835 3.54785 11.4155 2.87988Z' fill='white'/%3E%3C/svg%3E")
+      min-width: 15px
+      height: 15px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      margin-right: 8px
+
+  &__button-inner
+    display: flex
+    align-items: center
+    @media #{$tablet}
+      flex-direction: column
+      gap: 20px
+
+  &__button
+    @extend .commercial__button
+    margin-right: 20px
+    @media #{$tablet}
+      margin-right: 0
+
+  &__checkbox-inner
+    @extend .commercial__checkbox-inner
+
+  &__checkbox
+    @extend .commercial__checkbox
+
+  &__fake-checkbox
+    @extend .commercial__fake-checkbox
+
+  &__politic-inner
+    @extend .commercial__politic-inner
+
+  &__politic
+    @extend .commercial__politic

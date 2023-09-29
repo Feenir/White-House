@@ -3,6 +3,10 @@
   &__logo-wrapper
     position: relative
     padding: 50px 0
+    @media #{$tablet}
+      padding: 50px 0 36px 0
+    @media #{$mobile}
+      padding: 50px 0 24px 0
     &:before, &:after
       position: absolute
       content: ''
@@ -13,6 +17,13 @@
       max-width: 500px
       top: calc(50% - 1px )
       pointer-events: none
+      @media #{$notebook-small}
+        max-width: 40%
+      @media #{$mobile}
+        max-width: 35%
+        top: calc(50% + 18px )
+      @media #{$mobile-small}
+        max-width: 30%
     &:before
       left: 0
     &:after
@@ -27,6 +38,17 @@
     align-items: flex-start
     padding-bottom: 96px
     border-bottom: 1px solid rgba(255,255,255, .2)
+    @media (max-width: 1260px)
+      flex-wrap: wrap
+      gap: 30px 0
+      padding-bottom: 76px
+    @media #{$tablet}
+      padding-bottom: 50px
+    @media #{$tablet-small}
+      padding-bottom: 30px
+    @media #{$mobile}
+      padding-bottom: 20px
+      flex-direction: column
 
   &__list-inner
     &:first-child, &:nth-child(4)
@@ -39,6 +61,8 @@
     @include text(#fff)
     &:not(:last-child)
       margin-bottom: 20px
+      @media #{$mobile}
+        margin-bottom: 12px
     &--last
       color: $title-second-color
       text-decoration: underline
@@ -47,6 +71,8 @@
   &__link
     @extend .footer__item
     padding-bottom: 20px
+    @media #{$mobile}
+      padding-bottom: 12px
 
   &__list-title
     @include text-custom(14px, 400, $title-second-color)
@@ -86,6 +112,7 @@
   &__info
     color: #FFFFFF
     margin-bottom: 6px
+    white-space: nowrap
 
   &__social-list
     display: flex
@@ -137,23 +164,32 @@
     width: 100%
     padding: 40px 0
     border-bottom: 1px solid rgba(255,255,255, .2)
+    gap: 20px
+    flex-wrap: wrap
+    @media #{$tablet}
+      padding: 30px 0
+    @media #{$mobile}
+      padding: 20px 0
 
   &__middle-text
     max-width: 815px
     @include text-custom(14px,400,#fff)
     line-height: 1.4
+    @media #{$tablet-small}
+      font-size: 12px
     & span
       color: $title-second-color
 
   &__yandex-link
     border-radius: 6px
     background-color: #FFF
-    width: 160px
+    min-width: 160px
     height: 60px
     background-image: url("../images/similar/yandex-rewiews.png")
     background-repeat: no-repeat
     background-position: center
     background-size: 85%
+
 
   &__bottom
     display: flex
@@ -161,8 +197,16 @@
     align-items: center
     width: 100%
     padding: 30px 0
+    gap: 12px
+    @media #{$mobile}
+      flex-direction: column
+      justify-content: center
+      padding: 20px 0
 
   &__bottom-link
     @include text-custom(14px, 400, rgba(255, 255 ,255 , .5))
+    @media #{$tablet-small}
+      font-size: 12px
+      white-space: nowrap
 
 

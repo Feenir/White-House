@@ -16,7 +16,7 @@
   &__slide
     overflow: hidden
     border-radius: 12px
-
+    max-width: unset
 
   &__swiper-container
     position: relative
@@ -30,5 +30,20 @@
 
   &__link
     @include button
-    @include button-padding()
+    @include button-padding
     margin: 40px auto 0 auto
+
+  &__control-inner
+    position: static
+    max-width: unset
+    @media (max-width: 1340px)
+      max-width: fit-content
+    & .best__slider-button
+      position: absolute
+      @media (max-width: 1340px)
+        position: static
+    & .control__pagination
+      display: none
+      @media (max-width: 1340px)
+        display: flex
+

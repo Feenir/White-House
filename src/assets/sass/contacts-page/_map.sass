@@ -3,11 +3,22 @@
 
   &__map
     display: flex
+    @media #{$tablet}
+      flex-direction: column
 
   &__item
-    width: calc(50% - 50px)
     &:first-child
       margin-right: 100px
+      @media #{$tablet}
+        margin-right: 0
+    &--map
+      flex: 1 auto
+      @media #{$tablet}
+        order: 1
+        margin-bottom: 20px
+    &--title
+      @media #{$tablet}
+        order: 2
 
   &__info-wrapper
     display: flex
@@ -19,9 +30,15 @@
     flex-direction: column
     &:first-child
       margin-right: 44px
+      @media #{$notebook}
+        margin-right: 36px
+      @media #{$tablet}
+        margin-right: 22px
     & .contacts__info-item
       &:first-child
         margin-bottom: 30px
+        @media #{$tablet}
+          margin-bottom: 20px
 
   &__link-button
     @include button
@@ -30,6 +47,10 @@
 
   &__map-preloader
     height: 340px
+    @media #{$tablet}
+      height: 300px
+    @media #{$mobile}
+      height: 250px
 
   &__map-yandex
     background-image: url("../images/map/map-back.jpg")
@@ -41,10 +62,21 @@
     width: 100%
     border-radius: 12px
     overflow: hidden
+    border: 1px solid #B99D7B
 
   &__title
     font-size: 40px
     margin-bottom: 60px
+    @media #{$notebook}
+      font-size: 36px
+      margin-bottom: 50px
+    @media #{$notebook-small}
+      font-size: 30px
+      margin-bottom: 40px
+    @media #{$tablet}
+      font-size: 24px
+      margin-bottom: 30px
+      text-align: center
     &--color
       color: $title-second-color
       text-align: center
@@ -52,6 +84,16 @@
   &__subtitle
     @include text-subtitle
     margin-bottom: 40px
+    @media #{$notebook}
+      margin-bottom: 30px
+    &--color
+      color: $title-second-color
+    &--city
+      @media #{$notebook}
+        margin-bottom: 30px
+      @media #{$tablet}
+        margin-bottom: 20px
+        text-align: center
 
   &__icon-inner
     display: flex
@@ -61,15 +103,39 @@
     max-width: 20px
     max-height: 20px
     margin-left: 8px
+    @media #{$notebook}
+      max-width: 18px
+      max-height: 18px
+    @media #{$notebook-small}
+      max-width: 16px
+      max-height: 16px
+    @media #{$tablet}
+      max-width: 14px
+      max-height: 14px
+    @media #{$mobile}
+      max-width: 12px
+      max-height: 12px
 
   &__info-subtitle
     font-size: 12px
     color: rgba(83, 83, 83, .5)
     margin-bottom: 12px
+    @media #{$tablet}
+      font-size: 10px
+    @media #{$mobile}
+      font-size: 8px
 
   &__link
     font-size: 16px
     color: $title-second-color
+    @media #{$notebook-small}
+      font-size: 14px
+    @media #{$tablet-small}
+      font-size: 12px
 
   &__text-content
     max-width: 190px
+    @media #{$tablet}
+      font-size: 14px
+    @media #{$mobile}
+      font-size: 12px

@@ -1,20 +1,32 @@
 .category-single
   @include section-indent-margin
+  & .cloudimage-360-loader
+    background-color: $title-second-color
 
   &__swiper-container-thumb
     display: flex
     align-items: stretch
     min-width: 0
+    position: relative
+
+  &__swiper-thumb
+    width: 100%
 
   &__wrapper
     display: flex
     gap: 0 36px
+    @media #{$tablet}
+      flex-direction: column
+      gap: 20px
 
   &__item
     &:first-child
       width: calc(60% - 28px)
     &:last-child
       width: calc(40% - 8px)
+    &:nth-child(n)
+      @media #{$tablet}
+        width: 100%
 
   &__slide
     display: flex
@@ -23,11 +35,20 @@
     width: 100%
     background: #FCF7F4
     height: auto
+    max-height: 500px
+    @media #{$tablet}
+      max-height: unset
+      height: fit-content
 
   &__slide, &__slide-thumb
     border-radius: 12px
     overflow: hidden
     position: relative
+
+  &__slide-thumb
+    & img
+      @media #{$tablet}
+        max-width: 100%
 
   &__swiper
     margin-bottom: 20px
@@ -38,6 +59,12 @@
     gap: 6px
     top: 30px
     left: 30px
+    @media #{$tablet}
+      top: 20px
+      left: 20px
+    @media #{$mobile}
+      top: 10px
+      left: 10px
 
   &__slide-link
     display: flex
@@ -72,6 +99,10 @@
     @include text-custom(16px,400,#fff)
     padding: 8px 15px
     text-transform: uppercase
+    @media #{$tablet-small}
+      font-size: 14px
+    @media #{$mobile-small}
+      font-size: 12px
 
   &__title
     @include section-title
@@ -80,8 +111,7 @@
   &__color
     text-transform: capitalize
 
-  &__swiper-container-thumb
-    position: relative
+
 
   &__slider-button
     @extend .reviews__slider-button
@@ -111,11 +141,22 @@
   &__price
     @include text-custom(30px,600,#B99D7B)
     margin-bottom: 18px
+    @media #{$notebook}
+      font-size: 24px
+    @media #{$notebook-small}
+      font-size: 20px
+    @media #{$tablet}
+      font-size: 16px
 
   &__price-inner
     display: flex
     gap: 0 42px
     margin-bottom: 24px
+    @media #{$notebook-small}
+      gap: 0 30px
+    @media (max-width: 1110px)
+      flex-direction: column
+      gap: 20px
 
   &__price-sale-inner
     display: flex
@@ -124,6 +165,8 @@
   &__old-price
     @include text-custom(20px,600,rgba(83, 83, 83, .5))
     margin-right: 14px
+    @media #{$notebook-small}
+      font-size: 16px
 
   &__sum-sale
     display: flex
@@ -143,6 +186,7 @@
     bottom: 48px
     left: 50%
     transform: translateX(-50%)
+    pointer-events: none
 
   &__view-icon
     max-width: 308px
@@ -201,13 +245,24 @@
     align-items: center
     justify-content: flex-start
     gap: 20px
+    @media #{$notebook-small}
+      flex-direction: column
 
   &__button
     @include button
     @include button-padding
+    @media #{$notebook-small}
+      max-width: none
+      width: 100%
     &--lending
       color: $title-second-color
       background: rgba(122, 160, 75, 0.10)
+
+.cloudimage-360-view-360-icon
+  @extend .category-single__view
+  display: none
+
+
 
 
 

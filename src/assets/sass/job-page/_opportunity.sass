@@ -1,0 +1,63 @@
+.opportunity
+  border-radius: 12px
+  border: 1px solid #B99D7B
+  background: #FCF7F4
+  &__body
+    padding: 30px 40px 40px 40px
+    @media #{$tablet}
+      padding: 20px 30px 30px 30px
+    @media #{$mobile}
+      padding: 20px
+
+  &__title-inner
+    display: flex
+    justify-content: space-between
+    margin-bottom: 10px
+    @media #{$mobile-small}
+      flex-wrap: wrap
+      gap: 10px 0
+
+  &__title
+    @include text-subtitle
+
+  &__salary
+    @include text-custom(20px,600,$title-second-color)
+    @media #{$tablet}
+      font-size: 18px
+    @media #{$mobile}
+      font-size: 14px
+
+  &__practice
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+    &:before
+      content: ''
+      display: block
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M13.5 4.5H2.5C2.22386 4.5 2 4.72386 2 5V13C2 13.2761 2.22386 13.5 2.5 13.5H13.5C13.7761 13.5 14 13.2761 14 13V5C14 4.72386 13.7761 4.5 13.5 4.5Z' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 4.5V3.5C10.5 3.23478 10.3946 2.98043 10.2071 2.79289C10.0196 2.60536 9.76522 2.5 9.5 2.5H6.5C6.23478 2.5 5.98043 2.60536 5.79289 2.79289C5.60536 2.98043 5.5 3.23478 5.5 3.5V4.5' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 10H14' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      min-width: 16px
+      height: 16px
+      margin-right: 6px
+
+  &__city
+    color: $title-second-color
+    margin-bottom: 20px
+
+
+  &__text
+    margin-bottom: 30px
+
+  &__link
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50px
+    border: 1px solid #7AA04B
+    @include button-padding
+    max-width: fit-content
+    @media #{$mobile}
+      max-width: 100%
+      padding: 16px 20px

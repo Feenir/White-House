@@ -26,21 +26,39 @@ let heroSwiperText = new Swiper("[data-hero-swiper-text]", {
 });
 
 let bestSwiper = new Swiper("[data-best-swiper]", {
-    slidesPerView: 3,
     spaceBetween: 20,
+    slidesPerView: 1,
     navigation: {
         nextEl: "[data-best-next]",
         prevEl: "[data-best-prev]",
     },
+    pagination: {
+        el: "[data-best-pagination]",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1440: {
+            slidesPerView: 3,
+        },
+
+    }
 });
 
 let reviewsSwiperThumb = new Swiper("[data-reviews-thumb]", {
-    slidesPerView: 4,
-    spaceBetween: 16,
+    slidesPerView: 3,
+    spaceBetween: 9,
     navigation: {
         nextEl: "[data-reviews-next]",
         prevEl: "[data-reviews-prev]",
     },
+    breakpoints: {
+        561: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+        }
+    }
 
 });
 
@@ -53,29 +71,47 @@ let reviewsSwiperBig = new Swiper("[data-reviews-big]", {
 });
 
 let bestMoreSwiper = new Swiper("[data-best-more-swiper]", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
         nextEl: "[data-best-more-next]",
         prevEl: "[data-best-more-prev]",
     },
+    pagination: {
+        el: "[data-best-more-pagination]",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1440: {
+            slidesPerView: 3,
+        },
+
+    }
+
 
 });
 
 let singleSwiperThumb = new Swiper("[data-single-thumb]", {
     slidesPerView: 4,
-    spaceBetween: 20,
+    spaceBetween: 10,
     initialSlide: 2,
     navigation: {
         nextEl: "[data-single-thumb-next]",
         prevEl: "[data-single-thumb-prev]",
     },
+    breakpoints: {
+        spaceBetween: 20,
+    }
 });
 
 let singleSwiperImg = new Swiper("[data-single-big]", {
     slidesPerView: 1,
+    allowTouchMove: false,
+    autoHeight: true,
     lazy: true,
-     effect: "fade",
+    effect: "fade",
     thumbs: {
         swiper: singleSwiperThumb,
     },
@@ -87,16 +123,87 @@ let planSwiperImg = new Swiper("[data-plan-swiper]", {
         nextEl: "[data-layout-next]",
         prevEl: "[data-layout-prev]",
     },
+    pagination: {
+        el: "[data-layout-pagination]",
+    },
 });
 
 let branchesSwiper = new Swiper("[data-branches-swiper]", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
         nextEl: "[data-branches-next]",
         prevEl: "[data-branches-prev]",
     },
+    breakpoints: {
+        561: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        991: {
+            slidesPerView: 4,
+        },
+    }
 });
+
+let vacancyMoreSwiper = new Swiper("[data-vacancy-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: "[data-vacancy-next]",
+        prevEl: "[data-vacancy-prev]",
+    },
+    pagination: {
+        el: "[data-vacancy-pagination]",
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 2,
+        },
+
+    }
+});
+
+let jobReviewsSwiper = new Swiper("[data-job-reviews-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: "[data-job-reviews-next]",
+        prevEl: "[data-job-reviews-prev]",
+    },
+    pagination: {
+        el: "[data-job-reviews-pagination]",
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 2,
+        },
+
+    }
+});
+
+let insideReviewsSwiper = new Swiper("[data-inside-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+        nextEl: "[data-inside-next]",
+        prevEl: "[data-inside-prev]",
+    },
+    pagination: {
+        el: "[data-inside-pagination]",
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 1.8,
+        },
+
+    }
+});
+
 
 
 

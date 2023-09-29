@@ -270,17 +270,153 @@ favoriteButton.forEach(function (button) {
 })
 
 
+// ===================================================================
+// Функция по добавлению классов свайперу в зависимости от размера экрана
+// ===================================================================
+let swiperCatalogActive = document.querySelector('[data-catalog-swiper]')
 
 
 
+// ===================================================================
+// Функция по включению выключению свайпера в зависимости от экрана
+// ===================================================================
+
+if (swiperCatalogActive) {
+    addClassSwiper('(max-width: 991px)', swiperCatalogActive)
+    resizableSwiper(
+        '(max-width: 991px)',
+        swiperCatalogActive,
+        {
+            loop: true,
+            slidesPerView: 1,
+            pagination: {
+                el: "[data-catalog-pagination]",
+            },
+            navigation: {
+                nextEl: "[data-catalog-next]",
+                prevEl: "[data-catalog-prev]",
+            },
+        },
+    );
+}
+
+let swiperTileMobileActive = document.querySelector('[data-tile-mobile-slider]')
+
+if (swiperTileMobileActive) {
+    addClassSwiper('(max-width: 991px)', swiperTileMobileActive)
+    resizableSwiper(
+        '(max-width: 991px)',
+        swiperTileMobileActive,
+        {
+            loop: true,
+            spaceBetween: 15,
+            slidesPerView: 1,
+            pagination: {
+                el: "[data-tile-pagination]",
+            },
+            navigation: {
+                nextEl: "[data-tile-next]",
+                prevEl: "[data-tile-prev]",
+            },
+        },
+    );
+}
+
+let swiperOrderMobileActive = document.querySelector('[data-order-mobile-slider]')
+if (swiperOrderMobileActive) {
+    addClassSwiper('(max-width: 991px)', swiperOrderMobileActive)
+    resizableSwiper(
+        '(max-width: 991px)',
+        swiperOrderMobileActive,
+        {
+            spaceBetween: 20,
+            slidesPerView: 1.2,
+            pagination: {
+                el: "[data-order-pagination]",
+            },
+            navigation: {
+                nextEl: "[data-order-next]",
+                prevEl: "[data-order-prev]",
+            },
+            slidesOffsetAfter: 15,
+            slidesOffsetBefore: 15,
+        },
+    );
+}
+
+// ===================================================================
+// Замена Заголовка
+// ===================================================================
 
 
+let titleParent = document.querySelector('[data-parent]')
+if (titleParent) titleCopy('(max-width: 991px)', '.category-single__title', titleParent, '.category-single__item--description', '.container')
+let titleMapParent = document.querySelector('[data-map-parent]')
+if (titleMapParent) titleCopy('(max-width: 991px)', '.contacts__title', titleMapParent, '.contacts__item--title', '.contacts__item--map')
+
+window.CI360.init();
+
+// ===================================================================
+// Открытие закрытие бургер меню
+// ===================================================================
+const burgerOpen = document.querySelector('[data-burger-open]')
+const mobileMenuBody = document.querySelector('[data-mobile-menu]')
+const burgerClose = document.querySelector('[data-close-burger]')
+const html = document.querySelector('html')
+
+burgerOpen.addEventListener('click', function () {
+    mobileMenuBody.classList.add('open')
+    html.style.overflowY = 'hidden'
+})
+
+burgerClose.addEventListener('click',function () {
+    mobileMenuBody.classList.remove('open')
+    html.style.overflowY = 'visible'
+})
+
+mobileMenuBody.addEventListener('click', function (e) {
+    if (!mobileMenu.contains(e.target)) {
+        mobileMenuBody.classList.remove('open')
+        html.style.overflowY = 'visible'
+    }
+})
 
 
+// ===================================================================
+// Открытие закрытие пунктов меню
+// ===================================================================
 
+const mobileMenu = document.querySelector('[data-menu]')
 
+if (mobileMenu) {
+    let levelMenu = mobileMenu.querySelectorAll('.mobile-menu__down')
+    levelMenu.forEach(function (levelItem) {
+        levelItem.addEventListener('click', function (event) {
+            let subMenu = event.currentTarget.parentElement.querySelector('.mobile-menu__sub-list')
+            event.currentTarget.classList.toggle('rotate')
+            subMenu.classList.toggle('active')
+        })
+    })
+}
 
-
+// ==================================================================
+// Фильтр по статьям в блоге(Не забыть оставить комменты)
+// ==================================================================
+const filterButtonsBody = document.querySelector('[data-stocks-body]')
+const filterTargetItems = document.querySelectorAll('[data-filter-target]')
+const caseStocksObject = {
+    all: 'всеакции',
+}
+if (filterButtonsBody && filterTargetItems) {
+    filter(filterButtonsBody,filterTargetItems,caseStocksObject,'stocks__filter')
+}
+const articleButtonsBody = document.querySelector('[data-article-body]')
+const caseArticleObject = {
+    all: 'всетемы',
+}
+if (articleButtonsBody && filterTargetItems) {
+    filter(articleButtonsBody,filterTargetItems,caseArticleObject,'stocks__filter')
+}
 
 
 

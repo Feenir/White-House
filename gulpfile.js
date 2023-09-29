@@ -178,6 +178,9 @@ function js() {
             extname: ".js"
         }))
         .pipe(dest(path.build.js))
+        .pipe(size({
+            showFiles: true,
+        }))
         .pipe(gzip())
         .pipe(rename({
             suffix: ".gz",

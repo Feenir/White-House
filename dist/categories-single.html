@@ -65,7 +65,6 @@
           </a>
         </li>
       </ul>
-
       <div class="header__callback-inner">
         <a class="header__favourites-link" href="favourites.html" data-count="0">
           <svg class="header__favourites-icon">
@@ -73,6 +72,16 @@
           </svg>
         </a>
         <button class="header__callback" type="button">Заказать звонок</button>
+        <div class="header__mobile-icon">
+          <a class="header__mobile-phone" href="#">
+            <svg class="header__mobile-phone-icon">
+              <use href="./assets/images/svg/set.svg#phone-call"></use>
+            </svg>
+          </a>
+          <svg class="header__burger" data-burger-open>
+              <use href="./assets/images/svg/set.svg#burger"></use>
+          </svg>
+        </div>
       </div>
     </div>
     <nav class="header__nav">
@@ -109,6 +118,102 @@
   </div>
 </header>
 
+<aside class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__body" data-menu>
+      <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img class="logo" src="./assets/images/similar/logo.png" alt="Логотип"></picture>
+      <button class="mobile-menu__city-trigger" type="button">Нижний Новгород <svg class="mobile-menu__button-icon"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg></button>
+      <ul class="mobile-menu__city-body">
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+      </ul>
+      <ul class="mobile-menu__list">
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Каталог</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+              <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+              <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+              </ul>
+              </li>
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+                <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+                <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Услуги</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Материнский капитал</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Рассчитать стоимость</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О компании</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Проекты</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Отзывы</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Акции</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Клиентам</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+        </ul>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--phone">
+        <a class="mobile-menu__info mobile-menu__info--phone" href="+78314206197">8 831 420 61 97</a>
+        <p class="mobile-menu__info-text">Пн-Вс с 09:00 до 19:00</p>
+      </div>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--mail">
+        <a class="mobile-menu__info mobile-menu__info--mail" href="info@beli-dom.ru">info@beli-dom.ru</a>
+        <p class="mobile-menu__info-text">Напишите нам</p>
+      </div>
+      <ul class="mobile-menu__social-list">
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#viber"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <svg class="mobile-menu__close-icon" data-close-burger>
+        <use href="./assets/images/svg/set.svg#close-burger"></use>
+      </svg>
+    </div>
+</aside>
+
 
 
 
@@ -133,181 +238,187 @@
         <meta itemprop="item"/>
       </li>
     </ol>
-  </div>  <section class="category-single">
+  </div>  <section class="category-single" data-parent>
     <div class="container">
-      <div class="category-single__wrapper">
-  
-        <div class="category-single__item">
-          <div class="category-single__swiper swiper" data-single-big>
-            <div class="category-single__swiper-wrapper swiper-wrapper">
-              <div class="category-single__slide swiper-slide">
-                <picture><source srcset="./assets/images/category-single/single-big-3d.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-3d.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
-                <div class="category-single__meta-inner">
-                  <div class="meta meta--new">НОВИНКА</div>
-                  <div class="meta meta--hit">ХИТ</div>
-                </div>
-                <div class="category-single__view-inner">
-                  <p class="category-single__view">360&ordm;</p>
-                  <svg class="category-single__view-icon">
-                    <use xlink:href="./assets/images/svg/set.svg#view-360"></use>
-                  </svg>
-                </div>
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-              </div>
-              <div class="category-single__slide swiper-slide">
-                <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
+        <div class="category-single__wrapper">
+          <div class="category-single__item">
+            <div class="category-single__swiper swiper" data-single-big>
+              <div class="category-single__swiper-wrapper swiper-wrapper">
+                <div class="category-single__slide swiper-slide">
+                  <div class="cloudimage-360"
+                    data-folder="https://scaleflex.cloudimg.io/v7/demo/vivo-mobile/"
+                    data-filename-x="product-{index}.jpg"
+                    data-amount-x="60"
+                    data-pointer-zoom="2"
+                    data-fullscreen
+                     data-lazyload
+                    data-transformation="w=692&h=500&func=fit"
+                    data-responsive="scaleflex"></div>
                   <div class="category-single__meta-inner">
                     <div class="meta meta--new">НОВИНКА</div>
-                    <div class="meta meta--sale">СКИДКА 25%</div>
                     <div class="meta meta--hit">ХИТ</div>
                   </div>
-                  <div class="category-single__size-inner">
-                    <svg class="category-single__size-icon">
-                      <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+                  <div class="category-single__view-inner">
+                    <p class="category-single__view">360&ordm;</p>
+                    <svg class="category-single__view-icon">
+                      <use xlink:href="./assets/images/svg/set.svg#view-360"></use>
                     </svg>
                   </div>
-                </a>
-                <div class="category-single__house-status">
-                  <h3 class="category-single__status-subtitle">Дом на выставке</h3>
                 </div>
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-              </div>
-              <div class="category-single__slide swiper-slide">
-                <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
-                  <div class="category-single__meta-inner">
-                    <div class="meta meta--new">НОВИНКА</div>
-                    <div class="meta meta--sale">СКИДКА 25%</div>
-                    <div class="meta meta--hit">ХИТ</div>
+                <div class="category-single__slide swiper-slide">
+                  <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
+                    <div class="category-single__meta-inner">
+                      <div class="meta meta--new">НОВИНКА</div>
+                      <div class="meta meta--sale">СКИДКА 25%</div>
+                      <div class="meta meta--hit">ХИТ</div>
+                    </div>
+                    <div class="category-single__size-inner">
+                      <svg class="category-single__size-icon">
+                        <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+                      </svg>
+                    </div>
+                  </a>
+                  <div class="category-single__house-status">
+                    <h3 class="category-single__status-subtitle">Дом на выставке</h3>
                   </div>
-                  <div class="category-single__size-inner">
-                    <svg class="category-single__size-icon">
-                      <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+                <div class="category-single__slide swiper-slide">
+                  <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
+                    <div class="category-single__meta-inner">
+                      <div class="meta meta--new">НОВИНКА</div>
+                      <div class="meta meta--sale">СКИДКА 25%</div>
+                      <div class="meta meta--hit">ХИТ</div>
+                    </div>
+                    <div class="category-single__size-inner">
+                      <svg class="category-single__size-icon">
+                        <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+                      </svg>
+                    </div>
+                  </a>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+                <div class="category-single__slide swiper-slide">
+                  <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
+                    <div class="category-single__meta-inner">
+                      <div class="meta meta--new">НОВИНКА</div>
+                      <div class="meta meta--sale">СКИДКА 25%</div>
+                      <div class="meta meta--hit">ХИТ</div>
+                    </div>
+                    <div class="category-single__size-inner">
+                      <svg class="category-single__size-icon">
+                        <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+                      </svg>
+                    </div>
+                  </a>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-single__swiper-container-thumb">
+  
+              <div class="category-single__swiper-thumb swiper" data-single-thumb>
+                <div class="category-single__swiper-wrapper-thumb swiper-wrapper">
+                  <div class="category-single__slide-thumb swiper-slide">
+                    <picture><source srcset="./assets/images/category-single/single-thumb-3d.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-3d.jpg" alt="Фото" width="158" height="100"></picture>
+                  </div>
+                  <div class="category-single__slide-thumb swiper-slide">
+                    <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
+                  </div>
+                  <div class="category-single__slide-thumb swiper-slide">
+                    <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
+                  </div>
+                  <div class="category-single__slide-thumb swiper-slide">
+                    <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
+                  </div>
+                </div>
+              </div>
+              <div class="category-single__slider-button category-single__slider-button--next slider-button slider-button--next swiper-button-next" data-single-thumb-next></div>
+              <div class="category-single__slider-button category-single__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-single-thumb-prev></div>
+            </div>
+  
+          </div>
+  
+          <div class="category-single__item category-single__item--description">
+            <h1 class="category-single__title">Каркасный дом<br><span class="category-single__color">«Домино»</span></h1>
+            <div class="category-single__price-inner">
+              <div class="category-single__price-item">
+                <div class="category-single__price-month-inner">
+                  <p class="category-single__price-month">Цена в феврале</p>
+                  <div class="category-single__attention-trigger">
+                    <svg class="category-single__attention-icon">
+                      <use xlink:href="./assets/images/svg/set.svg#attention-icon"></use>
                     </svg>
+                    <div class="category-single__attention-body"></div>
                   </div>
-                </a>
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+                <p class="category-single__price">1 550 000 ₽</p>
+                <div class="category-single__price-sale-inner">
+                  <p class="category-single__old-price"><s>1 820 000 ₽</s></p>
+                  <div class="category-single__sum-sale">-25%</div>
+                </div>
               </div>
-              <div class="category-single__slide swiper-slide">
-                <a class="category-single__slide-link" href="./assets/images/category-single/single-big-1.jpg" data-fancybox="single-big-slider"> <picture><source srcset="./assets/images/category-single/single-big-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-big-1.png" alt="Фото" width="692" height="500" loading="lazy"></picture>
-                  <div class="category-single__meta-inner">
-                    <div class="meta meta--new">НОВИНКА</div>
-                    <div class="meta meta--sale">СКИДКА 25%</div>
-                    <div class="meta meta--hit">ХИТ</div>
-                  </div>
-                  <div class="category-single__size-inner">
-                    <svg class="category-single__size-icon">
-                      <use xlink:href="./assets/images/svg/set.svg#size-plus"></use>
+              <div class="category-single__price-item">
+                <div class="category-single__price-month-inner">
+                  <p class="category-single__price-month">Цена в феврале</p>
+                  <div class="category-single__attention-trigger">
+                    <svg class="category-single__attention-icon">
+                      <use xlink:href="./assets/images/svg/set.svg#attention-icon"></use>
                     </svg>
+                    <div class="category-single__attention-body"></div>
                   </div>
-                </a>
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+                <p class="category-single__price">1 550 000 ₽</p>
+                <div class="category-single__price-sale-inner">
+                  <p class="category-single__old-price"><s>1 820 000 ₽</s></p>
+                  <div class="category-single__sum-sale">-25%</div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="category-single__swiper-container-thumb">
+            <div class="category-single__features-inner">
+              <div class="category-single__features-icon"></div>
+              <div class="category-single__features-text">Строительство в кредит</div>
+            </div>
+            <p class="category-single__text">Минимальный ежемесячный платеж <span class="category-single__text-color">50 000 рублей</span></p>
+            <div class="category-single__features-inner category-single__features-inner--capital">
+              <div class="category-single__features-icon category-single__features-icon--capital"></div>
+              <div class="category-single__features-text">Материнский капитал</div>
+            </div>
+            <p class="category-single__choose">Выберите комплектацию</p>
+            <div class="category-single__custom-select category-single__custom-select--equipment custom-select itc-select" data-custom-select data-equipment-select>
+              <button class="itc-select__toggle" type="button" name="" value="" data-select="toggle" data-index="-1">Жилой дом - утепление 150 мм</button>
+              <div class="itc-select__dropdown">
+                <ul class="itc-select__options">
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="0">Общепромышленное, углеродистая сталь</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="1">Общепромышленное коррозионностойкое (К1)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="2">Взрывозащищенное из разнородных металлов (В)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="3">Взрывозащищенное, алюминий (ВК3)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="4">Взрывозащищенное, коррозионностойкое (ВК1)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="5">Жаростойкое (Ж)</li>
+                </ul>
+              </div>
+            </div>
+            <a class="category-single__link-all" href="#">Посмотреть характеристики комплектаций</a>
+            <p class="category-single__choose">Выберите материал</p>
+            <div class="category-single__custom-select category-single__custom-select--material custom-select itc-select" data-custom-select data-material-select>
+              <button class="itc-select__toggle" type="button" name="" value="" data-select="toggle" data-index="-1">Газобетон</button>
+              <div class="itc-select__dropdown">
+                <ul class="itc-select__options">
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="0">Общепромышленное, углеродистая сталь</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="1">Общепромышленное коррозионностойкое (К1)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="2">Взрывозащищенное из разнородных металлов (В)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="3">Взрывозащищенное, алюминий (ВК3)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="4">Взрывозащищенное, коррозионностойкое (ВК1)</li>
+                  <li class="itc-select__option" data-select="option" data-value="" data-index="5">Жаростойкое (Ж)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="category-single__button-inner">
+              <button class="category-single__button category-single__button--this">Заказать этот проект</button>
+              <button class="category-single__button category-single__button--lending">Кредитование</button>
+            </div>
   
-            <div class="category-single__swiper-thumb swiper" data-single-thumb>
-              <div class="category-single__swiper-wrapper-thumb swiper-wrapper">
-                <div class="category-single__slide-thumb swiper-slide">
-                  <picture><source srcset="./assets/images/category-single/single-thumb-3d.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-3d.jpg" alt="Фото" width="158" height="100"></picture>
-                </div>
-                <div class="category-single__slide-thumb swiper-slide">
-                  <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
-                </div>
-                <div class="category-single__slide-thumb swiper-slide">
-                  <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
-                </div>
-                <div class="category-single__slide-thumb swiper-slide">
-                  <picture><source srcset="./assets/images/category-single/single-thumb-1.webp" type="image/webp"><img class="" src="./assets/images/category-single/single-thumb-1.jpg" alt="Фото" width="158" height="100"></picture>
-                </div>
-              </div>
-            </div>
-            <div class="category-single__slider-button category-single__slider-button--next slider-button slider-button--next swiper-button-next" data-single-thumb-next></div>
-            <div class="category-single__slider-button category-single__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-single-thumb-prev></div>
           </div>
-  
-        </div>
-  
-        <div class="category-single__item category-single__item--description">
-          <h1 class="category-single__title">Каркасный дом<br><span class="category-single__color">«Домино»</span></h1>
-          <div class="category-single__price-inner">
-            <div class="category-single__price-item">
-              <div class="category-single__price-month-inner">
-                <p class="category-single__price-month">Цена в феврале</p>
-                <div class="category-single__attention-trigger">
-                  <svg class="category-single__attention-icon">
-                    <use xlink:href="./assets/images/svg/set.svg#attention-icon"></use>
-                  </svg>
-                  <div class="category-single__attention-body"></div>
-                </div>
-              </div>
-              <p class="category-single__price">1 550 000 ₽</p>
-              <div class="category-single__price-sale-inner">
-                <p class="category-single__old-price"><s>1 820 000 ₽</s></p>
-                <div class="category-single__sum-sale">-25%</div>
-              </div>
-            </div>
-            <div class="category-single__price-item">
-              <div class="category-single__price-month-inner">
-                <p class="category-single__price-month">Цена в феврале</p>
-                <div class="category-single__attention-trigger">
-                  <svg class="category-single__attention-icon">
-                    <use xlink:href="./assets/images/svg/set.svg#attention-icon"></use>
-                  </svg>
-                  <div class="category-single__attention-body"></div>
-                </div>
-              </div>
-              <p class="category-single__price">1 550 000 ₽</p>
-              <div class="category-single__price-sale-inner">
-                <p class="category-single__old-price"><s>1 820 000 ₽</s></p>
-                <div class="category-single__sum-sale">-25%</div>
-              </div>
-            </div>
-          </div>
-          <div class="category-single__features-inner">
-            <div class="category-single__features-icon"></div>
-            <div class="category-single__features-text">Строительство в кредит</div>
-          </div>
-          <p class="category-single__text">Минимальный ежемесячный платеж <span class="category-single__text-color">50 000 рублей</span></p>
-          <div class="category-single__features-inner category-single__features-inner--capital">
-            <div class="category-single__features-icon category-single__features-icon--capital"></div>
-            <div class="category-single__features-text">Материнский капитал</div>
-          </div>
-          <p class="category-single__choose">Выберите комплектацию</p>
-          <div class="category-single__custom-select category-single__custom-select--equipment custom-select itc-select" data-custom-select data-equipment-select>
-            <button class="itc-select__toggle" type="button" name="" value="" data-select="toggle" data-index="-1">Жилой дом - утепление 150 мм</button>
-            <div class="itc-select__dropdown">
-              <ul class="itc-select__options">
-                <li class="itc-select__option" data-select="option" data-value="" data-index="0">Общепромышленное, углеродистая сталь</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="1">Общепромышленное коррозионностойкое (К1)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="2">Взрывозащищенное из разнородных металлов (В)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="3">Взрывозащищенное, алюминий (ВК3)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="4">Взрывозащищенное, коррозионностойкое (ВК1)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="5">Жаростойкое (Ж)</li>
-              </ul>
-            </div>
-          </div>
-          <a class="category-single__link-all" href="#">Посмотреть характеристики комплектаций</a>
-          <p class="category-single__choose">Выберите материал</p>
-          <div class="category-single__custom-select category-single__custom-select--material custom-select itc-select" data-custom-select data-material-select>
-            <button class="itc-select__toggle" type="button" name="" value="" data-select="toggle" data-index="-1">Газобетон</button>
-            <div class="itc-select__dropdown">
-              <ul class="itc-select__options">
-                <li class="itc-select__option" data-select="option" data-value="" data-index="0">Общепромышленное, углеродистая сталь</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="1">Общепромышленное коррозионностойкое (К1)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="2">Взрывозащищенное из разнородных металлов (В)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="3">Взрывозащищенное, алюминий (ВК3)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="4">Взрывозащищенное, коррозионностойкое (ВК1)</li>
-                <li class="itc-select__option" data-select="option" data-value="" data-index="5">Жаростойкое (Ж)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="category-single__button-inner">
-            <button class="category-single__button category-single__button--this">Заказать этот проект</button>
-            <button class="category-single__button category-single__button--lending">Кредитование</button>
-          </div>
-  
-        </div>
       </div>
     </div>
   </section>
@@ -375,8 +486,13 @@
                 <use xlink:href="./assets/images/svg/set.svg#layout-plus"></use>
               </svg>
             </div>
-            <div class="layout__slider-button layout__slider-button--next slider-button slider-button--next swiper-button-next" data-layout-next></div>
-            <div class="layout__slider-button layout__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-layout-prev></div>
+  
+            <div class="layout__control-inner control">
+              <div class="layout__slider-button layout__slider-button--prev slider-button slider-button--prev swiper-button-prev control__button" data-layout-prev></div>
+              <div class="layout__pagination swiper-pagination custom-pagination control__pagination" data-layout-pagination></div>
+              <div class="layout__slider-button layout__slider-button--next slider-button slider-button--next swiper-button-next control__button" data-layout-next></div>
+            </div>
+  
           </div>
         </div>
       </div>
@@ -385,82 +501,106 @@
     <div class="container">
       <h2 class="material__title">Комплектации</h2>
       <div class="material__wrapper" data-tabs>
-        <div class="material__item material__item--content tabs-pane-show" data-tabs-pane >
-          <h3 class="material__content-title">Комплектации <span>«Домино» (8,0х12,8)-139м2</span></h3>
-          <div class="material__content-table" data-content-hide>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Терасса</p>
-              <p class="material__content-house-material">3,0х5,3 м</p>
+  
+        <aside class="material__item material__item--content tabs-pane-show" data-tabs-pane>
+          <div class="material__meta meta meta--new">Рекомендовано для круглогодичного проживания</div>
+            <table>
+              <thead>
+              <tr>
+                <th>Комплектации <span>«Домино» (8,0х12,8)-139м2</span></th>
+              </tr>
+              </thead>
+              <tbody data-content-hide>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Лаги пола 1 этажа</th>
+                <th>Доска 50х150 мм с шагом до 640 мм</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              <tr>
+                <th>Терасса</th>
+                <th>3,0х5,3 м</th>
+              </tr>
+              </tbody>
+  
+            </table>
+            <div class="material__price-inner">
+              <div class="material__price-item">
+                <p class="material__price">1 550 000 ₽</p>
+                <div class="material__old-price-inner">
+                  <p class="material__old-price"><s>1 820 000 ₽</s></p>
+                  <div class="material__sale">-25%</div>
+                </div>
+              </div>
+              <button class="material__button-hide" data-button-hide>Скрыть характеристики</button>
             </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Крыльцо</p>
-              <p class="material__content-house-material">2,0х1,3 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 1 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 2 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Чистовые полы</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 1 этажа</p>
-              <p class="material__content-house-material">2,7 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 2 этажа</p>
-              <p class="material__content-house-material">2,5 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стены</p>
-              <p class="material__content-house-material">Каркас из доски естественной <br> влажности 50х150 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Перегородки</p>
-              <p class="material__content-house-material">Обрезная доска 50х100 с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Окна ПВХ</p>
-              <p class="material__content-house-material">Стандартные</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Двери</p>
-              <p class="material__content-house-material">Входная металлическая 2,1 х 0,9</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Внутренняя отделка</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Наружная отделка</p>
-              <p class="material__content-house-material">Имитация бруса</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Утепление</p>
-              <p class="material__content-house-material">Без утепления</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стропила</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Кровельное покрытие</p>
-              <p class="material__content-house-material">Ондулин</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лестница</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Фундамент</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-          </div>
+          </aside>
+        <aside class="material__item material__item--content" data-tabs-pane>
+          <div class="material__meta meta meta--new">Рекомендовано для круглогодичного проживания</div>
+          <table>
+            <thead>
+            <tr>
+              <th>Жилой дом <span>–Утепление 150мм</span></th>
+            </tr>
+            </thead>
+            <tbody data-content-hide>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Лаги пола 1 этажа</th>
+              <th>Доска 50х150 мм с шагом до 640 мм</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            </tbody>
+  
+          </table>
           <div class="material__price-inner">
             <div class="material__price-item">
               <p class="material__price">1 550 000 ₽</p>
@@ -471,83 +611,51 @@
             </div>
             <button class="material__button-hide" data-button-hide>Скрыть характеристики</button>
           </div>
-        </div>
-        <div class="material__item material__item--content" data-tabs-pane>
-          <h3 class="material__content-title">Жилой дом – <span>Утепление 150мм</span></h3>
-          <div class="material__content-table" data-content-hide>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Терасса</p>
-              <p class="material__content-house-material">3,0х5,3 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Крыльцо</p>
-              <p class="material__content-house-material">2,0х1,3 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 1 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 2 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Чистовые полы</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 1 этажа</p>
-              <p class="material__content-house-material">2,7 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 2 этажа</p>
-              <p class="material__content-house-material">2,5 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стены</p>
-              <p class="material__content-house-material">Каркас из доски естественной <br> влажности 50х150 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Перегородки</p>
-              <p class="material__content-house-material">Обрезная доска 50х100 с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Окна ПВХ</p>
-              <p class="material__content-house-material">Стандартные</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Двери</p>
-              <p class="material__content-house-material">Входная металлическая 2,1 х 0,9</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Внутренняя отделка</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Наружная отделка</p>
-              <p class="material__content-house-material">Имитация бруса</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Утепление</p>
-              <p class="material__content-house-material">Без утепления</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стропила</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Кровельное покрытие</p>
-              <p class="material__content-house-material">Ондулин</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лестница</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Фундамент</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-          </div>
+        </aside>
+        <aside class="material__item material__item--content" data-tabs-pane>
+          <div class="material__meta meta meta--new">Рекомендовано для круглогодичного проживания</div>
+          <table>
+            <thead>
+            <tr>
+              <th>Аляска – <span>Утепление 200мм</span></th>
+            </tr>
+            </thead>
+            <tbody data-content-hide>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Лаги пола 1 этажа</th>
+              <th>Доска 50х150 мм с шагом до 640 мм</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            <tr>
+              <th>Терасса</th>
+              <th>3,0х5,3 м</th>
+            </tr>
+            </tbody>
+  
+          </table>
           <div class="material__price-inner">
             <div class="material__price-item">
               <p class="material__price">1 550 000 ₽</p>
@@ -558,94 +666,8 @@
             </div>
             <button class="material__button-hide" data-button-hide>Скрыть характеристики</button>
           </div>
-        </div>
-        <div class="material__item material__item--content" data-tabs-pane>
-          <h3 class="material__content-title">Аляска – <span class="material__content-color">Утепление 200мм</span></h3>
-          <div class="material__content-table" data-content-hide>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Терасса</p>
-              <p class="material__content-house-material">3,0х5,3 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Крыльцо</p>
-              <p class="material__content-house-material">2,0х1,3 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 1 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лаги пола 2 этажа</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Чистовые полы</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 1 этажа</p>
-              <p class="material__content-house-material">2,7 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Высота потолка 2 этажа</p>
-              <p class="material__content-house-material">2,5 м</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стены</p>
-              <p class="material__content-house-material">Каркас из доски естественной <br> влажности 50х150 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Перегородки</p>
-              <p class="material__content-house-material">Обрезная доска 50х100 с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Окна ПВХ</p>
-              <p class="material__content-house-material">Стандартные</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Двери</p>
-              <p class="material__content-house-material">Входная металлическая 2,1 х 0,9</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Внутренняя отделка</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Наружная отделка</p>
-              <p class="material__content-house-material">Имитация бруса</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Утепление</p>
-              <p class="material__content-house-material">Без утепления</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Стропила</p>
-              <p class="material__content-house-material">Доска 50х150 мм с шагом до 640 мм</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Кровельное покрытие</p>
-              <p class="material__content-house-material">Ондулин</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Лестница</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-            <div class="material__content-table-item">
-              <p class="material__content-house-info">Фундамент</p>
-              <p class="material__content-house-material">-</p>
-            </div>
-          </div>
-          <div class="material__price-inner">
-            <div class="material__price-item">
-              <p class="material__price">1 550 000 ₽</p>
-              <div class="material__old-price-inner">
-                <p class="material__old-price"><s>1 820 000 ₽</s></p>
-                <div class="material__sale">-25%</div>
-              </div>
-            </div>
-            <button class="material__button-hide" data-button-hide>Скрыть характеристики</button>
-          </div>
-        </div>
+        </aside>
+  
         <div class="material__item material__item--trigger">
           <div class="material__trigger-inner tabs-active" data-tabs-btn>
             <p class="material__trigger-subtitle">Комплектации «Домино» (8,0х12,8)-139м2</p>
@@ -719,8 +741,11 @@
             </div>
           </div>
         </div>
-        <div class="best__slider-button best__slider-button--next slider-button slider-button--next swiper-button-next" data-best-more-next></div>
-        <div class="best__slider-button best__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-best-more-prev></div>
+        <div class="best__control-inner control">
+          <div class="best__slider-button best__slider-button--prev slider-button slider-button--prev swiper-button-prev control__button" data-best-more-prev></div>
+          <div class="best__pagination swiper-pagination custom-pagination control__pagination" data-best-more-pagination></div>
+          <div class="best__slider-button best__slider-button--next slider-button slider-button--next swiper-button-next control__button" data-best-more-next></div>
+        </div>
         <a class="best__link" href="#">Смотреть все услуги</a>
       </div>
     </div>
@@ -797,95 +822,117 @@
                 </div>
               </div>
             </div>
-            <div class="reviews__slider-button reviews__slider-button--next slider-button slider-button--next swiper-button-next" data-reviews-next></div>
-            <div class="reviews__slider-button reviews__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-reviews-prev></div>
+            <div class="reviews__button-container">
+              <div class="reviews__slider-button reviews__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-reviews-prev></div>
+              <div class="reviews__slider-button reviews__slider-button--next slider-button slider-button--next swiper-button-next" data-reviews-next></div>
+            </div>
           </div>
         </div>
         <div class="reviews__item reviews__item--text">
             <div class="reviews__main-wrapper">
               <div class="reviews__review-wrapper">
-                <div class="reviews__icon">
-                  <p class="reviews__icon-text">С.Ч.</p>
-                </div>
-                <div class="reviews__body">
-                  <h4 class="reviews__name">Клишина Ольга</h4>
-                  <form class="reviews__rating rating-form" action="#">
-                    <div class="rating" data-star-rating>
-                      <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                <div class="reviews__head">
+                  <div class="reviews__icon">
+                    <p class="reviews__icon-text">С.Ч.</p>
+                  </div>
+                  <div class="reviews__user-wrapper">
+                    <h4 class="reviews__name">Клишина Ольга</h4>
+                    <form class="reviews__rating rating-form" action="#">
+                      <div class="rating" data-star-rating>
+                        <div class="rating__body">
+                          <div class="rating__active"></div>
+                          <div class="rating__items">
+                            <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                          </div>
+                          <div class="rating__value">4.5</div>
                         </div>
-                        <div class="rating__value">4.5</div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+  
+                <div class="reviews__body">
                   <p class="reviews__project-name">Дом по проекту "Емельян"</p>
                   <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
                   <a class="reviews__project-link" href="#">Читать отзыв</a>
                 </div>
               </div>
               <div class="reviews__review-wrapper">
-                <div class="reviews__icon">
-                  <p class="reviews__icon-text">С.Ч.</p>
-                </div>
-                <div class="reviews__body">
-                  <h4 class="reviews__name">Клишина Ольга</h4>
-                  <form class="reviews__rating rating-form" action="#">
-                    <div class="rating" data-star-rating>
-                      <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                <div class="reviews__head">
+                  <div class="reviews__icon">
+                    <p class="reviews__icon-text">С.Ч.</p>
+                  </div>
+                  <div class="reviews__user-wrapper">
+                    <h4 class="reviews__name">Клишина Ольга</h4>
+                    <form class="reviews__rating rating-form" action="#">
+                      <div class="rating" data-star-rating>
+                        <div class="rating__body">
+                          <div class="rating__active"></div>
+                          <div class="rating__items">
+                            <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                          </div>
+                          <div class="rating__value">4.5</div>
                         </div>
-                        <div class="rating__value">2.5</div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+  
+                <div class="reviews__body">
                   <p class="reviews__project-name">Дом по проекту "Емельян"</p>
                   <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
                   <a class="reviews__project-link" href="#">Читать отзыв</a>
                 </div>
               </div>
               <div class="reviews__review-wrapper">
-                <div class="reviews__icon">
-                  <p class="reviews__icon-text">С.Ч.</p>
-                </div>
-                <div class="reviews__body">
-                  <h4 class="reviews__name">Клишина Ольга</h4>
-                  <form class="reviews__rating rating-form" action="#">
-                    <div class="rating" data-star-rating>
-                      <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                <div class="reviews__head">
+                  <div class="reviews__icon">
+                    <p class="reviews__icon-text">С.Ч.</p>
+                  </div>
+                  <div class="reviews__user-wrapper">
+                    <h4 class="reviews__name">Клишина Ольга</h4>
+                    <form class="reviews__rating rating-form" action="#">
+                      <div class="rating" data-star-rating>
+                        <div class="rating__body">
+                          <div class="rating__active"></div>
+                          <div class="rating__items">
+                            <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                          </div>
+                          <div class="rating__value">4.5</div>
                         </div>
-                        <div class="rating__value">4</div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+  
+                <div class="reviews__body">
                   <p class="reviews__project-name">Дом по проекту "Емельян"</p>
                   <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
                   <a class="reviews__project-link" href="#">Читать отзыв</a>
                 </div>
               </div>
               <div class="reviews__review-wrapper">
-                <div class="reviews__icon">
-                  <p class="reviews__icon-text">С.Ч.</p>
-                </div>
-                <div class="reviews__body">
-                  <h4 class="reviews__name">Клишина Ольга</h4>
-                  <form class="reviews__rating rating-form" action="#">
-                    <div class="rating" data-star-rating>
-                      <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                <div class="reviews__head">
+                  <div class="reviews__icon">
+                    <p class="reviews__icon-text">С.Ч.</p>
+                  </div>
+                  <div class="reviews__user-wrapper">
+                    <h4 class="reviews__name">Клишина Ольга</h4>
+                    <form class="reviews__rating rating-form" action="#">
+                      <div class="rating" data-star-rating>
+                        <div class="rating__body">
+                          <div class="rating__active"></div>
+                          <div class="rating__items">
+                            <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                          </div>
+                          <div class="rating__value">4.5</div>
                         </div>
-                        <div class="rating__value">4.5</div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+  
+                <div class="reviews__body">
                   <p class="reviews__project-name">Дом по проекту "Емельян"</p>
                   <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
                   <a class="reviews__project-link" href="#">Читать отзыв</a>
@@ -1040,8 +1087,11 @@
             </div>
           </div>
         </div>
-        <div class="best__slider-button best__slider-button--next slider-button slider-button--next swiper-button-next" data-best-next></div>
-        <div class="best__slider-button best__slider-button--prev slider-button slider-button--prev swiper-button-prev" data-best-prev></div>
+        <div class="best__control-inner control">
+          <div class="best__slider-button best__slider-button--prev slider-button slider-button--prev swiper-button-prev control__button" data-best-prev></div>
+          <div class="best__pagination swiper-pagination custom-pagination control__pagination" data-best-pagination></div>
+          <div class="best__slider-button best__slider-button--next slider-button slider-button--next swiper-button-next control__button" data-best-next></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1073,6 +1123,7 @@
           <li class="footer__item"><a class="footer__link" href="#">Работы с фундаментом</a></li>
           <li class="footer__item"><a class="footer__link" href="#">Системы отопления</a></li>
           <li class="footer__item footer__item--last"><a class="footer__link" href="#">Смотреть все услуги</a></li>
+          <li class="footer__item footer__item--last"><a class="footer__link" href="site-map.html">Карта сайта</a></li>
         </ul>
       </div>
       <div class="footer__list-inner">

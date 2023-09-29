@@ -1,5 +1,8 @@
 .material
   @include section-indent-margin
+  & .container
+    @media #{$mobile}
+      padding: 0
 
   &__title
     @include section-title
@@ -9,29 +12,39 @@
     display: flex
     align-items: flex-start
     gap: 20px
+    @media #{$tablet}
+      flex-direction: column
 
   &__item
     width: calc(50% - 10px)
+    @media #{$tablet}
+      width: 100%
     &--trigger
       position: sticky
       overflow-y: auto
       top: 20px
       bottom: 0
       height: 100%
+      @media #{$tablet}
+        position: static
+        order: 1
+      @media #{$mobile}
+        padding: 0 15px
     &--content
       display: none
       flex-direction: column
       padding: 40px 30px
       border-radius: 12px
       background: #FCF7F4
+      @media #{$tablet}
+        order: 2
+        padding: 30px 20px
+      @media #{$mobile}
+        padding: 20px
       &.tabs-pane-show
         display: flex
 
-  &__content-title
-    @include section-title(inherit,40px,30px)
-    text-transform: none
-    & span
-      color: $title-second-color
+
 
   &__trigger-inner
     display: flex
@@ -47,9 +60,10 @@
         color: #fff
       & .material__trigger-icon-inner
         background-color: rgba(135, 160, 75, 1)
-
     &:not(:last-child)
       margin-bottom: 20px
+      @media #{$tablet}
+        margin-bottom: 10px
 
   &__trigger-icon-inner
     display: flex
@@ -60,43 +74,48 @@
     height: 80px
     background-color: rgba(185, 157, 123, .1)
     transition: background-color .4s
+    @media #{$notebook}
+      width: 60px
+      height: 60px
+    @media #{$tablet}
+      width: 40px
+      height: 40px
 
   &__trigger-icon
     max-width: 32px
     max-height: 32px
+    @media #{$notebook-small}
+      max-width: 26px
+      max-height: 26px
+    @media #{$tablet}
+      max-width: 18px
+      max-height: 18px
 
   &__trigger-subtitle
     padding-left: 30px
     @include text-custom(18px,600,#B99D7B)
     transition: color .4s
-
-  &__content-table
-    margin-bottom: 34px
-
-  &__content-house-info
-    color: rgba(83, 83, 83, .5)
-
-  &__content-house-material
-    text-align: end
-
-  &__content-table-item
-    display: flex
-    align-items: center
-    justify-content: space-between
-    padding-bottom: 10px
-    width: 100%
-    border-bottom: 1px solid rgba(83, 83, 83, .1)
-    &:not(:last-child)
-      margin-bottom: 10px
+    @media #{$notebook}
+      font-size: 16px
+    @media #{$tablet}
+      font-size: 14px
+    @media #{$mobile}
+      font-size: 12px
 
   &__price-inner
     display: flex
     align-items: flex-start
     justify-content: space-between
+    margin-top: 30px
+    @media #{$mobile}
+      flex-direction: column
+      margin-top: 20px
 
   &__price-item
     display: flex
     flex-direction: column
+    @media #{$mobile}
+      order: 2
 
   &__old-price-inner
     display: flex
@@ -104,14 +123,64 @@
 
   &__price
     @extend .category-single__price
+    @media #{$mobile}
+      margin-bottom: 6px
+      font-size: 18px
 
   &__old-price
     @extend .category-single__old-price
+    @media #{$mobile}
+      font-size: 14px
 
   &__sale
     @extend .category-single__sum-sale
 
   &__button-hide
     @include text-custom(16px,400,$title-second-color)
+    @media #{$tablet}
+      font-size: 14px
+    @media #{$mobile}
+      font-size: 12px
+      margin-bottom: 20px
+      order: 1
+
+  &__meta
+    text-align: center
+    margin-bottom: 28px
+
+  & table thead tr
+    @include section-title(inherit,40px,30px)
+    text-transform: none
+    text-align: left
+    & span
+      color: $title-second-color
+  & table thead
+    display: block
+
+  & table tbody
+    display: block
+    margin-top: 30px
+
+  & table tbody tr
+    display: flex
+    justify-content: space-between
+    padding-bottom: 10px
+    border-bottom: 1px solid rgba(83, 83, 83, .1)
+    margin-bottom: 10px
+    gap: 10px
+    & th
+      @media #{$tablet}
+        font-size: 14px
+      @media #{$mobile}
+        font-size: 12px
+    & th:first-child
+      text-align: left
+      color: rgba(83, 83, 83, .5)
+      font-weight: 400
+      line-height: 1.4
+      white-space: nowrap
+    & th:last-child
+      text-align: right
+
 
 

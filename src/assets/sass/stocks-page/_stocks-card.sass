@@ -1,0 +1,95 @@
+.stocks-card
+  position: relative
+  display: flex
+  align-items: flex-end
+  background-image: url("../images/hit/hit-2.jpg")
+  @supports ( background-image: url("../images/hit/hit-2.webp"))
+    background-image: url("../images/hit/hit-2.webp")
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  min-height: 342px
+  max-width: 100%
+  border-radius: 12px
+  overflow: hidden
+  @media #{$tablet}
+    min-height: 300px
+  @media #{$mobile}
+    min-height: 250px
+  &:before
+    position: absolute
+    inset: 0
+    content: ''
+    background: linear-gradient(180deg, rgba(51, 51, 51, 0.30) 0%, rgba(51, 51, 51, 0.00) 33.21%)
+    pointer-events: none
+  &--single
+    min-height: 580px
+    @media #{$notebook}
+      min-height: 480px
+    @media #{$notebook-small}
+      min-height: 400px
+    @media #{$tablet}
+      min-height: 360px
+    @media #{$tablet-small}
+      min-height: 280px
+    & .stocks-card__bottom-inner
+      display: flex
+      justify-content: space-between
+      width: 100%
+      background: rgba(122, 160, 75, 0.30)
+      backdrop-filter: blur(10px)
+      padding: 20px 40px
+
+    & .stocks-card__link
+      display: flex
+      align-items: center
+      padding: 15px 34px
+      @include text-custom(16px,400,#333)
+      border-radius: 60px
+      background: #FFF
+
+    & .stocks-card__title
+      display: flex
+      align-items: center
+      width: auto
+      background: none
+      backdrop-filter: none
+      padding: 0
+  &--services
+    min-height: 500px
+    background-image: url("../images/inside/inside-services.jpg")
+    @supports ( background-image: url("../images/inside/inside-services.webp"))
+      background-image: url("../images/inside/inside-services.webp")
+    @media #{$notebook}
+      min-height: 420px
+    @media #{$notebook-small}
+      min-height: 340px
+    @media #{$tablet}
+      min-height: 260px
+    @media #{$tablet-small}
+      min-height: 210px
+
+
+  &__time
+    position: absolute
+    top: 30px
+    left: 30px
+    @media #{$tablet}
+      text-transform: lowercase
+      top: 15px
+      left: 15px
+      font-size: 8px
+  &__title
+    @include text-custom(18px,600,#fff)
+    padding: 20px
+    width: 100%
+    text-align: center
+    background: rgba(122, 160, 75, 0.30)
+    backdrop-filter: blur(10px)
+    @media #{$notebook-small}
+      font-size: 16px
+    @media #{$tablet-small}
+      font-size: 14px
+    @media #{$mobile}
+      font-size: 12px
+

@@ -7,6 +7,10 @@
   padding: 8px 15px
   border-radius: $border-radius
   max-width: fit-content
+  @media #{$tablet}
+    padding: 8px
+  @media #{$mobile-small}
+    font-size: 10px
   &--new
     background: $title-second-color
   &--hit
@@ -26,8 +30,8 @@
     max-height: 30px
 
 .slider-button
-  width: $swiper-button-size
-  height: $swiper-button-size
+  min-width: $swiper-button-size
+  min-height: $swiper-button-size
   border-radius: 50%
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='none'%3E%3Ccircle cx='18' cy='18' r='18' transform='rotate(-180 18 18)' fill='%237AA04B'/%3E%3Cpath d='M16.5609 22.3199L20.1738 18.7071C20.5643 18.3165 20.5643 17.6834 20.1738 17.2928L16.5609 13.6799' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
   background-position: center
@@ -113,24 +117,38 @@
     padding: 12px 0
     background: rgba(122, 160, 75, 0.30)
     backdrop-filter: blur(10px)
+    @media #{$tablet}
+      font-size: 14px
 
   &__house-bottom
     display: flex
     padding: 20px
     gap: 30px
+    @media #{$tablet-small}
+      gap: 14px
+      padding: 14px
 
   &__metre
     @include text-subtitle($title-second-color)
+    white-space: nowrap
+    @media #{$tablet}
+      font-size: 14px
 
   &__price-now
     @include text-subtitle(#B99D7B)
+    white-space: nowrap
+    @media #{$tablet}
+      font-size: 14px
     &--next
       color: rgba(177, 100, 100, 1)
 
   &__price-month
+    white-space: nowrap
     @include text-custom
     opacity: .5
     margin-top: 6px
+    @media #{$tablet}
+      font-size: 12px
 
   &__link
     position: absolute
@@ -148,3 +166,159 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='16' transform='rotate(-90 16 16)' fill='%23B99D7B'/%3E%3Cpath d='M12.1602 14.7205L15.2931 17.8534C15.6836 18.244 16.3167 18.244 16.7073 17.8534L19.8402 14.7205' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
       width: 32px
       height: 32px
+
+.custom-pagination
+  display: flex
+  align-items: center
+  @media #{$mobile}
+  & .swiper-pagination-bullet
+    width: 10px
+    height: 10px
+    background-color: rgba(122, 160, 75, .2)
+    opacity: 1
+    transition: all .4s
+  & .swiper-pagination-bullet-active
+    background-color: rgba(122, 160, 75, 1)
+    width: 16px
+    height: 16px
+
+.control
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: fit-content
+  margin: 20px auto 0 auto
+  &__pagination
+    position: static
+  &__button
+    position: static
+
+.mobile-menu
+  display: none
+  transform: translateX(100%)
+  position: fixed
+  opacity: 0
+  visibility: hidden
+  top: 0
+  right: 0
+  z-index: -1
+  height: 100%
+  width: 100%
+  transition: all .4s
+  padding-bottom: 54px
+  @media #{$tablet}
+    display: block
+  &.open
+    display: flex
+    justify-content: flex-end
+    z-index: 10000
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)
+    height: 100vh
+  &__body
+    position: relative
+    background-color: white
+    height: 100vmax
+    width: 80vw
+    padding: 40px 18px 84px 18px
+    overflow-y: auto
+  &__down
+    max-width: 8px
+    max-height: 8px
+    margin-left: 10px
+    transition: transform .2s
+    &.rotate
+      transform: rotate(180deg)
+
+  &__list
+    margin-bottom: 42px
+
+  &__sub-list
+    display: none
+    &.active
+      display: block
+  & .logo
+    margin: 0 auto 18px auto
+
+  &__city-trigger
+    @include mobile-menu-text
+    text-align: center
+    margin: 0 auto 20px auto
+    width: 100%
+
+  &__button-icon
+    @extend .mobile-menu__down
+
+  &__city-body
+    display: none
+
+  &__item
+    padding-bottom: 18px
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+    margin-bottom: 12px
+
+  &__sub-list
+    margin-top: 22px
+    &--second
+      margin-bottom: 24px
+
+  &__sub-item
+    @include mobile-menu-text
+    font-size: 12px
+    &:not(:last-child)
+      padding-bottom: 12px
+
+  &__city-link, &__sub-link, &__sub-link-second
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+
+  &__item-sub-second
+    display: flex
+    align-items: center
+    &:before
+      display: block
+      content: ''
+      min-width: 9px
+      height: 9px
+      margin-right: 8px
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='12' viewBox='0 0 11 12' fill='none'%3E%3Cpath d='M10.5 11.5H4.5C2.29086 11.5 0.5 9.70914 0.5 7.5V0.5' stroke='%237AA04B'/%3E%3C/svg%3E")
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+    &:not(:last-child)
+      padding-bottom: 12px
+
+  &__info-inner
+    @extend .header__info-inner
+    display: flex!important
+    margin-bottom: 22px
+
+  &__info
+    @extend .header__info
+
+  &__info-text
+    @extend .header__info-text
+
+  &__social-list
+    @extend .header__social-list
+    display: flex!important
+
+  &__social-item
+    @extend .header__social-item
+
+  &__social-item-link
+    @extend .header__social-item-link
+
+  &__social-icon
+    @extend .header__social-icon
+
+  &__close-icon
+    position: absolute
+    max-width: 24px
+    max-height: 24px
+    top: 20px
+    right: 20px
+

@@ -3,37 +3,56 @@
   &__title
     @include section-title
     @include text-position
+    @media #{$mobile}
+      font-size: 20px
+      margin-bottom: 20px
 
   &__map-yandex
     border-radius: 10px
     border: 1px solid #B99D7B
     overflow: hidden
     min-height: 238px
+    @media #{$tablet}
+      min-height: 210px
 
   &__subtitle
     @include text-subtitle($title-second-color)
     @include text-position
     margin-bottom: 20px
+    @media #{$mobile}
+      font-size: 12px
 
   &__address
     @include text-custom(14px)
     @include text-position
     max-width: 240px
     margin: 20px auto 16px auto
+    @media #{$mobile}
+      font-size: 12px
+      margin: 16px auto
 
   &__link
     display: block
     @include text-position
     @include text-custom(14px,inherit,$title-second-color)
+    @media #{$mobile}
+      font-size: 12px
     &:first-of-type
       margin-bottom: 10px
 
   &__swiper-container
     position: relative
 
+  &__control-inner
+    @extend .best__control-inner
+
   &__slider-button
-    top: calc(50% - 60px)
-    &--next
-      right: -80px
+    @extend .best__slider-button
     &--prev
-      left: -80px
+      left: -100px
+      @media #{$notebook}
+        left: -50px
+    &--next
+      right: -100px
+      @media #{$notebook}
+        left: -50px

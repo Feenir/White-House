@@ -5,18 +5,35 @@
     align-items: center
     justify-content: space-between
     margin-bottom: 60px
+    @media #{$notebook}
+      margin-bottom: 50px
+    @media #{$notebook-small}
+      margin-bottom: 40px
+    @media #{$tablet}
+      margin-bottom: 30px
+      flex-direction: column
+      align-items: flex-start
+    @media #{$mobile}
+      align-items: center
 
   &__title
     @include section-title(inherit,0,40px)
+    @media #{$tablet}
+      margin-bottom: 20px
+
 
   &__button-inner
     display: flex
     align-items: center
     gap: 20px
+    @media #{$mobile}
+      flex-direction: column
+      gap: 10px
+      width: 100%
 
   &__button
     @include button
-    @include button-padding
+    padding: 14px 30px
     &--clear
       background:  rgba(122, 160, 75, 0.10)
       color: $title-second-color
@@ -27,4 +44,4 @@
     align-items: stretch
     gap: 20px
     & > .card
-      width: calc(33.33% - 14px)
+      @extend .catalog-project__card

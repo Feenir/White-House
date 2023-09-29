@@ -5,14 +5,16 @@
     margin-bottom: $margin-bottom - 16
   @media #{$tablet}
     margin-bottom: $margin-bottom - 24
+  @media #{$mobile}
+    margin-bottom: $margin-bottom - 60
 
 
 @mixin section-indent-padding ($padding-bottom: $similar-indent)
   padding-bottom: $padding-bottom
   @media #{$notebook}
-    margin-bottom: $padding-bottom - 16
+    padding-bottom: $padding-bottom - 16
   @media #{$tablet}
-    margin-bottom: $padding-bottom - 24
+    padding-bottom: $padding-bottom - 24
 
 @mixin section-title ($color: $color-text, $margin: $section-title-indent, $font-size: $section-title-font-size)
   font-size: $font-size
@@ -20,21 +22,37 @@
   margin-bottom: $margin
   font-weight: $title-font-weight
   text-transform: lowercase
+  line-height: 1.2
   &:first-letter
     text-transform: uppercase
-
+  @media #{$notebook}
+    margin-bottom: $margin - 10
+    font-size: $font-size - 4
+  @media #{$tablet}
+    margin-bottom: $margin - 20
+    font-size: $font-size - 10
+  @media #{$mobile}
+    margin-bottom: $margin - 30
+    font-size: $font-size - 16
 @mixin text-subtitle ($color: $color-text, $text-size: $text-subtitle-font-size)
   color: $color
   font-family: $font-family
   font-size: $text-size
   font-weight: $subtitle-second-font-weight
   line-height: 1.2
+  @media #{$notebook-small}
+    font-size: $text-size - 2
+  @media #{$tablet-small}
+    font-size: $text-size - 4
 
 @mixin text ($color: $color-text)
   color: $color
   font-size: $text-font-size
   font-weight: $text-font-weight
   line-height: 1.4
+  @media #{$tablet}
+    font-size: $text-font-size - 2
+
 
 @mixin text-custom ($font-size: 14px, $font-weigh: $text-font-weight, $color: $color-text)
   color: $color
@@ -54,6 +72,11 @@
   line-height: 1
   border-radius: $border-radius
   background: $back
+  @media #{$tablet}
+    font-size: $font-size-button - 2
+  @media #{$mobile}
+    width: 100%
+    max-width: unset
 
 @mixin li-custom
   position: relative
@@ -76,6 +99,11 @@
     background-position: center
     background-size: 16px
     background-repeat: no-repeat
+  @media #{$notebook-small}
+    font-size: 16px
+    padding-left: 46px
+  @media #{$tablet-small}
+    font-size: 14px
 
 @mixin text-position($position: center)
   text-align: center
@@ -86,6 +114,21 @@
   font-weight: $title-in-section-font-size
   line-height: 1
   margin-bottom: $margin-bottom
+  @media #{$notebook-small}
+    margin-bottom: $margin-bottom - 16px
+    font-size: 24px
+  @media #{$tablet}
+    margin-bottom: $margin-bottom - 26px
+  @media #{$mobile}
+    text-align: center
 
 @mixin button-padding($top: 20px, $side: 40px)
   padding: $top $side
+  @media #{$mobile}
+    padding: 20px
+
+@mixin mobile-menu-text
+  color: #535353
+  font-size: 14px
+  font-weight: 400
+  line-height: 1

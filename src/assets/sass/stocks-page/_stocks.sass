@@ -1,0 +1,69 @@
+@import "./stocks-card"
+.stocks
+  & .pagination
+    @media #{$mobile}
+      padding: 0 15px
+  & .container
+    @media #{$mobile}
+      padding: 0
+  @include section-indent-margin
+  &__title
+    @include section-title
+    margin-bottom: 0!important
+    @media #{$mobile}
+      margin-bottom: 30px!important
+  &__title-inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 60px
+    @media #{$notebook}
+      margin-bottom: 50px
+    @media #{$notebook-small}
+      margin-bottom: 40px
+    @media #{$tablet}
+      margin-bottom: 30px
+    @media #{$mobile}
+      flex-direction: column
+
+  &__filter-inner
+    display: flex
+    align-items: center
+    gap: 20px
+    @media #{$mobile}
+      align-self: flex-start
+      gap: 10px
+      padding: 0 15px
+      overflow-x: auto
+      width: 100vw
+
+  &__filter
+    padding: 10px 20px
+    border-radius: 60px
+    background: #FCF7F4
+    @include text-custom(14px,400,#B99D7B)
+    transition: background .3s, color .3s
+    @media #{$mobile}
+      white-space: nowrap
+    &.active
+      background: #B99D7B
+      color: #ffffff
+
+  &__wrapper
+    display: flex
+    align-items: stretch
+    flex-wrap: wrap
+    gap: 20px
+    @media #{$mobile}
+      padding: 0 15px
+
+  &__card
+    width: calc(33.33% - 14px)
+    @media #{$tablet}
+      width: calc(50% - 10px)
+    @media #{$mobile}
+      width: 100%
+    &--not-active
+      &:before
+        background-color: rgba(255, 255, 255, .5)
+

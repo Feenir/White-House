@@ -14,6 +14,9 @@ html
   margin-right: calc(-1 * (100vw - 100%))
   box-sizing: border-box
 
+html.with-fancybox
+  overflow: hidden
+
 body
   font-family: $font-family
   position: relative
@@ -44,6 +47,13 @@ h1
   line-height: 1.2
   & span
     color: $title-second-color
+  @media #{$notebook-small}
+    font-size: $h1-font-size - 10
+  @media #{$tablet}
+    font-size: $h1-font-size - 18
+  @media #{$mobile}
+    & br
+      display: none
 
 h2
   color: $color-text
@@ -53,9 +63,17 @@ h2
   line-height: 1
   & span
     color: $title-second-color
+  @media #{$notebook}
+    font-size: $h2-font-size - 10
+  @media #{$tablet}
+    font-size: $h2-font-size - 16
+  @media #{$tablet}
+    font-size: $h2-font-size - 22
 p
   font-size: $html-font-size
   color: $main-color
+  @media #{$tablet-small}
+    font-size: $html-font-size - 2
 
 a
   text-decoration: none

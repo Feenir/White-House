@@ -6,13 +6,24 @@
 
   &__wrapper
     display: flex
-    align-items: flex-start
+    align-items: stretch
     gap: 20px
+    flex-wrap: wrap
 
   &__item
     width: calc(25% - 15px)
     border-radius: 12px
     background: #FCF7F4
+    overflow: hidden
+    &:hover .advantages__hidden-text
+      height: 100%
+      opacity: 1
+      visibility: visible
+      position: static
+    @media #{$tablet}
+      width: calc(50% - 10px)
+    @media #{$mobile}
+      width: 100%
 
   &__img
     background-image: url("../images/advantages/advantages-1.jpg")
@@ -26,11 +37,22 @@
 
   &__text-inner
     padding: 30px
+    @media #{$tablet}
+      padding: 16px 20px
 
   &__subtitle
-    @include text-subtitle(inherit, 16px)
+    @include text-subtitle(inherit)
     margin-bottom: 20px
+    font-size: 16px
+
 
   &__text
     @include text
+
+  &__hidden-text
+    position: absolute
+    z-index: -1
+    height: 0
+    opacity: 0
+    visibility: hidden
 

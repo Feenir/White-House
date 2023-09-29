@@ -17,6 +17,12 @@
     bottom: 0
     left: 0
     pointer-events: none
+    @media #{$tablet-small}
+      background-image: url("../images/about/about-mobile.png")
+      width: 100%
+      height: 345px
+      background-size: contain
+      bottom: -80px
   &__title
     @include title-in-section
 
@@ -33,6 +39,10 @@
     margin-bottom: 50px
     padding-left: 20px
     border-left: 4px solid #B99D7B
+    @media #{$notebook-small}
+      margin-bottom: 40px
+    @media #{$tablet-small}
+      margin-bottom: 30px
 
   &__text
     @include text

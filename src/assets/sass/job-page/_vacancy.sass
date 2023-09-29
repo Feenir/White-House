@@ -1,0 +1,74 @@
+.vacancy
+  @include section-indent-margin
+  &__title
+    @include section-title
+    text-align: center
+
+  &__swiper-container
+    @extend .best__swiper-container
+    @media #{$notebook-small}
+      padding-bottom: 60px
+
+  &__control-inner
+    @extend .best__control-inner
+
+  &__slider-button
+    @extend .best__slider-button
+    top: calc(50% - 32px)
+    &--prev
+      left: -76px
+    &--next
+      right: -76px
+
+  &__look
+    border-radius: 12px
+    background-color: #FCF7F4
+    padding: 40px 40px 50px 40px
+    background-image: url("../images/vacancy/1.png")
+    @supports (background-image: url("../images/vacancy/1.webp"))
+      background-image: url("../images/vacancy/1.webp")
+    background-position: right bottom
+    background-repeat: no-repeat
+    background-size: contain
+    @media #{$tablet}
+      padding-bottom: 186px
+      background-size: 320px
+    @media #{$mobile}
+      padding: 20px 20px 186px 20px
+      background-size: 280px
+
+  &__look-title
+    @include section-title
+    @media #{$mobile}
+      font-size: 20px
+      text-align: center
+      margin-bottom: 10px
+      & br
+        display: none
+
+
+  &__look-link-inner
+    display: flex
+    align-items: center
+    @media #{$mobile}
+      flex-direction: column
+      gap: 30px
+
+  &__look-link
+    @extend .opportunity__link
+    margin-right: 20px
+    @media #{$mobile}
+      order: 2
+      margin-right: 0
+      width: 100%
+
+  &__look-rate
+    @media #{$mobile}
+      text-align: center
+      font-size: 12px
+      order: 1
+
+
+
+
+@import './opportunity'

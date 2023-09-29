@@ -1,0 +1,38 @@
+.redirect
+  @include section-indent-margin
+  & h1
+    @include section-title
+    text-align: center
+
+  & picture
+    margin-bottom: 50px
+    border-radius: 12px
+    overflow: hidden
+
+  & div
+    counter-reset: list
+
+  & h2
+    counter-increment: list
+    @include text-subtitle
+    margin-bottom: 30px
+    @media #{$mobile}
+      margin-bottom: 15px
+    &:before
+      content: counter(list)'.'' '
+
+  & ol
+    counter-reset: sublist
+    margin-bottom: 30px
+  & li
+    @include text
+    counter-increment: sublist
+    @media #{$mobile}
+      font-size: 12px
+    &:before
+      content: counter(list)'.'counter(sublist)'.'' '
+
+  & a
+    font-size: inherit
+    text-decoration: underline
+

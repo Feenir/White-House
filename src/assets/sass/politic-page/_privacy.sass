@@ -1,12 +1,40 @@
 .privacy
   @include section-indent-margin
+
+  & li
+    @media #{$mobile}
+      font-size: 12px
+
   & h1
     font-size: 40px
     margin-bottom: 60px
+    @media #{$notebook}
+      font-size: 36px
+      margin-bottom: 50px
+    @media #{$notebook-small}
+      font-size: 30px
+      margin-bottom: 40px
+      @media #{$tablet}
+        font-size: 24px
+        margin-bottom: 30px
+      @media #{$tablet-small}
+        margin-bottom: 20px
+      @media #{$mobile}
+        margin-bottom: 16px
+
   & h2
     font-size: 30px
     color: $title-second-color
     margin-bottom: 60px
+    @media #{$notebook}
+      font-size: 24px
+      margin-bottom: 50px
+    @media #{$notebook-small}
+      font-size: 20px
+      margin-bottom: 40px
+    @media #{$tablet}
+      font-size: 14px
+      margin-bottom: 30px
 
   & div
     counter-reset: counter-title
@@ -15,29 +43,47 @@
       @include text-custom(20px,600,$title-second-color)
       counter-increment: counter-title
       margin-bottom: 30px
+      @media #{$notebook}
+        font-size: 14px
+      @media #{$tablet}
+        margin-bottom: 20px
       &:before
         content: counter(counter-title)'.'' '
 
     & p
       @include text
       margin-bottom: 20px
+      @media #{$tablet}
+        margin-bottom: 16px
 
     & p:has(span)
       margin-bottom: 60px
+      @media #{$tablet}
+        margin-bottom: 30px
 
     & ol
       counter-reset: sublist
       margin-bottom: 60px
+      @media #{$notebook}
+        margin-bottom: 50px
+      @media #{$tablet}
+        margin-bottom: 40px
+      @media #{$mobile}
+        margin-bottom: 30px
       & li
+        @include text
         counter-increment: sublist
+        @media #{$mobile}
+          font-size: 12px
         &:not(:last-child)
           margin-bottom: 20px
-          @include text
         &:before
           content: counter(counter-title)'.'counter(sublist)'.'' '
         & ul
           margin-top: 20px
           counter-reset: sublist
+          @media #{$tablet}
+            margin-bottom: 16px
           & li
             list-style: none
             &:before
@@ -47,6 +93,12 @@
       position: relative
       overflow: hidden
       margin-bottom: 60px
+      @media #{$notebook}
+        margin-bottom: 50px
+      @media #{$notebook-small}
+        margin-bottom: 40px
+      @media #{$tablet}
+        margin-bottom: 30px
       &:before
         position: absolute
         display: block
@@ -67,11 +119,32 @@
           &:first-child
             padding-left: 42px
             @include text-custom(20px,600,$title-second-color)
+            @media #{$notebook}
+              font-size: 18px
+              margin-right: 10px
+            @media #{$notebook-small}
+              font-size: 16px
+            @media #{$tablet}
+              padding-left: 20px
+              font-size: 14px
+            @media #{$tablet-small}
+              font-size: 12px
+            @media #{$mobile}
+              font-size: 8px
           &:last-child
             @include text
             padding: 20px 42px 20px 0
+            @media #{$tablet}
+              padding-right: 20px
+              font-size: 12px
+            @media #{$tablet-small}
+              font-size: 8px
           & ul
             & li
+              @media #{$tablet}
+                font-size: 12px
+              @media #{$tablet-small}
+                font-size: 8px
               &:before
                 display: inline-block
                 content: ''
@@ -81,6 +154,10 @@
                 background-color: #535353
                 margin-right: 8px
                 transform: translateY(-2px)
+                @media #{$tablet}
+                  min-width: 3px
+                  min-height: 3px
+                  margin-right: 4px
 
 
 

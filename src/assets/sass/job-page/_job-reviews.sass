@@ -1,0 +1,28 @@
+.job-reviews
+  &__title
+    @include section-title
+    text-align: center
+
+  &__slide
+    border-radius: 12px
+    background: #FCF7F4
+    padding: 30px 30px 30px 50px
+    @media #{$tablet}
+      padding: 20px
+
+  &__swiper-container
+    @extend .best__swiper-container
+
+  &__control-inner
+    @extend .best__control-inner
+
+  &__slider-button
+    @extend .best__slider-button
+    top: calc(50% + 14px)
+    &--prev
+      left: -76px
+    &--next
+      right: -76px
+
+  & .review-wrapper
+    padding-right: 0

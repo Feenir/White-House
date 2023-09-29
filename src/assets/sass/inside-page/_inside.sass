@@ -1,0 +1,163 @@
+.inside
+  @include section-indent-margin
+  & h1:not([class])
+    @include section-title
+    text-align: center
+
+  & h3:not([class])
+    @include text-custom(20px,600,#151417)
+    line-height: 1.4
+    margin-bottom: 20px
+    @media #{$mobile}
+      font-size: 16px
+
+  & p
+    @include text
+    margin-bottom: 40px
+
+  & aside:not([class])
+    counter-reset: inside
+    & h5
+      counter-increment: inside
+      margin-bottom: 20px
+      &:before
+        content: counter(inside)'. '
+    & ol
+      margin-bottom: 30px
+      counter-reset: inside-sub
+      & li
+        counter-increment: inside-sub
+        &:before
+          content: counter(inside)'.'counter(inside-sub)' '
+
+  & h5, & li, & p
+    @include text-custom(16px,400,#151417)
+    line-height: 1.4
+    @media #{$tablet-small}
+      font-size: 14px
+
+  & a[data-role="mobile"]
+    display: none
+    align-items: center
+    justify-content: center
+    border-radius: 60px
+    background: rgba(122, 160, 75, 0.10)
+    margin-bottom: 60px
+    @include text-custom(16px,400,#7AA04B)
+    @media #{$tablet-small}
+      display: flex
+      padding: 16px
+
+  & p:has(span)
+    padding: 40px
+    border-radius: 12px
+    background: #FCF7F4
+    margin-bottom: 40px
+    @media #{$tablet}
+      padding: 30px
+    @media #{$mobile}
+      padding: 20px
+    & span
+      @include text-custom(18px,400,#B99D7B)
+      line-height: 1.4
+      @media #{$tablet}
+        font-size: 16px
+      @media #{$mobile}
+        font-size: 12px
+
+  & div
+    & div:has(h3,a)
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 30px
+      border-radius: 12px
+      background: #FCF7F4
+      @media #{$mobile}
+        flex-direction: column
+        gap: 15px
+        padding: 15px
+      & h3:not([class])
+        margin-bottom: 0
+        text-align: center
+      & a
+        @include button
+        @include button-padding
+
+  ul
+    margin-bottom: 40px
+    & li:not([class])
+      display: flex
+      @include text-custom(16px,400,#151417)
+      line-height: 1.8
+      @media #{$tablet}
+        font-size: 14px
+      &:before
+        content: ''
+        display: block
+        min-width: 6px
+        height: 6px
+        margin-right: 10px
+        border-radius: 50%
+        background-color: #151417
+        transform: translateY(10px)
+        @media #{$tablet}
+          min-width: 3px
+          height: 3px
+
+  & .stocks-card__link
+    @media #{$tablet-small}
+      display: none
+
+  &__card
+    margin-bottom: 50px
+    background-image: url("../images/inside/inside-stocks.jpg")
+    @supports (background-image: url("../images/inside/inside-stocks.webp"))
+      background-image: url("../images/inside/inside-stocks.webp")
+
+  &__swiper-container
+    position: relative
+    max-width: 1920px
+    margin: 0 auto 50px auto
+    @media #{$tablet}
+      padding: 0 15px
+    & .swiper-slide
+      border-radius: 12px
+      overflow: hidden
+      & img
+        max-width: unset
+    & .swiper-slide-prev,
+    & .swiper-slide-next
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        inset: 0
+    & .swiper-slide-prev
+      &:before
+        background: linear-gradient(90deg, #FFF 71.56%, rgba(255, 255, 255, 0.00) 148.82%), linear-gradient(180deg, rgba(51, 51, 51, 0.30) 0%, rgba(51, 51, 51, 0.00) 33.21%)
+    & .swiper-slide-next
+      &:before
+        background: linear-gradient(270deg, #FFF 71.64%, rgba(255, 255, 255, 0.00) 144.43%)
+
+  &__control-inner
+    @extend .best__control-inner
+  &__slider-button
+    @extend .best__slider-button
+    &--next
+      right: 15%
+    &--prev
+      left: 15%
+
+  & aside
+    &:has(img)
+      display: flex
+      flex-wrap: wrap
+      gap: 20px
+      & > *
+        width: calc(50% - 10px)
+        @media #{$mobile}
+          width: 100%
+
+      & img
+        max-width: unset

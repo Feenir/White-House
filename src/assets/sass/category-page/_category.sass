@@ -11,6 +11,17 @@
     justify-content: center
     gap: 20px
     margin-bottom: 60px
+    @media #{$notebook-small}
+      margin-bottom: 50px
+    @media #{$tablet-small}
+      flex-direction: column
+      background: rgba(122, 160, 75, .3)
+      border-radius: 20px
+      padding: 6px
+      gap: 0
+      margin-bottom: 40px
+    @media #{$mobile}
+      margin-bottom: 30px
 
   &__trigger
     @include button-padding(15px, 34px)
@@ -18,6 +29,12 @@
     background: rgba(122, 160, 75, 0.10)
     @include text-custom(14px,400,rgba(122, 160, 75, 1))
     transition: all .4s
+    @media #{$tablet-small}
+      width: 100%
+      background: none
+      padding: 10px 30px
+    @media #{$mobile}
+      padding: 6px 24px
     &.tabs-active
       color: #FFFFFF
       background: rgba(122, 160, 75, 1)
@@ -62,6 +79,13 @@
     background-size: 70%
     background-position: right bottom
     background-repeat: no-repeat
+    @media #{$mobile}
+      flex-direction: row
+      padding: 26px 16px
+      min-height: 260px
+      width: 100%
+      flex-wrap: wrap
+      background-size: 230px
     &:hover
       border: 1px solid #B99D7B
       & .category__item-icon-inner
@@ -80,6 +104,15 @@
     background-color: rgba(185, 157, 123, .1)
     margin-bottom: 204px
     transition: background-color .4s
+    @media #{$notebook}
+      margin-bottom: 160px
+    @media #{$notebook-small}
+      margin-bottom: 120px
+    @media #{$tablet}
+      margin-bottom: 80px
+    @media #{$mobile}
+      margin-bottom: 0
+      order: 2
 
   &__item-icon
     max-width: 20px
@@ -91,3 +124,5 @@
 
   &__item-fake-link
     @include text-custom(16px, 400, $title-second-color)
+    @media #{$tablet-small}
+      font-size: 14px

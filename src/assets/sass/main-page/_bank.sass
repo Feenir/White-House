@@ -6,15 +6,36 @@
     border-radius: 12px
     background: #FCF7F4
     justify-content: space-between
+    gap: 30px
+    @media #{$notebook}
+      padding: 40px
+    @media #{$tablet}
+      padding: 30px
+      flex-wrap: wrap
+    @media #{$tablet-small}
+      padding: 30px 20px
+    @media #{$mobile}
+      padding: 30px 14px 14px 14px
 
   &__item
     &--bank-box
       padding: 44px 40px
       background-color: #FFFFFF
       max-width: 470px
+      @media #{$notebook}
+        padding: 38px 32px
+      @media #{$notebook-small}
+        padding: 30px 20px
+      @media #{$tablet}
+        padding: 22px 14px
+      @media #{$tablet}
+        max-width: unset
+        width: 100%
 
   &__title
     @include title-in-section
+    @media #{$tablet-small}
+      text-align: center
 
   &__list
     margin-bottom: 46px
@@ -26,7 +47,16 @@
     padding-bottom: 30px
     border-bottom: 1px solid rgba(83, 83, 83, .1)
     margin-bottom: 30px
-
+    @media #{$notebook}
+      gap: 16px 48px
+    @media #{$tablet}
+      gap: 12px 36px
+    @media #{$mobile}
+      gap: 12px 17px
+      justify-content: center
+      & picture
+        max-width: 30%
+        max-height: 20px
 
 
   &__list-item
@@ -58,6 +88,12 @@
     display: flex
     flex-wrap: wrap
     gap: 40px 55px
+    @media #{$notebook}
+      gap: 30px 42px
+    @media #{$notebook-small}
+      gap: 20px 32px
+    @media #{$tablet}
+      gap: 20px 24px
 
   &__list-number-box
     display: flex
@@ -66,5 +102,13 @@
   &__list-number-big
     @include text-custom(20px, 600)
     margin-bottom: 10px
+    @media #{$notebook}
+      font-size: 18px
+    @media #{$notebook-small}
+      font-size: 16px
+    @media #{$tablet}
+      font-size: 14px
   &__list-number-small
     @include text-custom(14px, 400, rgba(83, 83, 83, .5))
+    @media #{$tablet}
+      font-size: 12px

@@ -36,7 +36,6 @@
           </a>
         </li>
       </ul>
-
       <div class="header__callback-inner">
         <a class="header__favourites-link" href="favourites.html" data-count="0">
           <svg class="header__favourites-icon">
@@ -44,6 +43,16 @@
           </svg>
         </a>
         <button class="header__callback" type="button">Заказать звонок</button>
+        <div class="header__mobile-icon">
+          <a class="header__mobile-phone" href="#">
+            <svg class="header__mobile-phone-icon">
+              <use href="./assets/images/svg/set.svg#phone-call"></use>
+            </svg>
+          </a>
+          <svg class="header__burger" data-burger-open>
+              <use href="./assets/images/svg/set.svg#burger"></use>
+          </svg>
+        </div>
       </div>
     </div>
     <nav class="header__nav">
@@ -79,6 +88,102 @@
     </nav>
   </div>
 </header>
+
+<aside class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__body" data-menu>
+      <img class="logo" src="./assets/images/similar/logo.png" alt="Логотип">
+      <button class="mobile-menu__city-trigger" type="button">Нижний Новгород <svg class="mobile-menu__button-icon"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg></button>
+      <ul class="mobile-menu__city-body">
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+      </ul>
+      <ul class="mobile-menu__list">
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Каталог</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+              <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+              <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+              </ul>
+              </li>
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+                <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+                <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Услуги</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Материнский капитал</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Рассчитать стоимость</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О компании</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Проекты</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Отзывы</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Акции</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Клиентам</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+        </ul>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--phone">
+        <a class="mobile-menu__info mobile-menu__info--phone" href="{{data.phoneHref}}">{{data.phone}}</a>
+        <p class="mobile-menu__info-text">Пн-Вс с 09:00 до 19:00</p>
+      </div>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--mail">
+        <a class="mobile-menu__info mobile-menu__info--mail" href="{{data.email}}">{{data.email}}</a>
+        <p class="mobile-menu__info-text">Напишите нам</p>
+      </div>
+      <ul class="mobile-menu__social-list">
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#viber"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <svg class="mobile-menu__close-icon" data-close-burger>
+        <use href="./assets/images/svg/set.svg#close-burger"></use>
+      </svg>
+    </div>
+</aside>
 
 
 

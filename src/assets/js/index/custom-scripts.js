@@ -33,7 +33,6 @@ for (let elem of phone_inputs) {
 // ==============================================
 function copyToClipboard(str) {
     let area = document.createElement('textarea');
-
     document.body.appendChild(area);
     area.value = str;
     area.select();
@@ -413,6 +412,31 @@ if (formQ) {
             buttonThis.disabled = true
             return false
         }
+    })
+}
+
+
+// ==============================================
+// Копирование в буфер Множества
+// ==============================================
+let objectsCopy = document.querySelectorAll('[data-copy]')
+
+if (objectsCopy) {
+    function copyToClipboard(str) {
+        let area = document.createElement('textarea');
+
+        document.body.appendChild(area);
+        area.value = str;
+        area.select();
+        document.execCommand("copy");
+        document.body.removeChild(area);
+    }
+
+    objectsCopy.forEach(function (objectCopy) {
+        let copyTarget = objectCopy.previousElementSibling.textContent
+        objectCopy.addEventListener('click', function () {
+            copyToClipboard(copyTarget)
+        })
     })
 }
 
