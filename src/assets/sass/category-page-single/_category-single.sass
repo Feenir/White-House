@@ -36,9 +36,17 @@
     background: #FCF7F4
     height: auto
     max-height: 500px
+    opacity: 1
+    visibility: visible
+    position: static
+    &:hover
+      & .category-single__size-inner
+        opacity: 1
     @media #{$tablet}
       max-height: unset
       height: fit-content
+    &--3d
+      margin-bottom: 20px
 
   &__slide, &__slide-thumb
     border-radius: 12px
@@ -46,6 +54,10 @@
     position: relative
 
   &__slide-thumb
+    &--3d
+      margin-right: 20px
+      @media #{$mobile}
+        margin-right: 10px
     & img
       @media #{$tablet}
         max-width: 100%
@@ -59,6 +71,7 @@
     gap: 6px
     top: 30px
     left: 30px
+    z-index: 10
     @media #{$tablet}
       top: 20px
       left: 20px
@@ -71,6 +84,7 @@
     max-width: fit-content
 
   &__size-inner
+    opacity: 0
     position: absolute
     display: flex
     align-items: center
@@ -81,6 +95,7 @@
     height: 72px
     border-radius: 50%
     background: $title-second-color
+    transition: opacity .3s
 
   &__size-icon
     max-width: 32px
@@ -88,17 +103,27 @@
 
   &__house-status
     position: absolute
+    z-index: 10
     bottom: 0
     left: 50%
     transform: translateX(-50%)
     border-radius: 12px 12px 0 0
     background: rgba(255, 255, 255, 0.30)
     backdrop-filter: blur(10px)
+    padding: 10px
+
+  &__house-address
+    color: #FFF
+    text-align: center
+    font-size: 12px
+    font-weight: 400
+    line-height: 1.4 
 
   &__status-subtitle
     @include text-custom(16px,400,#fff)
     padding: 8px 15px
     text-transform: uppercase
+    text-align: center
     @media #{$tablet-small}
       font-size: 14px
     @media #{$mobile-small}
@@ -115,6 +140,8 @@
 
   &__slider-button
     @extend .reviews__slider-button
+    @media #{$tablet}
+      position: absolute
 
   &__price-month-inner
     display: flex
@@ -127,20 +154,43 @@
   &__attention-trigger
     display: flex
     margin-left: 6px
+    position: relative
+    &:hover
+      & .category-single__attention-body
+        opacity: 1
+        visibility: visible
+        z-index: 10
 
   &__attention-icon
     max-width: 14px
     max-height: 14px
 
   &__attention-body
-    position: fixed
+    position: absolute
+    top: -90px
+    left: max(-12vw, -170px)
     z-index: -1
     opacity: 0
     visibility: hidden
+    width: 330px
+    border-radius: 10px
+    border: 1px solid #7AA04B
+    background: #FFF
+    padding: 10px
+    transition: opacity .3s
+    @media #{$notebook-small}
+      left: - 17vw
+    @media #{$tablet}
+      left: -130px
+    @media #{$mobile-small}
+      width: 100vw
+    
 
   &__price
     @include text-custom(30px,600,#B99D7B)
     margin-bottom: 18px
+    &--new
+      color: rgba(83, 83, 83, 1)
     @media #{$notebook}
       font-size: 24px
     @media #{$notebook-small}
@@ -221,6 +271,14 @@
     & span
       color: $title-second-color
 
+  &__text-hidden
+    color: #000
+    text-align: center
+    font-size: 10px
+    font-weight: 300
+    line-height: 1.2
+    
+
   &__choose
     @include text-custom(12px,400,rgba(83, 83, 83, .5))
     margin-bottom: 10px
@@ -258,14 +316,45 @@
       color: $title-second-color
       background: rgba(122, 160, 75, 0.10)
 
+  &__material-inner
+    display: flex
+    align-items: center
+    gap: 16px
+    margin-bottom: 20px
+
+  &__material-link
+    display: flex
+    align-items: center
+    padding: 10px 18px
+    border-radius: 60px
+    background: #FCF7F4
+    color: rgba(185, 157, 123, 1)
+    &--active
+      color: white
+      background: #B99D7B
+
+  &__icon
+    max-width: 20px
+    max-height: 20px
+    margin-right: 8px
+
 .cloudimage-360-view-360-icon
   @extend .category-single__view
   display: none
 
+.hidden
+  position: absolute
+  z-index: -100
+  opacity: 0
+  visibility: hidden
 
+.cloudimage-360.initialized
+  width: 100% !important
+  height: 100% !important
 
-
-
+canvas
+  width: 100% !important
+  height: 100% !important
 
 
 

@@ -94,15 +94,17 @@ let bestMoreSwiper = new Swiper("[data-best-more-swiper]", {
 });
 
 let singleSwiperThumb = new Swiper("[data-single-thumb]", {
-    slidesPerView: 4,
+    slidesPerView: 2,
     spaceBetween: 10,
-    initialSlide: 2,
     navigation: {
         nextEl: "[data-single-thumb-next]",
         prevEl: "[data-single-thumb-prev]",
     },
     breakpoints: {
-        spaceBetween: 20,
+        561: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
     }
 });
 
@@ -202,6 +204,37 @@ let insideReviewsSwiper = new Swiper("[data-inside-swiper]", {
         },
 
     }
+});
+
+
+let feedbackSwiperThumb = new Swiper("[data-feedback-thumb]", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: "[data-feedback-thumb-next]",
+        prevEl: "[data-feedback-thumb-prev]",
+    },
+    breakpoints: {
+        561: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        },
+    }
+});
+
+let feedbackSwiperImg = new Swiper("[data-single-feedback]", {
+    slidesPerView: 1,
+    allowTouchMove: false,
+    autoHeight: true,
+    lazy: true,
+    effect: "fade",
+    thumbs: {
+        swiper: feedbackSwiperThumb,
+    },
 });
 
 

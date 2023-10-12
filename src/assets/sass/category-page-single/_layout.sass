@@ -129,13 +129,12 @@
     height: 50px
     border-radius: 50%
     background-color: $title-second-color
-    right: -80px
-    bottom: 10px
-    @media (max-width: 1340px)
-      right: calc(50% - 25px)
+    right: calc(50% - 25px)
+    bottom: calc(50% + 15px)
+    z-index: 1
+    pointer-events: none
+    @media #{$tablet}
       bottom: calc(50% + 50px)
-      z-index: 1
-      pointer-events: none
 
   &__plus-icon
     max-width: 22px

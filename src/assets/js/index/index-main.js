@@ -141,7 +141,6 @@ let customSelect = document.querySelectorAll('[data-custom-select]')
 
 if (customSelect.length > 0) {
     const equipment = new ItcCustomSelect('[data-equipment-select]');
-    const material = new ItcCustomSelect('[data-material-select]');
 }
 
 let filterCatalog = document.querySelector('[data-filter-catalog-project]')
@@ -158,7 +157,7 @@ if (filterCatalog) {
 // Скрыть характеристики
 // ==============================================
 
-let tabParent = document.querySelectorAll('[data-tabs-pane]')
+let tabParent = document.querySelectorAll('[data-hidden-parent]')
 
 if (tabParent) {
     tabParent.forEach(function (parent) {
@@ -166,7 +165,6 @@ if (tabParent) {
         let button = parent.querySelector('[data-button-hide]')
         button.setAttribute('data-status', 'true')
         button.addEventListener('click', function () {
-
             if (button.dataset.status === 'false') {
                 table.style.display = 'block'
                 button.textContent = 'Скрыть характеристики'
@@ -176,8 +174,26 @@ if (tabParent) {
                 button.textContent = 'Показать характеристики'
                 button.setAttribute('data-status', 'false')
             }
-
         })
+    })
+}
+
+let reviewMore = document.querySelector('[data-review-more]')
+let reviewTextMore = document.querySelector('[data-review-hidden]')
+
+if (reviewMore) {
+    reviewMore.setAttribute('data-status', 'false')
+    reviewMore.addEventListener('click', function () {
+        if (reviewMore.dataset.status === 'false') {
+            reviewTextMore.style.display = 'block'
+            reviewMore.textContent = 'Спрятать'
+            reviewMore.setAttribute('data-status', 'true')
+        }
+        else {
+            reviewTextMore.style.display = 'none'
+            reviewMore.textContent = 'Читать полностью'
+            reviewMore.setAttribute('data-status', 'false')
+        }
     })
 }
 
@@ -276,7 +292,6 @@ favoriteButton.forEach(function (button) {
 let swiperCatalogActive = document.querySelector('[data-catalog-swiper]')
 
 
-
 // ===================================================================
 // Функция по включению выключению свайпера в зависимости от экрана
 // ===================================================================
@@ -369,7 +384,7 @@ burgerOpen.addEventListener('click', function () {
     html.style.overflowY = 'hidden'
 })
 
-burgerClose.addEventListener('click',function () {
+burgerClose.addEventListener('click', function () {
     mobileMenuBody.classList.remove('open')
     html.style.overflowY = 'visible'
 })
@@ -408,16 +423,124 @@ const caseStocksObject = {
     all: 'всеакции',
 }
 if (filterButtonsBody && filterTargetItems) {
-    filter(filterButtonsBody,filterTargetItems,caseStocksObject,'stocks__filter')
+    filter(filterButtonsBody, filterTargetItems, caseStocksObject, 'stocks__filter')
 }
 const articleButtonsBody = document.querySelector('[data-article-body]')
 const caseArticleObject = {
     all: 'всетемы',
 }
 if (articleButtonsBody && filterTargetItems) {
-    filter(articleButtonsBody,filterTargetItems,caseArticleObject,'stocks__filter')
+    filter(articleButtonsBody, filterTargetItems, caseArticleObject, 'stocks__filter')
+}
+
+// ==================================================================
+// Переключение слайдеров
+// ==================================================================
+let slider3D = document.querySelector('[data-slider-3d]')
+let singleSlider = document.querySelector('[data-single-big]')
+let show3DSlider = document.querySelector('[data-slider-3d-show]')
+let showSingleSlider = document.querySelector('[data-single-thumb]')
+
+if (show3DSlider) {
+    show3DSlider.addEventListener('click', function () {
+        if (slider3D.classList.contains('hidden') && !singleSlider.classList.contains('hidden')) {
+            slider3D.classList.remove('hidden')
+            singleSlider.classList.add('hidden')
+        }
+    })
 }
 
 
+if (showSingleSlider) {
+    let thumbShows = showSingleSlider.querySelectorAll('[data-thumb-show]')
+    thumbShows.forEach(function (thumbShow) {
+        thumbShow.addEventListener('click', function () {
+            if (!slider3D.classList.contains('hidden') && singleSlider.classList.contains('hidden')) {
+                slider3D.classList.add('hidden')
+                singleSlider.classList.remove('hidden')
+                singleSwiperImg.slideTo(0, 10)
+            }
+        })
+    })
+}
+
+let child = document.querySelector('[data-slider-3d-show]')
+const changeWidth = () => {
+    let parent = document.querySelector('[data-single-thumb]')
+    let parentChild = parent.querySelector('.category-single__slide-thumb img')
+    child.style.minWidth = parentChild.offsetWidth + 'px'
+    child.style.minHeight = parentChild.offsetHeight + 'px'
+}
+if (child) {
+    changeWidth()
+    window.addEventListener('resize', function () {
+        changeWidth()
+    });
+}
 
 
+// ==================================================================
+// Переключение комплектации
+// ==================================================================
+let priceBe = document.querySelector('[data-price-be]')
+function changeSelect(parent) {
+    let children = parent.children
+    let tabsButton = document.querySelectorAll('[data-tabs-btn]')
+    let tabsPane = document.querySelectorAll('[data-tabs-pane]')
+    let priceCurrently = document.querySelector('[data-price-currently]')
+    let priceBe = document.querySelector('[data-price-be]')
+    const titleSelect = document.querySelector('[data-select-main]')
+    for (const child of children) {
+        let childrenIndex = child.dataset.index
+        child.addEventListener('click', function (event) {
+            let childTargetIndex = event.target.dataset.index
+            for (let i = 0; i < tabsPane.length; i++) {
+                tabsPane[i].setAttribute('data-index', `${i}`)
+                let tabsPaneIndex = tabsPane[i].dataset.index
+                tabsPane[i].classList.remove('tabs-pane-show')
+                if (childTargetIndex === tabsPaneIndex) {
+                    tabsPane[i].classList.add('tabs-pane-show')
+                    priceCurrently.textContent = event.target.dataset.priceNow
+                    priceBe.textContent = event.target.dataset.priceNext
+                }
+            }
+            for (const tabsButtonElement of tabsButton) {
+                let tabsButtonIndex = tabsButtonElement.dataset.index
+                tabsButtonElement.classList.remove('tabs-active')
+                if (childTargetIndex === tabsButtonIndex) {
+                    tabsButtonElement.classList.add('tabs-active')
+                }
+            }
+        })
+        for (const tabButton of tabsButton) {
+            tabButton.addEventListener('click', function (event) {
+                let tabButtonIndex = event.currentTarget.dataset.index
+                child.classList.remove('itc-select__option_selected')
+                if (tabButtonIndex === childrenIndex) {
+                    child.classList.add('itc-select__option_selected')
+                    titleSelect.textContent = child.textContent
+                    titleSelect.value = child.textContent
+                }
+            })
+        }
+    }
+
+
+}
+
+let selectChange = document.querySelector('[data-select-change]')
+if (selectChange) {
+    changeSelect(selectChange)
+}
+
+
+// const options = {separator: ' ',suffix: ' ₽',};
+// let number = event.target.dataset.priceNow.replace(/\s/g, '')
+// const count = new CountUp( // задаем необходимые параметры
+//     'now', // 1. задаём идентификатор элемента с числом
+//     0, // 2. задаём начальное число
+//     number, // 3. задаём конечное число
+//     0, // 4. задаём количество цифр после запятой
+//     2, // 5. задаём продолжительность анимации в секундах
+//     options);
+// count.start() // запускаем настроенную анимацию

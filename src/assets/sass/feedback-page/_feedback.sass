@@ -1,0 +1,72 @@
+.feedback
+
+  &__list, &__info-list
+    margin-bottom: 40px
+
+  &__item
+    display: flex
+    align-items: center
+    @include text
+    &:before
+      display: block
+      content: ''
+      min-width: 30px
+      height: 30px
+      background-position: center
+      background-size: 16px
+      background-repeat: no-repeat
+      border-radius: 50%
+      background-color: #7AA04B
+      margin-right: 12px
+    &--project
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cmask id='mask0_1681_14826' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='2' y='0' width='12' height='16'%3E%3Cpath d='M12.6641 1.33337H3.33073C3.15392 1.33337 2.98435 1.40361 2.85932 1.52864C2.7343 1.65366 2.66406 1.82323 2.66406 2.00004V14C2.66406 14.1769 2.7343 14.3464 2.85932 14.4714C2.98435 14.5965 3.15392 14.6667 3.33073 14.6667H12.6641C12.8409 14.6667 13.0104 14.5965 13.1355 14.4714C13.2605 14.3464 13.3307 14.1769 13.3307 14V2.00004C13.3307 1.82323 13.2605 1.65366 13.1355 1.52864C13.0104 1.40361 12.8409 1.33337 12.6641 1.33337Z' fill='white' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.66406 10H10.3307M5.66406 12H7.9974M6.33073 5.66667H9.66406M7.9974 7.33333V4' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1681_14826)'%3E%3Cpath d='M0 0H16V16H0V0Z' fill='white'/%3E%3C/g%3E%3C/svg%3E")
+    &--address
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.1946 13.939L8.19594 13.9383L8.19927 13.936L8.20927 13.9283L8.24861 13.9C8.28194 13.8753 8.3306 13.8393 8.39194 13.792C8.5146 13.698 8.6886 13.5597 8.89627 13.382C9.44141 12.916 9.95115 12.4102 10.4213 11.8687C11.5239 10.5933 12.6693 8.773 12.6693 6.692C12.6693 5.44867 12.1779 4.25533 11.3033 3.37533C10.8709 2.9398 10.3568 2.59406 9.79029 2.35803C9.22383 2.12199 8.61628 2.00031 8.0026 2C7.38896 2.00027 6.78142 2.12189 6.21495 2.35787C5.64849 2.59385 5.13429 2.93952 4.70194 3.375C3.82641 4.25701 3.33535 5.44956 3.33594 6.69233C3.33594 8.773 4.48127 10.5933 5.58394 11.8687C6.05406 12.4102 6.5638 12.916 7.10894 13.382C7.31694 13.5597 7.49061 13.698 7.61327 13.792C7.67344 13.8384 7.73422 13.8839 7.7956 13.9287L7.80627 13.936L7.80927 13.9383L7.81061 13.939C7.9256 14.02 8.07961 14.02 8.1946 13.939ZM9.66927 6.66667C9.66927 7.10869 9.49368 7.53262 9.18112 7.84518C8.86856 8.15774 8.44463 8.33333 8.0026 8.33333C7.56058 8.33333 7.13665 8.15774 6.82409 7.84518C6.51153 7.53262 6.33594 7.10869 6.33594 6.66667C6.33594 6.22464 6.51153 5.80072 6.82409 5.48816C7.13665 5.17559 7.56058 5 8.0026 5C8.44463 5 8.86856 5.17559 9.18112 5.48816C9.49368 5.80072 9.66927 6.22464 9.66927 6.66667Z' fill='white'/%3E%3C/svg%3E")
+    &:not(:last-child)
+      margin-bottom: 28px
+
+  &__info-list
+    display: flex
+    flex-direction: column
+    max-width: 230px
+
+  &__info-item
+    display: flex
+    justify-content: space-between
+    color: #333
+    font-size: 16px
+    font-weight: 500
+    line-height: 1
+    &:not(:last-child)
+      margin-bottom: 22px
+
+  &__info-sub
+    margin-left: 46px
+    color: #7AA04B
+
+  &__button-inner
+    margin-bottom: 20px
+
+  &__review
+    padding: 20px 40px 26px 20px
+    border-radius: 12px
+    background: #FCF7F4
+
+  &__review-subtitle
+    @include text
+    font-weight: 500
+    margin-bottom: 12px
+
+  &__review-text
+    position: relative
+    @include text
+    margin-bottom: 20px
+
+  &__review-hidden
+    @include text
+    display: none
+
+  &__review-more
+    @include text(#7AA04B)
