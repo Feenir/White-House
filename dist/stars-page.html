@@ -491,8 +491,26 @@
     <div class="container">
       <form class="form-vacancy__wrapper form-vacancy__wrapper--stars" action="#">
         <fieldset class="form-vacancy__body">
-          <legend class="form-vacancy__title">Подать заявку на собеседование</legend>
-          <p class="form-vacancy__text">Мы стремимся к долгосрочному сотрудничеству и являемся идеальной компанией для соискателей, желающих достичь успеха в своей профессиональной деятельности.</p>
+          <legend class="form-vacancy__title">Оставьте свой отзыв</legend>
+          <p class="form-vacancy__text form-vacancy__text--stars">Мы очень внимательно относимся к каждому пожеланию и замечанию наших клиентов! Для нас благодарность — лучший показатель качества нашей работы</p>
+          <fieldset class="form-vacancy__stars-inner">
+            <p class="form-vacancy__stars-text">Оценка</p>
+            <div class="simple-rating">
+              <div class="simple-rating__items">
+                <input class="simple-rating__item" type="radio" value="5" name="simple-rating" id="simple-rating-5">
+                <label class="simple-rating__label" for="simple-rating-5"></label>
+                <input class="simple-rating__item" type="radio" value="4" name="simple-rating" id="simple-rating-4">
+                <label class="simple-rating__label" for="simple-rating-4"></label>
+                <input class="simple-rating__item" type="radio" value="3" name="simple-rating" id="simple-rating-3">
+                <label class="simple-rating__label" for="simple-rating-3"></label>
+                <input class="simple-rating__item" type="radio" value="2" name="simple-rating" id="simple-rating-2">
+                <label class="simple-rating__label" for="simple-rating-2"></label>
+                <input class="simple-rating__item" type="radio" value="1" name="simple-rating" id="simple-rating-1">
+                <label class="simple-rating__label" for="simple-rating-1"></label>
+              </div>
+  
+            </div>
+          </fieldset>
           <fieldset class="form-vacancy__info-inner">
             <label class="form-vacancy__label">
               <input class="form-vacancy__input" type="text" name="Name" placeholder="Ваше имя" required>
@@ -505,7 +523,7 @@
             <textarea class="form-vacancy__textarea" name="Text" placeholder="Комментарий работодателю"></textarea>
             <label class="form-vacancy__file-inner">
               <input class="form-vacancy__file" type="file">
-              <span class="form-vacancy__fake-file">Прикрепить резюме</span>
+              <span class="form-vacancy__fake-file">Прикрепить файл</span>
             </label>
           </label>
           <fieldset class="form-vacancy__button-inner">

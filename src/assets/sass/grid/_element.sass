@@ -429,3 +429,46 @@
       background-position: center
       background-repeat: no-repeat
 
+.simple-rating
+  display: inline-block
+  position: relative
+  font-size: 18px
+  &:before
+    content: '★★★★★'
+    display: block
+  &__items
+    position: absolute
+    display: flex
+    flex-direction: row-reverse
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    overflow: hidden
+
+  &__item
+    position: absolute
+    width: 0%
+    height: 0%
+    opacity: 0
+    visibility: hidden
+    top: 0
+    left: 0
+    &:checked ~ .simple-rating__label
+      color: #FFE269
+
+  &__label
+    flex: 0 0 20%
+    height: 100%
+    cursor: pointer
+    color: rgba(255, 255, 255, .4)
+    &:before
+      content: '★'
+      display: block
+      transition: color .3s ease 0s
+    &:hover,
+    &:hover ~ .simple-rating__label,
+    &:checked ~ .simple-rating__label:hover
+      color: #FFE269
+
+
