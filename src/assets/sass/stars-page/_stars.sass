@@ -1,0 +1,89 @@
+.stars
+  & .container
+    @media #{$tablet}
+      padding: 0
+  @include section-indent-margin
+  &__title
+    @include section-title
+    text-align: center
+    @media #{$tablet}
+      padding: 0 15px
+
+  &__wrapper
+    display: flex
+    align-items: stretch
+    gap: 20px
+    @media #{$notebook-small}
+      gap: 10px
+    @media #{$tablet}
+      gap: 0
+
+  &__item
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    border-radius: 12px
+    background: #FCF7F4
+    padding: 28px 28px 42px 28px
+    border: 1px solid #FCF7F4
+    transition: border-color .4s
+    width: calc(25% - 10px)
+    height: auto
+    &.swiper-slide-active
+      border: 1px solid #B99D7B
+    @media #{$tablet-small}
+      padding: 20px 20px 36px 20px
+    &:hover
+      border-color: #B99D7B
+
+  &__logo
+    margin-bottom: 8px
+    max-width: 158px
+    height: 44px
+    object-fit: contain
+    &--yandex
+      max-width: 100px
+    &--otzovik
+      max-width: 158px
+    &--recomend
+      max-width: 150px
+    &--twogis
+      max-width: 108px
+
+  & .rating
+    display: flex
+    align-items: center
+    margin-bottom: 14px
+
+  &__link
+    color: #7AA04B
+    font-size: 16px
+    font-weight: 500
+    line-height: 1
+    margin-bottom: 6px
+
+  &__city
+    color: #535353
+    font-size: 14px
+    font-weight: 500
+    line-height: 1
+
+  &__swiper-container
+    @extend .stars__swiper-container
+    @media #{$notebook-small}
+      padding-bottom: 60px
+
+  &__control-inner
+    @extend .best__control-inner
+    display: none
+    @media #{$tablet}
+      display: flex
+
+  &__slider-button
+    @extend .best__slider-button
+    top: calc(50% - 32px)
+    &--prev
+      left: -76px
+    &--next
+      right: -76px

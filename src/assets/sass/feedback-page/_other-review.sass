@@ -1,2 +1,30 @@
 .other-review
   @include section-indent-margin
+
+  &__container
+    position: relative
+  &__title
+    @include section-title
+    text-align: center
+
+  &__button-all
+    @include button
+    @include button-padding
+    margin: 50px auto 0 auto
+    @media #{$tablet}
+      margin: 30px auto 0 auto
+
+  &__control-inner
+    @extend .best__control-inner
+
+  &__slider-button
+    @extend .best__slider-button
+    top: calc(50% - 24px)
+    &--prev
+      left: -100px
+      @media #{$notebook}
+        left: -50px
+    &--next
+      right: -100px
+      @media #{$notebook}
+        right: -50px

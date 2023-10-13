@@ -12,6 +12,12 @@
     background-repeat: no-repeat
     padding: 50px
     overflow: hidden
+    &--stars
+      background-image: url("../images/stars/back.png")
+      @supports (background-image: url("../images/stars/back.webp"))
+        background-image: url("../images/stars/back.webp")
+      background-size: 29%
+      background-position: right 70px bottom
     &:before
       position: absolute
       content: ''

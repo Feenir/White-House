@@ -53,6 +53,10 @@
   &:hover
     & .card__house-top:after, .card__house-top:before
       opacity: 1
+    & .card__info-hidden
+      position: static
+      opacity: 1
+      width: max-content
   &__house-top
     position: relative
     display: flex
@@ -166,13 +170,41 @@
     border-bottom-left-radius: 12px
 
   &__info-item
+    display: flex
+    align-items: center
+    gap: 6px
     color: #FFF
     font-size: 12px
     font-weight: 400
     line-height: 100%
+    &:before
+      content: ''
+      min-width: 16px
+      height: 16px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      margin-right: 6px
     &:not(:last-child)
       margin-bottom: 14px
-    
+    &--project
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M13.5 13.5001V7.22124C13.5 7.15157 13.4854 7.08267 13.4573 7.01896C13.4291 6.95525 13.3879 6.89814 13.3363 6.85127L8.336 2.30533C8.24396 2.22165 8.12403 2.17529 7.99964 2.17529C7.87525 2.1753 7.75532 2.22167 7.66329 2.30535L2.66363 6.85128C2.61209 6.89814 2.57091 6.95525 2.54273 7.01896C2.51456 7.08267 2.5 7.15156 2.5 7.22122V13.5001' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 13.5H15' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.5 13.4995V9.99951C9.5 9.8669 9.44732 9.73973 9.35355 9.64596C9.25978 9.55219 9.13261 9.49951 9 9.49951H7C6.86739 9.49951 6.74021 9.55219 6.64645 9.64596C6.55268 9.73973 6.5 9.8669 6.5 9.99951V13.4995' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    &--dimensions
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8.75 3H7.25' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.25 13H8.75' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.25 3H12.5C12.6326 3 12.7598 3.05268 12.8536 3.14645C12.9473 3.24022 13 3.3674 13 3.50001V4.75' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13 8.75V7.25' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 7.25V8.75' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.75 13H3.5C3.36739 13 3.24022 12.9473 3.14645 12.8536C3.05268 12.7598 3 12.6326 3 12.5V11.25' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.75 3H3.5C3.36739 3 3.24021 3.05268 3.14645 3.14645C3.05268 3.24022 3 3.3674 3 3.50001V4.75' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13 11.25V14.75' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.75 13H11.25' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    &--square
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M10 5.49963H3C2.72386 5.49963 2.5 5.72349 2.5 5.99963V12.9996C2.5 13.2758 2.72386 13.4996 3 13.4996H10C10.2761 13.4996 10.5 13.2758 10.5 12.9996V5.99963C10.5 5.72349 10.2761 5.49963 10 5.49963Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 2.5H9' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.5 2.5H13C13.1326 2.5 13.2598 2.55268 13.3536 2.64645C13.4473 2.74021 13.5 2.86739 13.5 3V3.49998' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 7V6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.5 10.5H13C13.1326 10.5 13.2598 10.4473 13.3536 10.3536C13.4473 10.2598 13.5 10.1326 13.5 10V9.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.5 2.5H6C5.86739 2.5 5.74021 2.55268 5.64645 2.64645C5.55268 2.74021 5.5 2.86739 5.5 3V3.49998' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+
+  &__info-hidden
+    position: absolute
+    left: -999px
+    top: -999px
+    opacity: 0
+    width: 1px
+    transition: opacity .3s
+
 
 .custom-select
   & .itc-select__toggle
@@ -371,4 +403,29 @@
       background-position: center
       background-repeat: no-repeat
 
+.other-cards
+  &__thumb
+    display: flex
+    align-items: center
+    gap: 20px
+    margin: 20px 0
+    
+  &__coordinates
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #535353
+    font-size: 16px
+    font-style: normal
+    font-weight: 500
+    line-height: 100%
+    &:before
+      content: ''
+      min-width: 20px
+      height: 20px
+      margin-right: 8px
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 21 21' fill='none'%3E%3Cpath d='M10.5 11.405C11.8807 11.405 13 10.2857 13 8.905C13 7.52429 11.8807 6.405 10.5 6.405C9.11929 6.405 8 7.52429 8 8.905C8 10.2857 9.11929 11.405 10.5 11.405Z' stroke='%237AA04B' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.75 8.905C16.75 14.53 10.5 18.905 10.5 18.905C10.5 18.905 4.25 14.53 4.25 8.905C4.25 7.2474 4.90848 5.65768 6.08058 4.48558C7.25269 3.31348 8.8424 2.655 10.5 2.655C12.1576 2.655 13.7473 3.31348 14.9194 4.48558C16.0915 5.65768 16.75 7.2474 16.75 8.905V8.905Z' stroke='%237AA04B' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
 

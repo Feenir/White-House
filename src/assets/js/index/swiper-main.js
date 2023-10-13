@@ -237,6 +237,28 @@ let feedbackSwiperImg = new Swiper("[data-single-feedback]", {
     },
 });
 
+let otherSwiper = new Swiper("[data-other-review]", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+        561: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        991: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        }
+    },
+    navigation: {
+        nextEl: "[data-other-review-next]",
+        prevEl: "[data-other-review-prev]",
+    },
+    pagination: {
+        el: "[data-other-review-pagination]",
+    },
+});
+
 
 
 

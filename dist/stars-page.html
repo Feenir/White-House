@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ru">
+
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="preload" as="style" href="assets/css/main.min.css" onload="this.rel='stylesheet'">
+			<noscript>
+					<link rel="preload" as="style" href="assets/css/main.min.css">
+			</noscript>
+			<link rel="preconnect" href="//api-maps.yandex.ru">
+			<link rel="dns-prefetch" href="//api-maps.yandex.ru">
+	<!--		<link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon">-->
+	<!--		<link rel="icon" href="../assets/images/favicon/favicon.svg" sizes="any" type="image/x-icon">-->
+	<!--		<link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/favicon/apple-touch-icon-1024x1024.png">-->
+	<!--		<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon-180x180.png">-->
+	<!--		<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+	<!--		<link rel="manifest" href="manifest.json">-->
+	<!--		<meta name="msapplication-TileColor" content="#da532c">-->
+			<script defer src="assets/js/index.min.js"></script>
+			
+			
+			
+			
+			<meta name="theme-color" content="#ffffff">
+			<title>WhiteHouse</title>
+	</head>
+
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header__top">
+      <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img src="./assets/images/similar/logo.png" alt="Логотип" class="logo"></picture>
+      <button class="header__dropdown-city">Нижний Новгород
+        <svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+      </button>
+      <div class="header__info-inner header__info-inner--mail">
+        <a class="header__info header__info--mail" href="info@beli-dom.ru">info@beli-dom.ru</a>
+        <p class="header__info-text">Напишите нам</p>
+      </div>
+      <div class="header__info-inner header__info-inner--phone">
+        <a class="header__info header__info--phone" href="+78314206197">8 831 420 61 97</a>
+        <p class="header__info-text">Пн-Вс с 09:00 до 19:00</p>
+      </div>
+      <ul class="header__social-list">
+        <li class="header__social-item">
+          <a class="header__social-item-link" href="#">
+            <svg class="header__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__social-item">
+          <a class="header__social-item-link" href="#">
+            <svg class="header__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__social-item">
+          <a class="header__social-item-link" href="#">
+            <svg class="header__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#viber"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="header__callback-inner">
+        <a class="header__favourites-link" href="favourites.html" data-count="0">
+          <svg class="header__favourites-icon">
+            <use xlink:href="./assets/images/svg/set.svg#favourites"></use>
+          </svg>
+        </a>
+        <button class="header__callback" type="button">Заказать звонок</button>
+        <div class="header__mobile-icon">
+          <a class="header__mobile-phone" href="#">
+            <svg class="header__mobile-phone-icon">
+              <use href="./assets/images/svg/set.svg#phone-call"></use>
+            </svg>
+          </a>
+          <svg class="header__burger" data-burger-open>
+              <use href="./assets/images/svg/set.svg#burger"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="catalog-project.html">Каталог<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Услуги<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Рассчитать стоимость</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">О компании<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Проекты</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Отзывы</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Акции</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="#">Клиентам<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-item-link" href="contacts-page.html">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<aside class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__body" data-menu>
+      <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img class="logo" src="./assets/images/similar/logo.png" alt="Логотип"></picture>
+      <button class="mobile-menu__city-trigger" type="button">Нижний Новгород <svg class="mobile-menu__button-icon"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg></button>
+      <ul class="mobile-menu__city-body">
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+        <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
+      </ul>
+      <ul class="mobile-menu__list">
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Каталог</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+              <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+              <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+              </ul>
+              </li>
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a>
+                <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+                <ul class="mobile-menu__sub-list mobile-menu__sub-list--second">
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                  <li class="mobile-menu__item-sub-second"><a class="mobile-menu__sub-link-second" href="#">Вторая строка меню</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Услуги</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Материнский капитал</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Рассчитать стоимость</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О компании</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Проекты</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Отзывы</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Акции</a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Клиентам</a>
+            <svg class="mobile-menu__down"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <ul class="mobile-menu__sub-list">
+              <li class="mobile-menu__sub-item"><a class="mobile-menu__sub-link" href="#">Материнский капитал</a></li>
+            </ul>
+          </li>
+        </ul>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--phone">
+        <a class="mobile-menu__info mobile-menu__info--phone" href="+78314206197">8 831 420 61 97</a>
+        <p class="mobile-menu__info-text">Пн-Вс с 09:00 до 19:00</p>
+      </div>
+      <div class="mobile-menu__info-inner mobile-menu__info-inner--mail">
+        <a class="mobile-menu__info mobile-menu__info--mail" href="info@beli-dom.ru">info@beli-dom.ru</a>
+        <p class="mobile-menu__info-text">Напишите нам</p>
+      </div>
+      <ul class="mobile-menu__social-list">
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a class="mobile-menu__social-item-link" href="#">
+            <svg class="mobile-menu__social-icon">
+              <use xlink:href="./assets/images/svg/set.svg#viber"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <svg class="mobile-menu__close-icon" data-close-burger>
+        <use href="./assets/images/svg/set.svg#close-burger"></use>
+      </svg>
+    </div>
+</aside>
+
+
+
+
+<main class="stars-main">
+  <div class="container">
+    <ol class="bread-crumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li class="bread-crumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a class="bread-crumbs__link" itemprop="item" href="https://example.com/dresses">
+        <span class="bread-crumbs__text" itemprop="name">Главная</span></a>
+        <meta itemprop="position" content="1"/>
+      </li>
+  
+      <li class="bread-crumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span class="bread-crumbs__text" itemprop="name">Каталог</span>
+        <meta itemprop="position" content="2"/>
+        <meta itemprop="item"/>
+      </li>
+    </ol>
+  </div>  <section class="stars">
+    <div class="container">
+      <h1 class="stars__title">Наш рейтинг по оценкам <br> <span>независимых интернет-площадок</span></h1>
+      <div class="stars__swiper-container">
+        <div class="stars__slider" data-stars-swiper>
+          <div class="stars__wrapper">
+            <div class="stars__item">
+              <picture><source srcset="./assets/images/stars/1.webp" type="image/webp"><img class="stars__logo stars__logo--yandex" src="./assets/images/stars/1.png" alt="Логотип" width="100" height="44"></picture>
+              <div class="rating" data-star-rating>
+                <div class="rating__value-show">3.5</div>
+                <div class="rating__body">
+                  <div class="rating__value" data-rating-value>3.5</div>
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                  </div>
+                </div>
+              </div>
+              <a class="stars__link" href="#">450 отзывов</a>
+              <p class="stars__city">Питер</p>
+            </div>
+            <div class="stars__item">
+              <picture><source srcset="./assets/images/stars/2.webp" type="image/webp"><img class="stars__logo stars__logo--otzovik" src="./assets/images/stars/2.png" alt="Логотип" width="158" height="44"></picture>
+              <div class="rating" data-star-rating>
+                <div class="rating__value-show">2.6</div>
+                <div class="rating__body">
+                  <div class="rating__value" data-rating-value>2.6</div>
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                  </div>
+                </div>
+              </div>
+              <a class="stars__link" href="#">450 отзывов</a>
+            </div>
+            <div class="stars__item">
+              <picture><source srcset="./assets/images/stars/3.webp" type="image/webp"><img class="stars__logo stars__logo--recomend" src="./assets/images/stars/3.png" alt="Логотип" width="158" height="44"></picture>
+              <div class="rating" data-star-rating>
+                <div class="rating__value-show">1.2</div>
+                <div class="rating__body">
+                  <div class="rating__value" data-rating-value>1.2</div>
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                  </div>
+                </div>
+              </div>
+              <a class="stars__link" href="#">450 отзывов</a>
+            </div>
+            <div class="stars__item">
+              <picture><source srcset="./assets/images/stars/4.webp" type="image/webp"><img class="stars__logo stars__logo--twogis" src="./assets/images/stars/4.png" alt="Логотип" width="108" height="44"></picture>
+              <div class="rating" data-star-rating>
+                <div class="rating__value-show">4.4</div>
+                <div class="rating__body">
+                  <div class="rating__value" data-rating-value>4.4</div>
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                  </div>
+                </div>
+              </div>
+              <a class="stars__link" href="#">450 отзывов</a>
+            </div>
+            <div class="stars__item">
+              <picture><source srcset="./assets/images/stars/5.webp" type="image/webp"><img class="stars__logo stars__logo--zoon" src="./assets/images/stars/5.png" alt="Логотип" width="100" height="44"></picture>
+              <div class="rating" data-star-rating>
+                <div class="rating__value-show">4.9</div>
+                <div class="rating__body">
+                  <div class="rating__value" data-rating-value>4.9</div>
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                  </div>
+                </div>
+              </div>
+              <a class="stars__link" href="#">450 отзывов</a>
+            </div>
+          </div>
+        </div>
+        <div class="stars__control-inner control">
+          <div class="stars__slider-button stars__slider-button--prev slider-button slider-button--prev swiper-button-prev control__button" data-stars-prev></div>
+          <div class="stars__pagination swiper-pagination custom-pagination control__pagination" data-stars-pagination></div>
+          <div class="stars__slider-button stars__slider-button--next slider-button slider-button--next swiper-button-next control__button" data-stars-next></div>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="reviews reviews--stars">
+    <div class="container">
+      <div class="reviews__title-wrapper">
+        <h1 class="reviews__title">Отзывы</h1>
+        <div class="reviews__filter-inner">
+          <a class="reviews__filter reviews__filter--active" href="#">Отзывы</a>
+          <a class="reviews__filter" href="#">Фото отзывы</a>
+          <a class="reviews__filter" href="#">Видео отзывы</a>
+        </div>
+      </div>
+      <div class="reviews__wrapper">
+        <div class="reviews__item reviews__item--stars">
+          <div class="reviews__main-wrapper reviews__main-wrapper--text">
+            <div class="reviews__review-wrapper">
+              <div class="reviews__head">
+                <div class="reviews__icon">
+                  <p class="reviews__icon-text">С.Ч.</p>
+                </div>
+                <div class="reviews__user-wrapper">
+                  <h4 class="reviews__name">Клишина Ольга</h4>
+                  <form class="reviews__rating rating-form" action="#">
+  
+                    <div class="rating" data-star-rating>
+                      <div class="rating__body">
+                        <div class="rating__active"></div>
+                        <div class="rating__items">
+                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                        </div>
+                        <div class="rating__value">4.2</div>
+                      </div>
+                    </div>
+                  </form>
+  
+                </div>
+              </div>
+  
+              <div class="reviews__body" data-hidden-review>
+                <p class="reviews__project-name">Дом по проекту "Емельян"</p>
+                <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.
+                  <span class="reviews__hidden" data-content-hide>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque beatae consequatur dignissimos doloremque excepturi fugiat iusto minima natus nostrum odio quae quam rerum sapiente sint suscipit, temporibus vel voluptas!</span>
+                </p>
+                <button class="reviews__project-link" data-button-hide>Открыть полностью</button>
+              </div>
+            </div>
+            <div class="reviews__review-wrapper">
+              <div class="reviews__head">
+                <div class="reviews__icon">
+                  <p class="reviews__icon-text">С.Ч.</p>
+                </div>
+                <div class="reviews__user-wrapper">
+                  <h4 class="reviews__name">Клишина Ольга</h4>
+                  <form class="reviews__rating rating-form" action="#">
+                    <div class="rating" data-star-rating>
+                      <div class="rating__body">
+                        <div class="rating__active"></div>
+                        <div class="rating__items">
+                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                        </div>
+                        <div class="rating__value">4.5</div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+  
+              <div class="reviews__body">
+                <p class="reviews__project-name">Дом по проекту "Емельян"</p>
+                <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
+              </div>
+            </div>
+            <div class="reviews__review-wrapper">
+              <div class="reviews__head">
+                <div class="reviews__icon">
+                  <p class="reviews__icon-text">С.Ч.</p>
+                </div>
+                <div class="reviews__user-wrapper">
+                  <h4 class="reviews__name">Клишина Ольга</h4>
+                  <form class="reviews__rating rating-form" action="#">
+                    <div class="rating" data-star-rating>
+                      <div class="rating__body">
+                        <div class="rating__active"></div>
+                        <div class="rating__items">
+                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                        </div>
+                        <div class="rating__value">4.5</div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+  
+              <div class="reviews__body">
+                <p class="reviews__project-name">Дом по проекту "Емельян"</p>
+                <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
+              </div>
+            </div>
+            <div class="reviews__review-wrapper">
+              <div class="reviews__head">
+                <div class="reviews__icon">
+                  <p class="reviews__icon-text">С.Ч.</p>
+                </div>
+                <div class="reviews__user-wrapper">
+                  <h4 class="reviews__name">Клишина Ольга</h4>
+                  <form class="reviews__rating rating-form" action="#">
+                    <div class="rating" data-star-rating>
+                      <div class="rating__body">
+                        <div class="rating__active"></div>
+                        <div class="rating__items">
+                          <label class="rating__label"> <input class="rating__item" type="radio" value="1" name="rating"> </label> <label class="rating__label"> <input class="rating__item" type="radio" value="2" name="rating"> </label> <label class="rating__label"><input class="rating__item" type="radio" value="3" name="rating"></label> <label class="rating__label"><input class="rating__item" type="radio" value="4" name="rating"></label> <label class="rating__item"><input class="rating__item" type="radio" value="5" name="rating"></label>
+                        </div>
+                        <div class="rating__value">4.5</div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+  
+              <div class="reviews__body">
+                <p class="reviews__project-name">Дом по проекту "Емельян"</p>
+                <p class="reviews__project-text">Большое спасибо компании "Белый дом" за то, что дом был построен качественно и в срок. Цены на сайте соответствуют действительности. Отдельное спасибо менеджерам и бригаде.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <div class="pagination__body">
+          <button class="pagination__element pagination__number pagination__number--active" type="button"></button>
+          <button class="pagination__element pagination__number" type="button"></button>
+          <button class="pagination__element pagination__number" type="button"></button>
+          <div class="pagination__element pagination__dots">...</div>
+          <button class="pagination__element pagination__more" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="advantages">
+    <div class="container">
+      <h2 class="advantages__title">Преимущества</h2>
+      <div class="advantages__wrapper">
+        <div class="advantages__item">
+          <div class="advantages__img" data-bg="./assets/images/advantages/advantages-1.jpg" data-bg-webp="./assets/images/advantages/advantages-1.webp"></div>
+          <div class="advantages__text-inner">
+            <h4 class="advantages__subtitle">Выставка домов <br> «Белый дом»</h4>
+            <p class="advantages__text">Обязательна к посещению, если Вы задумываетесь о строительстве собственного дома...</p>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img" data-bg="./assets/images/advantages/advantages-2.jpg" data-bg-webp="./assets/images/advantages/advantages-2.webp"></div>
+          <div class="advantages__text-inner">
+            <h4 class="advantages__subtitle">Многолетний опыт и завод <br> быстросборных <br> домокомплектов</h4>
+            <p class="advantages__text">Мы работаем на рынке малоэтажного домостроения с 2008 года, построили более 2000 домов, наработали огромный опыт, а в 2017г.<span class="advantages__hidden-text">запустили производство быстросборных домокомплектов по типу «лего». Сегодня мы строим дома принципиально нового поколения, вне конкуренции по качеству на рынке малоэтажного домостроения в РФ.</span></p>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img" data-bg="./assets/images/advantages/advantages-3.jpg" data-bg-webp="./assets/images/advantages/advantages-3.webp"></div>
+          <div class="advantages__text-inner">
+            <h4 class="advantages__subtitle">Аккредитация во всех крупных банках РФ</h4>
+            <p class="advantages__text">За многолетний опыт наша компания завоевала доверие не только клиентов , но и партнеров...</p>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img" data-bg="./assets/images/advantages/advantages-4.jpg" data-bg-webp="./assets/images/advantages/advantages-4.webp"></div>
+          <div class="advantages__text-inner">
+            <h4 class="advantages__subtitle">Собственное <br> Архитектурно-<br>конструкторское бюро</h4>
+            <p class="advantages__text">Это профессиональный подход к строительству на всех этапах : от... </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="form-vacancy form-vacancy--stars">
+    <div class="container">
+      <form class="form-vacancy__wrapper form-vacancy__wrapper--stars" action="#">
+        <fieldset class="form-vacancy__body">
+          <legend class="form-vacancy__title">Подать заявку на собеседование</legend>
+          <p class="form-vacancy__text">Мы стремимся к долгосрочному сотрудничеству и являемся идеальной компанией для соискателей, желающих достичь успеха в своей профессиональной деятельности.</p>
+          <fieldset class="form-vacancy__info-inner">
+            <label class="form-vacancy__label">
+              <input class="form-vacancy__input" type="text" name="Name" placeholder="Ваше имя" required>
+            </label>
+            <label class="form-vacancy__label">
+              <input class="form-vacancy__input" type="tel" name="Phone" placeholder="+7 ХХХ ХХХ ХХ ХХ" required>
+            </label>
+          </fieldset>
+          <label class="form-vacancy__textarea-inner">
+            <textarea class="form-vacancy__textarea" name="Text" placeholder="Комментарий работодателю"></textarea>
+            <label class="form-vacancy__file-inner">
+              <input class="form-vacancy__file" type="file">
+              <span class="form-vacancy__fake-file">Прикрепить резюме</span>
+            </label>
+          </label>
+          <fieldset class="form-vacancy__button-inner">
+            <button class="form-vacancy__button">Подать заявку</button>
+            <label class="form-vacancy__checkbox-inner">
+              <input class="form-vacancy__checkbox" type="checkbox" hidden checked>
+              <span class="form-vacancy__fake-checkbox"></span>
+              <span class="form-vacancy__politic-inner">Я согласен на обработку <a class="form-vacancy__politic" href="#">персональных данных</a></span>
+            </label>
+          </fieldset>
+        </fieldset>
+      </form>
+    </div>
+  </section></main>
+
+<footer class="footer">
+  <div class="container">
+    <picture class="footer__logo-wrapper logo-white-picture"><source srcset="./assets/images/similar/logo-white.webp" type="image/webp"><img class="footer__logo logo-white" src="./assets/images/similar/logo-white.png" alt="Логотип белый" ></picture>
+    <div class="footer__wrapper">
+      <div class="footer__list-inner">
+        <p class="footer__list-title">Каталог</p>
+        <ul class="footer__list">
+          <li class="footer__item"><a class="footer__link" href="#">Каркасные дома до 180 м²</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Каркасные дома более 180 м²</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Одноэтажные дома</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Дачные дома</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Бани</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Каменные дома</a></li>
+          <li class="footer__item footer__item--last"><a class="footer__link" href="#">Рассчитать стоимость</a></li>
+        </ul>
+      </div>
+      <div class="footer__list-inner">
+        <p class="footer__list-title">Услуги</p>
+        <ul class="footer__list">
+          <li class="footer__item"><a class="footer__link" href="#">Кредитование²</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Материнский капитал</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Реконструкция </a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Работы с фундаментом</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Системы отопления</a></li>
+          <li class="footer__item footer__item--last"><a class="footer__link" href="#">Смотреть все услуги</a></li>
+          <li class="footer__item footer__item--last"><a class="footer__link" href="site-map.html">Карта сайта</a></li>
+        </ul>
+      </div>
+      <div class="footer__list-inner">
+        <p class="footer__list-title">О компании</p>
+        <ul class="footer__list">
+          <li class="footer__item"><a class="footer__link" href="#">Производство домокомплектов</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Выставка домов</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Работа в компании</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer__list-inner">
+        <p class="footer__list-title">Информация</p>
+        <ul class="footer__list">
+          <li class="footer__item"><a class="footer__link" href="#">Проекты</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Отзывы</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Акции</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Статьи</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Видеоблог</a></li>
+        </ul>
+      </div>
+      <div class="footer__list-inner">
+        <div class="footer__info-inner footer__info-inner--mail">
+          <a class="footer__info footer__info--mail" href="info@beli-dom.ru">info@beli-dom.ru</a>
+          <p class="footer__info-text">Напишите нам</p>
+        </div>
+        <div class="footer__info-inner footer__info-inner--phone">
+          <a class="footer__info footer__info--phone" href="+78314206197">8 831 420 61 97</a>
+          <p class="footer__info-text">Пн-Вс с 09:00 до 19:00</p>
+        </div>
+        <p class="footer__social-text">Наши мессенджеры</p>
+        <ul class="footer__social-list footer__social-list--messenger">
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#whatsapp"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#viber"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="footer__social-text">Социальные сети</p>
+        <ul class="footer__social-list footer__social-list--network">
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#instagramm"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#youtube"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-item-link" href="#">
+              <svg class="footer__social-icon">
+                <use xlink:href="./assets/images/svg/set.svg#vkontakte"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__middle-inner">
+     <p class="footer__middle-text">Обращаем ваше внимание на то, что вся представленная на сайте информация, касающаяся комплектаций, технических характеристик, цветовых сочетаний ни при каких условиях не является публичной офертой, определяемой положениями <span class="footer__text-color">Статьи 437 (2) Гражданского кодекса Российской Федерации.</span></p>
+      <a class="footer__yandex-link" href="#"></a>
+    </div>
+    <div class="footer__bottom">
+      <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
+      <a class="footer__bottom-link" href="#">Сайт создан в CrazyStudio</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>

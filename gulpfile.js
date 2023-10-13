@@ -193,15 +193,6 @@ function js() {
         }))
 }
 
-/*Функция фотографий*/
-
-// function webpImages() {
-//   return src(path.src.images, {base: srcPath + "assets/images/"})
-//     .pipe(webp({quality: 78}))
-//     .pipe(dest(path.build.images))
-//     .pipe(browserSync.reload({stream:true}))
-//     .pipe(size())
-// }
 function images() {
     return src(path.src.images, {base: srcPath + "assets/images/"})
         .pipe(imagemin([

@@ -23,8 +23,16 @@
     padding: 20px
     @media #{$tablet-small}
       width: 100%
-    &--text
-      padding: 30px
+    &--stars
+      padding: 0
+      background: none
+      width: 100%
+      & .reviews__review-wrapper
+        background: #FCF7F4
+        padding: 30px
+        border-radius: 12px
+        margin-bottom: 0!important
+        width: calc(50% - 10px  )
 
   &__main-wrapper
     max-height: 400px
@@ -39,6 +47,11 @@
       border: 3px solid $title-second-color  /* padding вокруг плашки */
       border-radius: 16px
       background: #FCF7F4
+    &--text
+      display: flex
+      flex-wrap: wrap
+      gap: 20px
+      max-height: 100%
 
   &__big-slide, &__thumb-slide
     border-radius: 6px
@@ -207,6 +220,59 @@
         @media #{$tablet}
           transform: rotateY(180deg)
 
+  &__title-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 60px
+    @media #{$tablet}
+      margin-bottom: 30px
+    @media #{$tablet-small}
+      flex-direction: column
+      align-items: flex-start
+      gap: 20px
+
+  &--stars
+    & .container
+      @media #{$mobile}
+        padding: 0
+    & .reviews__title
+      margin-bottom: 0
+      @media #{$mobile}
+        padding: 0 15px
+
+    & .reviews__main-wrapper
+      @media #{$mobile}
+        padding: 0 15px
+        gap: 10px
+
+    & .reviews__review-wrapper
+      @media #{$mobile}
+        width: 100%
+
+    & .reviews__filter-inner
+      @media #{$mobile}
+        display: flex
+        flex-wrap: nowrap
+        padding-left: 15px
+        overflow-x: auto
+        width: calc(100vw - 10px)
+
+    & .reviews__filter
+      @media #{$mobile}
+        white-space: nowrap
+
+  &__filter
+    @extend .review-joint__filter
+
+    &--active
+      @extend .review-joint__filter--active
+
+  &__hidden
+    display: none
+
+  &__filter-inner
+    @media #{$mobile}
 
 
 

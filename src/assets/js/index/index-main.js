@@ -156,33 +156,42 @@ if (filterCatalog) {
 // ==============================================
 // Скрыть характеристики
 // ==============================================
-
-let tabParent = document.querySelectorAll('[data-hidden-parent]')
-
-if (tabParent) {
-    tabParent.forEach(function (parent) {
+function hiddenText (parents,textHide, textShow) {
+    parents.forEach(function (parent) {
         let table = parent.querySelector('[data-content-hide]')
         let button = parent.querySelector('[data-button-hide]')
-        button.setAttribute('data-status', 'true')
+        button.setAttribute('data-status', 'false')
         button.addEventListener('click', function () {
             if (button.dataset.status === 'false') {
                 table.style.display = 'block'
-                button.textContent = 'Скрыть характеристики'
+                button.textContent = textHide
                 button.setAttribute('data-status', 'true')
             } else {
                 table.style.display = 'none'
-                button.textContent = 'Показать характеристики'
+                button.textContent = textShow
                 button.setAttribute('data-status', 'false')
             }
         })
     })
 }
+let tabParent = document.querySelectorAll('[data-hidden-parent]')
+let reviewParent = document.querySelectorAll('[data-hidden-review]')
+
+if (tabParent) {
+    hiddenText(tabParent,'Скрыть характеристики', 'Показать характеристики')
+}
+
+if (reviewParent) {
+    hiddenText(reviewParent,'Скрыть', 'Открыть полностью')
+}
+
+
 
 let reviewMore = document.querySelector('[data-review-more]')
 let reviewTextMore = document.querySelector('[data-review-hidden]')
 
 if (reviewMore) {
-    reviewMore.setAttribute('data-status', 'false')
+    reviewMore.setAttribute('data-status', 'false ')
     reviewMore.addEventListener('click', function () {
         if (reviewMore.dataset.status === 'false') {
             reviewTextMore.style.display = 'block'
@@ -290,11 +299,33 @@ favoriteButton.forEach(function (button) {
 // Функция по добавлению классов свайперу в зависимости от размера экрана
 // ===================================================================
 let swiperCatalogActive = document.querySelector('[data-catalog-swiper]')
+let starsSwiper = document.querySelector('[data-stars-swiper]')
 
 
 // ===================================================================
 // Функция по включению выключению свайпера в зависимости от экрана
 // ===================================================================
+
+if (starsSwiper) {
+    addClassSwiper('(max-width: 991px)', starsSwiper)
+    resizableSwiper(
+        '(max-width: 991px)',
+        starsSwiper,
+        {
+            loop: true,
+            centeredSlides: true,
+            spaceBetween: 10,
+            slidesPerView: 1.4,
+            pagination: {
+                el: "[data-stars-pagination]",
+            },
+            navigation: {
+                nextEl: "[data-stars-next]",
+                prevEl: "[data-stars-prev]",
+            },
+        },
+    );
+}
 
 if (swiperCatalogActive) {
     addClassSwiper('(max-width: 991px)', swiperCatalogActive)
@@ -520,6 +551,8 @@ function changeSelect(parent) {
                     child.classList.add('itc-select__option_selected')
                     titleSelect.textContent = child.textContent
                     titleSelect.value = child.textContent
+                    priceCurrently.textContent = event.target.dataset.priceNow
+                    priceBe.textContent = event.target.dataset.priceNext
                 }
             })
         }
