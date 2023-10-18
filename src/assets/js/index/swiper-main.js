@@ -88,10 +88,7 @@ let bestMoreSwiper = new Swiper("[data-best-more-swiper]", {
             slidesPerView: 3,
         },
 
-    }
-
-
-});
+    }});
 
 let singleSwiperThumb = new Swiper("[data-single-thumb]", {
     slidesPerView: 2,
@@ -258,6 +255,47 @@ let otherSwiper = new Swiper("[data-other-review]", {
         el: "[data-other-review-pagination]",
     },
 });
+
+
+let videoBlockSwiper = new Swiper("[data-video-block-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: "[data-video-block-next]",
+        prevEl: "[data-video-block-prev]",
+    },
+    pagination: {
+        el: "[data-video-block-pagination]",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1440: {
+            slidesPerView: 3,
+        },
+
+    }});
+
+let videoAsideBlockSwiper = new Swiper("[data-video-block-aside-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: "[data-video-block-aside-next]",
+        prevEl: "[data-video-block-aside-prev]",
+    },
+    pagination: {
+        el: "[data-video-block-aside-pagination]",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1440: {
+            slidesPerView: 3,
+        },
+
+    }});
 
 
 

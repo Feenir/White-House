@@ -1,0 +1,40 @@
+.target
+  @include section-indent-margin
+
+  &__title
+    @include section-title
+    text-align: center
+
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    gap: 20px
+
+  &__item
+    display: flex
+    flex-direction: column
+    width: calc(25% - 15px)
+    border-radius: 12px
+    overflow: hidden
+    background: #FCF7F4
+    @media #{$tablet}
+      width: calc(50% - 10px)
+    @media #{$mobile}
+      width: 100%
+
+  &__img
+    max-width: 100%
+    max-height: 175px
+
+  &__item-inner
+    padding: 30px
+    @media #{$tablet-small}
+      padding: 24px
+
+  &__item-subtitle
+    font-size: 40px
+    font-weight: 600
+    margin-bottom: 20px
+    @media #{$tablet}
+      font-size: 30px

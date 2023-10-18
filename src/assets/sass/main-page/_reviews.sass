@@ -141,12 +141,21 @@
       height: 50px
 
   &__review-wrapper
+    position: relative
     display: flex
     flex-direction: column
-    padding-right: 30px
     &:not(:last-child)
       margin-bottom: 30px
 
+  &__review-inner
+    left: 0
+    top: 0
+    border-radius: 12px
+    &--active
+      position: absolute
+      background-color: #fcf7f4
+      z-index: 100
+      padding: 30px
   &__head
     display: flex
     @media #{$tablet}

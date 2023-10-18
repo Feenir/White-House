@@ -14,13 +14,15 @@ function canUseWebp() {
 window.onload = function () {
     // Получаем все элементы с дата-атрибутом data-bg
     let images = document.querySelectorAll('[data-bg]');
+    let imagesMob = document.querySelectorAll('[data-bg-mob]');
     // Проходимся по каждому
-    for (let i = 0; i < images.length; i++) {
-        // Получаем значение каждого дата-атрибута
-        let image = images[i].getAttribute('data-bg');
-        // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
-        images[i].style.backgroundImage = 'url(' + image + ')';
-    }
+        for (let i = 0; i < images.length; i++) {
+            // Получаем значение каждого дата-атрибута
+            let image = images[i].getAttribute('data-bg');
+            // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
+            images[i].style.backgroundImage = 'url(' + image + ')';
+        }
+
 
     // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
     let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
@@ -30,9 +32,11 @@ window.onload = function () {
     if (canUseWebp() || firefoxVer >= 65) {
         // Делаем все то же самое что и для jpg, но уже для изображений формата Webp
         let imagesWebp = document.querySelectorAll('[data-bg-webp]');
-        for (let i = 0; i < imagesWebp.length; i++) {
-            let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
-            imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
+        if (document.documentElement.clientWidth > 560) {
+            for (let i = 0; i < imagesWebp.length; i++) {
+                let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
+                imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
+            }
         }
     }
 };
@@ -156,12 +160,14 @@ if (filterCatalog) {
 // ==============================================
 // Скрыть характеристики
 // ==============================================
-function hiddenText (parents,textHide, textShow) {
+function hiddenText(parents, textHide, textShow) {
     parents.forEach(function (parent) {
         let table = parent.querySelector('[data-content-hide]')
         let button = parent.querySelector('[data-button-hide]')
+
         button.setAttribute('data-status', 'false')
         button.addEventListener('click', function () {
+
             if (button.dataset.status === 'false') {
                 table.style.display = 'block'
                 button.textContent = textHide
@@ -174,19 +180,32 @@ function hiddenText (parents,textHide, textShow) {
         })
     })
 }
-let tabParent = document.querySelectorAll('[data-hidden-parent]')
-let reviewParent = document.querySelectorAll('[data-hidden-review]')
+
+let tabParent = document.querySelector('[data-hidden-parent]')
 
 if (tabParent) {
-    hiddenText(tabParent,'Скрыть характеристики', 'Показать характеристики')
+    let buttonHide = document.querySelector('[data-button-hide]')
+    let status = false
+    buttonHide.addEventListener('click', function () {
+        let tableBody = tabParent.querySelector('tbody')
+        let tableBodyItem = tableBody.getElementsByTagName('tr')
+        let arrLength = tableBodyItem.length = 2
+
+        for (let i = 0; i < tableBodyItem.length; i++) {
+            tableBodyItem[i].setAttribute('data-index', `${i}`)
+            if (tableBodyItem[i].dataset.index > arrLength && status === false) {
+                tableBodyItem[i].style.display = 'none'
+                status = true
+            }
+            else  if (status === true) {
+                tableBodyItem[i].style.display = 'flex'
+                status = false
+            }
+        }
+
+    })
+
 }
-
-if (reviewParent) {
-    hiddenText(reviewParent,'Скрыть', 'Открыть полностью')
-}
-
-
-
 let reviewMore = document.querySelector('[data-review-more]')
 let reviewTextMore = document.querySelector('[data-review-hidden]')
 
@@ -197,8 +216,7 @@ if (reviewMore) {
             reviewTextMore.style.display = 'block'
             reviewMore.textContent = 'Спрятать'
             reviewMore.setAttribute('data-status', 'true')
-        }
-        else {
+        } else {
             reviewTextMore.style.display = 'none'
             reviewMore.textContent = 'Читать полностью'
             reviewMore.setAttribute('data-status', 'false')
@@ -514,6 +532,7 @@ if (child) {
 // Переключение комплектации
 // ==================================================================
 let priceBe = document.querySelector('[data-price-be]')
+
 function changeSelect(parent) {
     let children = parent.children
     let tabsButton = document.querySelectorAll('[data-tabs-btn]')
@@ -551,20 +570,40 @@ function changeSelect(parent) {
                     child.classList.add('itc-select__option_selected')
                     titleSelect.textContent = child.textContent
                     titleSelect.value = child.textContent
-                    priceCurrently.textContent = event.target.dataset.priceNow
-                    priceBe.textContent = event.target.dataset.priceNext
+                    priceCurrently.textContent = event.currentTarget.dataset.priceNow
+                    priceBe.textContent = event.currentTarget.dataset.priceNext
                 }
             })
         }
     }
-
-
 }
 
 let selectChange = document.querySelector('[data-select-change]')
 if (selectChange) {
     changeSelect(selectChange)
 }
+
+let reviewsParent = document.querySelectorAll('[data-review-parent]')
+
+reviewsParent.forEach(function (reviewParent) {
+    let hiddenReview = reviewParent.querySelector('[data-hidden-review]')
+    let contentReview = reviewParent.querySelector('[data-content-review]')
+    let buttonReview = reviewParent.querySelector('[data-button-review]')
+    buttonReview.setAttribute('data-status', 'false')
+    buttonReview.addEventListener('click', function () {
+        if (buttonReview.dataset.status === 'false') {
+            contentReview.style.display = 'block'
+            buttonReview.textContent = 'Спрятать'
+            buttonReview.setAttribute('data-status', 'true')
+            hiddenReview.classList.add('reviews__review-inner--active')
+        } else {
+            contentReview.style.display = 'none'
+            buttonReview.textContent = 'Читать полностью'
+            buttonReview.setAttribute('data-status', 'false')
+            hiddenReview.classList.remove('reviews__review-inner--active')
+        }
+    })
+})
 
 
 // const options = {separator: ' ',suffix: ' ₽',};

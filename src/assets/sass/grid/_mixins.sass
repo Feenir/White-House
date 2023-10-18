@@ -78,6 +78,24 @@
     width: 100%
     max-width: unset
 
+@mixin button-transparent ($font-size-button: $text-font-size, $color-button: #535353,$back: #7AA04B)
+  font-family: $font-family
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: max-content
+  color: $color-button
+  font-size: $font-size-button
+  font-weight: $text-font-weight
+  line-height: 1
+  border-radius: $border-radius
+  border: 1px solid $back
+  @media #{$tablet}
+    font-size: $font-size-button - 2
+  @media #{$mobile}
+    width: 100%
+    max-width: unset
+
 @mixin li-custom
   position: relative
   padding-left: 54px

@@ -3,6 +3,9 @@
   & .cloudimage-360-loader
     background-color: $title-second-color
 
+  & .favorite
+    margin-left: auto
+
   &__swiper-container-thumb
     display: flex
     align-items: stretch
@@ -11,6 +14,12 @@
 
   &__swiper-thumb
     width: 100%
+
+  &__slider-container
+    position: relative
+    &:hover
+      & .category-single__size-inner
+        opacity: 1
 
   &__wrapper
     display: flex
@@ -39,9 +48,7 @@
     opacity: 1
     visibility: visible
     position: static
-    &:hover
-      & .category-single__size-inner
-        opacity: 1
+
     @media #{$tablet}
       max-height: unset
       height: fit-content
@@ -72,9 +79,11 @@
     top: 30px
     left: 30px
     z-index: 10
+    width: calc(100% - 60px)
     @media #{$tablet}
       top: 20px
       left: 20px
+      width: calc(100% - 40px)
     @media #{$mobile}
       top: 10px
       left: 10px
@@ -96,6 +105,7 @@
     border-radius: 50%
     background: $title-second-color
     transition: opacity .3s
+    z-index: 10
 
   &__size-icon
     max-width: 32px
@@ -337,6 +347,9 @@
     max-width: 20px
     max-height: 20px
     margin-right: 8px
+
+  &__favorite
+    margin-left: auto
 
 .cloudimage-360-view-360-icon
   @extend .category-single__view

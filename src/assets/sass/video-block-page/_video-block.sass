@@ -1,0 +1,130 @@
+.video-block
+  @include section-indent-margin
+
+  &__title
+    @extend .review-joint__title
+
+  &__swiper-inner
+    position: relative
+
+  &__container
+    &--aside
+      & .video-block__item
+        &:before
+          display: none
+
+  &__filter-inner
+    display: flex
+    align-items: center
+    flex-wrap: nowrap
+    overflow: auto
+    @media #{$mobile}
+      width: calc(100vw - 30px)
+
+  &__title-wrapper
+    @extend .review-joint__title-wrapper
+
+  &__filter
+    @extend .review-joint__filter
+    &--active
+      @extend .review-joint__filter--active
+
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    @media #{$mobile}
+      gap: 10px
+    &.swiper-wrapper
+      gap: 0
+      flex-wrap: nowrap
+
+  & .meta
+    position: absolute
+    top: 30px
+    left: 30px
+    text-transform: lowercase
+    z-index: 10
+    @media #{$tablet-small}
+      top: 20px
+      left: 20px
+    @media #{$mobile}
+      font-size: 8px
+      top: 15px
+      left: 15px
+    &:first-letter
+      text-transform: uppercase
+
+  &__item
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    min-height: 380px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    border-radius: 12px
+    overflow: hidden
+    width: calc(33.33% - 14px)
+    @media #{$tablet}
+      width: calc(50% - 10px)
+    @media #{$mobile}
+      width: 100%
+    &:before, &:after
+      position: absolute
+      content: ''
+      inset: 0
+      opacity: 0
+      pointer-events: none
+      transition: opacity .3s
+    &:before
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42' fill='none'%3E%3Ccircle cx='21' cy='21' r='21' fill='%237AA04B'/%3E%3Cpath d='M28 20.5L16.75 26.9952L16.75 14.0048L28 20.5Z' fill='white'/%3E%3C/svg%3E")
+      background-position: center
+      background-size: 42px
+      background-repeat: no-repeat
+    &:after
+      content: ''
+      background: linear-gradient(180deg, rgba(51, 51, 51, 0.30) 0%, rgba(51, 51, 51, 0.00) 33.21%)
+    &:hover:before,
+    &:hover:after
+      opacity: 1
+      &.swiper-slide
+        max-height: 380px
+        & a
+          position: absolute
+          display: flex
+          inset: 0
+        & p
+          width: 100%
+
+  &__text
+    padding: 20px
+    color: #FFF
+    text-align: center
+    font-size: 18px
+    font-weight: 600
+    line-height: 1.2
+    background: rgba(122, 160, 75, 0.30)
+    backdrop-filter: blur(10px)
+    @media #{$tablet}
+      font-size: 16px
+    @media #{$tablet-small}
+      font-size: 14px
+    @media #{$mobile}
+      font-size: 12px
+
+  &__control-inner
+    @extend .best__control-inner
+  &__slider-button
+    @extend .best__slider-button
+    top: calc(50% - 48px)
+    &--next
+      @extend .best__slider-button--next
+    &--prev
+      @extend .best__slider-button--prev
+
+  &__button
+    @include button-transparent
+    padding: 20px 40px
+    margin: 50px auto 0 auto

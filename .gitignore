@@ -3,4 +3,5 @@
 
  #Исключаем из GIT файлы GUP
 node_modules/
+production/
 
