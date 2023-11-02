@@ -1,15 +1,27 @@
 .job-reviews
+  //overflow: visible
+  margin-bottom: 0!important
+  //padding-bottom: 120px
+
+  &__swiper-inner
+    position: relative
+
   &__title
     @include section-title
     text-align: center
 
-  &__slide
+
+  //&__slide
+  //  border-radius: 12px
+  //  background: #FCF7F4
+  //  padding: 30px 30px 30px 50px
+  //  @media #{$tablet}
+  //    padding: 20px
+
+  &__review
     border-radius: 12px
     background: #FCF7F4
-    padding: 30px 30px 30px 50px
-    @media #{$tablet}
-      padding: 20px
-
+    padding: 30px
   &__swiper-container
     @extend .best__swiper-container
 
@@ -18,7 +30,7 @@
 
   &__slider-button
     @extend .best__slider-button
-    top: calc(50% + 14px)
+    top: calc(50% - 26px)
     &--prev
       left: -76px
     &--next
@@ -26,3 +38,12 @@
 
   & .review-wrapper
     padding-right: 0
+
+
+  &__link
+    @include button
+    @include button-padding
+    margin: 50px auto 0 auto
+
+  & .reviews__review-inner--active
+    position: static !important

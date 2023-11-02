@@ -49,5 +49,14 @@
   --color: white;
 }
 
+.favorite__icon-change {
+  --color: white;
+}
+
+.favorite.favorite--active .favorite__icon-change {
+  --color: rgba(122, 160, 75, 1);;
+
+}
+
 
 }

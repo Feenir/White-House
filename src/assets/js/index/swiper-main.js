@@ -12,6 +12,7 @@ let heroSwiperText = new Swiper("[data-hero-swiper-text]", {
     loop: true,
     pagination: {
         el: "[data-hero-swiper-text-pagination]",
+        clickable: true,
     },
     hashNavigation: {
         watchState: true,
@@ -183,6 +184,12 @@ let jobReviewsSwiper = new Swiper("[data-job-reviews-swiper]", {
     }
 });
 
+jobReviewsSwiper.realIndex
+
+console.log(jobReviewsSwiper.realIndex)
+
+
+
 let insideReviewsSwiper = new Swiper("[data-inside-swiper]", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -202,6 +209,14 @@ let insideReviewsSwiper = new Swiper("[data-inside-swiper]", {
 
     }
 });
+let insideReviewsSwiperBody = document.querySelector('[data-inside-swiper]')
+
+if (insideReviewsSwiper.slides.length  === 1 && insideReviewsSwiperBody) {
+    let slide = insideReviewsSwiperBody.querySelectorAll('.swiper-slide')
+    slide.forEach(function (item) {
+        item.classList.add('slide-not-active')
+    })
+}
 
 
 let feedbackSwiperThumb = new Swiper("[data-feedback-thumb]", {
@@ -296,6 +311,73 @@ let videoAsideBlockSwiper = new Swiper("[data-video-block-aside-swiper]", {
         },
 
     }});
+
+
+let galleryThumbSwiper = new Swiper("[data-gallery-thumb]", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    freeMode: true,
+    watchSlidesProgress: true,
+    mousewheel: {
+        forceToAxis: true,
+        sensitivity: .1,
+        releaseOnEdges: true,
+    },
+    navigation: {
+        nextEl: "[data-gallery-thumb-next]",
+        prevEl: "[data-gallery-thumb-prev]",
+    },
+    pagination: {
+        el: "[data-gallery-thumb-pagination]",
+    },
+    breakpoints: {
+
+        561: {
+            slidesPerView: 4,
+        },
+
+        769: {
+            slidesPerView: 5,
+        },
+
+        991: {
+            slidesPerView: 'auto',
+            direction: "vertical",
+            spaceBetween: 16,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+        }
+    }
+});
+
+let gallerySwiper = new Swiper("[data-gallery]", {
+    slidesPerView: 1,
+    effect: "fade",
+    freeMode: true,
+    watchSlidesProgress: true,
+    thumbs: {
+        swiper: galleryThumbSwiper,
+    },
+});
+
+
+
+
+let swiperSize = document.querySelector('[data-gallery]')
+let swiperMaxChange = document.querySelector('[data-gallery-thumb]')
+let swiperMaxChangeParent = document.querySelector('.gallery__thumb-container')
+const changeMaxHeight = (bigElement, heightChangeElement,parent) => {
+    heightChangeElement.style.maxHeight = (bigElement.offsetHeight - 40) + 'px'
+    parent.style.maxHeight = bigElement.offsetHeight + 'px'
+}
+
+if (swiperSize && swiperMaxChange) {
+    changeMaxHeight(swiperSize,swiperMaxChange,swiperMaxChangeParent)
+    window.addEventListener('resize', function () {
+        changeMaxHeight(swiperSize,swiperMaxChange,swiperMaxChangeParent)
+    });
+}
 
 
 

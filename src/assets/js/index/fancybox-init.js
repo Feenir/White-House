@@ -76,6 +76,7 @@ Fancybox для видеоблога
 ===================================================
 */
 Fancybox.bind(`[data-fancybox="video-block"]`, {});
+Fancybox.bind(`[data-fancybox="hero-build"]`, {});
 
 
 

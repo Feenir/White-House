@@ -1,0 +1,32 @@
+.partners
+  @include section-indent-margin
+
+  &__title
+    @include section-title
+    text-align: center
+
+  &__wrapper
+    display: flex
+    border-radius: 12px
+    border: 1px solid #E7E7E7
+    @media #{$tablet}
+      flex-direction: column
+
+  &__item
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 20px 70px
+    @media #{$notebook-small}
+      padding: 20px 50px
+    @media #{$tablet}
+      padding: 10px 20px
+    &:not(:last-child)
+      border-right: 1px solid #E7E7E7
+      @media #{$tablet}
+        border-right: none
+        border-bottom: 1px solid #E7E7E7
+
+  &__img
+    min-width: fit-content
+

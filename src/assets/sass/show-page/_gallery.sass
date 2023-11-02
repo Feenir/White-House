@@ -1,0 +1,85 @@
+.gallery
+  @include section-indent-margin
+
+  &__slide
+    position: relative
+    max-height: 600px
+    border-radius: 12px
+    overflow: hidden
+    & img
+      max-height: 600px
+      max-width: 100%
+
+  &__swiper-container
+    position: relative
+
+  &__subtitle
+    position: absolute
+    left: 0
+    bottom: 0
+    color: #FFF
+    text-align: center
+    font-size: 18px
+    font-weight: 600
+    line-height: 1.2
+    padding: 20px 28px
+    background: rgba(122, 160, 75, 0.30)
+    backdrop-filter: blur(10px)
+    border-top-left-radius: 12px
+    border-top-right-radius: 12px
+    @media #{$tablet}
+      font-size: 16px
+    @media #{$mobile}
+      font-size: 14px
+      padding: 12px
+      width: 100%
+      border-radius: unset
+
+  &__thumb-container
+    position: absolute!important
+    top: 0
+    right: 0
+    background: rgba(255, 255, 255, 0.10)
+    backdrop-filter: blur(10px)
+    padding: 20px 16px 20px 40px!important
+    border-radius: 12px
+    z-index: 1
+    overflow: hidden
+    @media #{$tablet}
+      margin-top: 18px
+
+  &__thumb
+    overflow: auto
+    padding-right: 24px
+    &::-webkit-scrollbar
+      width: 2px              /* ширина scrollbar */
+
+    &::-webkit-scrollbar-track
+      background: rgba(255, 255, 255, .2)       /* цвет дорожки */
+
+    &::-webkit-scrollbar-thumb
+      background-color: #FFF   /* цвет плашки */
+      border-radius: 20px      /* закругления плашки */
+
+    @media #{$tablet}
+      position: static!important
+      padding: 0!important
+      background: none
+      backdrop-filter: none
+
+  &__thumb-slide
+    overflow: hidden
+    border-radius: 12px
+    height: auto
+    cursor: pointer
+    max-height: 100px
+    & img
+      max-width: 100%
+
+  &__thumb-control-inner
+    display: none
+    @media #{$tablet}
+      display: flex
+
+  &__thumb-scrollbar
+    display: none

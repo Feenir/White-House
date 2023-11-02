@@ -48,7 +48,7 @@
   &__house-info-wrapper
     display: flex
     justify-content: space-between
-    gap: 0 50px
+    gap: 0 30px
     margin-bottom: 30px
     @media #{$notebook}
       flex-wrap: wrap
@@ -62,7 +62,7 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    width: calc(25% - 23px)
+    width: calc(25% - 17px)
     max-width: 114px
     @media #{$notebook-small}
       width: calc(50% - 15px)
@@ -135,6 +135,8 @@
   &__swiper-inner
     position: relative
     padding-bottom: 20px
+    & picture
+      justify-content: center
 
   &__control-inner
     position: absolute
@@ -160,10 +162,16 @@
       display: flex
 
   &__swiper-slide
+    & picture
+      background-color: white
     @media #{$tablet-small}
       display: flex
       flex-direction: column
       align-items: center
+
+
+  &__swiper-img
+    max-height: 370px
 
 
 

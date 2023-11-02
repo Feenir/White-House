@@ -112,8 +112,8 @@
             </div>
             <p class="category-single__price"><span id="now" data-price-currently>1 550 000</span> ₽</p>
             <div class="category-single__price-sale-inner">
-              <p class="category-single__old-price"><s>1 820 000 ₽</s></p>
-              <div class="category-single__sum-sale">-25%</div>
+              <p class="category-single__old-price"><s data-price-old>1 820 000 ₽</s></p>
+              <div class="category-single__sum-sale" data-sum>-25%</div>
             </div>
           </div>
           <div class="category-single__price-item">
@@ -149,9 +149,12 @@
           <button class="itc-select__toggle" type="button" value="Комплектации «Домино» (8,0х12,8)-139м2" data-select="toggle" data-index="-1" data-select-main>Комплектации «Домино» (8,0х12,8)-139м2</button>
           <div class="itc-select__dropdown">
             <ul class="itc-select__options" data-select-change>
-              <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="Комплектации «Домино» (8,0х12,8)-139м2" data-index="0" data-price-now="1 550 000" data-price-next="1 750 000">Комплектации «Домино» (8,0х12,8)-139м2</li>
-              <li class="itc-select__option" data-select="option" data-value="Жилой дом –Утепление 150мм" data-index="1" data-price-now="1 650 000" data-price-next="1 950 000">Жилой дом – Утепление 150мм</li>
-              <li class="itc-select__option" data-select="option" data-value="Аляска – Утепление 200мм" data-index="2" data-price-now="2 550 000" data-price-next="2 750 000">Аляска – Утепление 200мм</li>
+              <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="Комплектации «Домино» (8,0х12,8)-139м2"
+                  data-index="0" data-price-now="1 550 000" data-price-next="1 750 000" data-price-not-sale="2 500 000">Комплектации «Домино» (8,0х12,8)-139м2</li>
+              <li class="itc-select__option" data-select="option" data-value="Жилой дом –Утепление 150мм" data-index="1"
+                  data-price-now="1 650 000" data-price-next="1 950 000">Жилой дом – Утепление 150мм</li>
+              <li class="itc-select__option" data-select="option" data-value="Аляска – Утепление 200мм" data-index="2"
+                  data-price-now="2 550 000" data-price-next="2 750 000">Аляска – Утепление 200мм</li>
             </ul>
           </div>
         </div>
@@ -169,12 +172,74 @@
           <span class="category-single__link-text">Каркас</span></a>
         </div>
         <div class="category-single__button-inner">
-          <button class="category-single__button category-single__button--this">Заказать этот проект</button>
-          <button class="category-single__button category-single__button--lending">Кредитование</button>
+          <button class="category-single__button category-single__button--this" data-house-open>Заказать этот проект</button>
+          <button class="category-single__button category-single__button--lending" data-credit-open>Кредитование</button>
         </div>
 
       </div>
     </div>
   </div>
 </section>
+
+<div class="popup popup--credit" data-credit>
+  <div class="popup__body">
+    <div class="popup__item popup__item--space">
+      <p class="popup__subtext">Бесплатный рассчёт кредита по проекту “Название прокета”</p>
+    </div>
+    <div class="popup__item popup__item--form">
+      <form class="popup__form popup__form--credit">
+        <fieldset class="popup__form-wrapper">
+          <label class="popup__label"><input class="popup__input" type="text" name="Name" placeholder="Ваше имя"></label>
+          <label class="popup__label"><input class="popup__input" type="email" name="Email" placeholder="Почта"></label>
+          <label class="popup__label"><input class="popup__input" type="tel" name="Phone" placeholder="+7 ХХХ ХХХ ХХ ХХ"></label>
+          <label class="popup__label"><input class="popup__input" type="text" name="Money" placeholder="Сумма первоночального взноса"></label>
+          <fieldset class="popup__answer-inner">
+            <p class="popup__answer-text">Наличие залога</p>
+            <label class="popup__answer-label"><input class="popup__answer-input" type="radio" value="Да" name="answer" checked>
+              <span class="popup__fake-input">Да</span>
+            </label>
+            <label class="popup__answer-label"><input class="popup__answer-input" type="radio" value="Нет" name="answer">
+              <span class="popup__fake-input">Нет</span></label>
+          </fieldset>
+          <label class="popup__label"><input class="popup__input" type="text" name="Money" placeholder="Какой ежемесячный платеж вас интересует"></label>
+          <button class="popup__button popup__button--other" type="button">Получить консультацию</button>
+        </fieldset>
+        <label class="popup__checkbox-inner">
+          <input class="popup__checkbox" type="checkbox" hidden checked>
+          <span class="popup__fake-checkbox"></span>
+          <span class="popup__politic-inner">Я согласен на обработку <a class="popup__politic" href="#">персональных данных</a></span>
+        </label>
+      </form>
+    </div>
+    <svg class="popup__close" data-close>
+      <use href="./assets/images/svg/set.svg#close-popup"></use>
+    </svg>
+  </div>
+</div>
+<div class="popup popup--house" data-house>
+  <div class="popup__body">
+    <div class="popup__item popup__item--house">
+      <p class="popup__subtext">Каркасный дом «Домино»</p>
+    </div>
+    <div class="popup__item popup__item--form">
+      <form class="popup__form popup__form--credit">
+        <fieldset class="popup__form-wrapper">
+          <label class="popup__label"><input class="popup__input" type="text" name="Name" placeholder="Ваше имя"></label>
+          <label class="popup__label"><input class="popup__input" type="email" name="Email" placeholder="Почта"></label>
+          <label class="popup__label"><input class="popup__input" type="tel" name="Phone" placeholder="+7 ХХХ ХХХ ХХ ХХ"></label>
+          <label class="popup__label"><input class="popup__input" type="text" name="Money" placeholder="Сумма первоночального взноса"></label>
+          <button class="popup__button popup__button--other" type="button">Получить консультацию</button>
+        </fieldset>
+        <label class="popup__checkbox-inner">
+          <input class="popup__checkbox" type="checkbox" hidden checked>
+          <span class="popup__fake-checkbox"></span>
+          <span class="popup__politic-inner">Я согласен на обработку <a class="popup__politic" href="#">персональных данных</a></span>
+        </label>
+      </form>
+    </div>
+    <svg class="popup__close" data-close>
+      <use href="./assets/images/svg/set.svg#close-popup"></use>
+    </svg>
+  </div>
+</div>
 

@@ -1,0 +1,52 @@
+.privilege
+  @include section-indent-margin
+
+  &__title
+    @include section-title
+    text-align: center
+
+  &__inner
+    display: flex
+    gap: 20px
+    counter-reset: number
+    @media #{$tablet}
+      gap: 0
+
+  &__item
+    position: relative
+    width: calc(25% - 14px)
+    counter-increment: number
+    @media #{$tablet}
+      width: 100%
+    &:before
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: center
+      content: counter(number)
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      background-color: #B99D7B
+      color: #fff
+      top: 15px
+      left: 15px
+      font-size: 14px
+    & img
+      @media #{$tablet}
+        max-width: 100%
+
+  &__img-inner
+    border-radius: 12px
+    overflow: hidden
+
+  &__text
+    text-align: center
+    font-size: 14px
+    max-width: 224px
+    margin: 20px auto 0 auto
+
+  &__control-inner
+    display: none
+    @media #{$tablet}
+      display: flex

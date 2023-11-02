@@ -16,12 +16,12 @@ window.onload = function () {
     let images = document.querySelectorAll('[data-bg]');
     let imagesMob = document.querySelectorAll('[data-bg-mob]');
     // Проходимся по каждому
-        for (let i = 0; i < images.length; i++) {
-            // Получаем значение каждого дата-атрибута
-            let image = images[i].getAttribute('data-bg');
-            // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
-            images[i].style.backgroundImage = 'url(' + image + ')';
-        }
+    for (let i = 0; i < images.length; i++) {
+        // Получаем значение каждого дата-атрибута
+        let image = images[i].getAttribute('data-bg');
+        // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
+        images[i].style.backgroundImage = 'url(' + image + ')';
+    }
 
 
     // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
@@ -142,7 +142,10 @@ for (let elem of phone_inputs) {
 // ==============================================
 
 let customSelect = document.querySelectorAll('[data-custom-select]')
-
+let popupSelect = document.querySelectorAll('[data-popup-select]')
+if (popupSelect.length > 0) {
+    const equipment = new ItcCustomSelect('[data-popup-select]');
+}
 if (customSelect.length > 0) {
     const equipment = new ItcCustomSelect('[data-equipment-select]');
 }
@@ -181,31 +184,50 @@ function hiddenText(parents, textHide, textShow) {
     })
 }
 
-let tabParent = document.querySelector('[data-hidden-parent]')
+let tabParent = document.querySelectorAll('[data-hidden-parent]')
 
-if (tabParent) {
-    let buttonHide = document.querySelector('[data-button-hide]')
-    let status = false
-    buttonHide.addEventListener('click', function () {
-        let tableBody = tabParent.querySelector('tbody')
+if (tabParent.length > 0) {
+    tabParent.forEach(function (tab) {
+        let buttonHide = tab.querySelector('[data-button-equipment-hide]')
+        let tableBody = tab.querySelector('tbody')
         let tableBodyItem = tableBody.getElementsByTagName('tr')
-        let arrLength = tableBodyItem.length = 2
+        let arrLength = 2
+        tableBody.classList.add('hide')
 
         for (let i = 0; i < tableBodyItem.length; i++) {
             tableBodyItem[i].setAttribute('data-index', `${i}`)
-            if (tableBodyItem[i].dataset.index > arrLength && status === false) {
-                tableBodyItem[i].style.display = 'none'
-                status = true
-            }
-            else  if (status === true) {
-                tableBodyItem[i].style.display = 'flex'
-                status = false
+            for (let i = 0; i < tableBodyItem.length; i++) {
+                if (tableBodyItem[i].dataset.index > arrLength) {
+                    tableBodyItem[i].style.display = 'none'
+                    buttonHide.textContent = 'Показать характеристики'
+                }
             }
         }
 
+        buttonHide.addEventListener('click', function () {
+
+            if (!tableBody.classList.contains('hide')) {
+                tableBody.classList.add('hide')
+                for (let i = 0; i < tableBodyItem.length; i++) {
+                    if (tableBodyItem[i].dataset.index > arrLength) {
+                        tableBodyItem[i].style.display = 'none'
+                        buttonHide.textContent = 'Показать характеристики'
+                    }
+                }
+            } else {
+                tableBody.classList.remove('hide')
+                for (let i = 0; i < tableBodyItem.length; i++) {
+                    tableBodyItem[i].style.display = 'flex'
+                    buttonHide.textContent = 'Скрыть характеристики'
+                }
+            }
+        })
     })
 
+
 }
+
+
 let reviewMore = document.querySelector('[data-review-more]')
 let reviewTextMore = document.querySelector('[data-review-hidden]')
 
@@ -285,8 +307,20 @@ if (objectsCopy) {
 
     objectsCopy.forEach(function (objectCopy) {
         let copyTarget = objectCopy.previousElementSibling.textContent
+        let status = false
         objectCopy.addEventListener('click', function () {
-            copyToClipboard(copyTarget)
+            let notification = document.createElement('div')
+            if (status === false) {
+                copyToClipboard(copyTarget)
+                notification.classList.add('notification')
+                notification.textContent = 'Текст скопирован в Ваш буфер обмена'
+                document.body.append(notification)
+                status = true
+                setTimeout(() => {
+                    notification.remove()
+                    status = false
+                }, 2000)
+            }
         })
     })
 }
@@ -301,8 +335,6 @@ let cardArray = []
 
 favoriteButton.forEach(function (button) {
     button.addEventListener('click', function (event) {
-        console.log(button)
-
         let cards = button.closest('.card')
         let copyCards = cards.cloneNode(true)
         document.body.appendChild(copyCards)
@@ -408,6 +440,36 @@ if (swiperOrderMobileActive) {
     );
 }
 
+let privilegeSlider = document.querySelector('[data-privilege-slider]')
+
+if (privilegeSlider) {
+    addClassSwiper('(max-width: 991px)', privilegeSlider)
+    resizableSwiper(
+        '(max-width: 991px)',
+        privilegeSlider,
+        {
+            spaceBetween: 20,
+            slidesPerView: 1,
+            pagination: {
+                el: "[data-privilege-pagination]",
+            },
+            navigation: {
+                nextEl: "[data-privilege-next]",
+                prevEl: "[data-privilege-prev]",
+            },
+            breakpoints: {
+                561: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                }
+            }
+        },
+    );
+}
+
+
 // ===================================================================
 // Замена Заголовка
 // ===================================================================
@@ -490,7 +552,7 @@ let singleSlider = document.querySelector('[data-single-big]')
 let show3DSlider = document.querySelector('[data-slider-3d-show]')
 let showSingleSlider = document.querySelector('[data-single-thumb]')
 
-if (show3DSlider) {
+if (slider3D) {
     show3DSlider.addEventListener('click', function () {
         if (slider3D.classList.contains('hidden') && !singleSlider.classList.contains('hidden')) {
             slider3D.classList.remove('hidden')
@@ -500,7 +562,7 @@ if (show3DSlider) {
 }
 
 
-if (showSingleSlider) {
+if (showSingleSlider && slider3D) {
     let thumbShows = showSingleSlider.querySelectorAll('[data-thumb-show]')
     thumbShows.forEach(function (thumbShow) {
         thumbShow.addEventListener('click', function () {
@@ -531,52 +593,100 @@ if (child) {
 // ==================================================================
 // Переключение комплектации
 // ==================================================================
-let priceBe = document.querySelector('[data-price-be]')
 
 function changeSelect(parent) {
     let children = parent.children
     let tabsButton = document.querySelectorAll('[data-tabs-btn]')
-    let tabsPane = document.querySelectorAll('[data-tabs-pane]')
-    let priceCurrently = document.querySelector('[data-price-currently]')
-    let priceBe = document.querySelector('[data-price-be]')
+    let tabsPane = document.querySelectorAll('[data-hidden-parent]')
+    let priceContainer = document.querySelectorAll('[data-container-price]')
+    let monthPay = document.querySelectorAll('[data-month-pay]')
+    let popupSelect = document.querySelectorAll('[data-popup-select]')
+    let popupTitle = document.querySelector('[data-popup-title]')
+
     const titleSelect = document.querySelector('[data-select-main]')
     for (const child of children) {
         let childrenIndex = child.dataset.index
-        child.addEventListener('click', function (event) {
-            let childTargetIndex = event.target.dataset.index
-            for (let i = 0; i < tabsPane.length; i++) {
-                tabsPane[i].setAttribute('data-index', `${i}`)
-                let tabsPaneIndex = tabsPane[i].dataset.index
-                tabsPane[i].classList.remove('tabs-pane-show')
-                if (childTargetIndex === tabsPaneIndex) {
-                    tabsPane[i].classList.add('tabs-pane-show')
-                    priceCurrently.textContent = event.target.dataset.priceNow
-                    priceBe.textContent = event.target.dataset.priceNext
+        for (let pS = 0;pS < popupSelect.length;pS++){
+            for (let p = 0; p < priceContainer.length; p++) {
+                for (let m = 0; m < monthPay.length; m++) {
+
+                    priceContainer[p].setAttribute('data-price', `${p}`)
+                    monthPay[m].setAttribute('data-month', `${m}`)
+
+                    child.addEventListener('click', function (event) {
+                        popupSelect[pS].classList.remove('itc-select__option_selected')
+                        let childTargetIndex = event.target.dataset.index
+                        for (let i = 0; i < tabsPane.length; i++) {
+                            tabsPane[i].setAttribute('data-index', `${i}`)
+                            let tabsPaneIndex = tabsPane[i].dataset.index
+                            tabsPane[i].classList.remove('tabs-pane-show')
+                            priceContainer[p].classList.remove('show')
+                            monthPay[m].classList.remove('show')
+
+                            if (childTargetIndex === tabsPaneIndex) {
+                                tabsPane[i].classList.add('tabs-pane-show')
+
+                            }
+                            if (childTargetIndex === priceContainer[p].dataset.price) {
+                                priceContainer[p].classList.add('show')
+
+                            }
+                            if (childTargetIndex === monthPay[m].dataset.month) {
+                                monthPay[m].classList.add('show')
+                            }
+                            if (childrenIndex === popupSelect[pS].dataset.index) {
+                                popupSelect[pS].classList.add('itc-select__option_selected')
+                                popupTitle.textContent = child.textContent
+                                popupTitle.dataset.value = child.textContent
+
+                            }
+
+                        }
+
+                        for (const tabsButtonElement of tabsButton) {
+                            let tabsButtonIndex = tabsButtonElement.dataset.index
+                            tabsButtonElement.classList.remove('tabs-active')
+                            if (childTargetIndex === tabsButtonIndex) {
+                                tabsButtonElement.classList.add('tabs-active')
+                            }
+                        }
+                    })
+
+                    for (const tabButton of tabsButton) {
+                        tabButton.addEventListener('click', function (event) {
+                            let tabButtonIndex = event.currentTarget.dataset.index
+                            child.classList.remove('itc-select__option_selected')
+                            priceContainer[p].classList.remove('show')
+                            monthPay[m].classList.remove('show')
+                            if (tabButtonIndex === childrenIndex) {
+                                child.classList.add('itc-select__option_selected')
+                                titleSelect.textContent = child.textContent
+                                titleSelect.value = child.textContent
+                            }
+                            if (tabButtonIndex === priceContainer[p].dataset.price) {
+                                priceContainer[p].classList.add('show')
+
+                            }
+                            if (tabButtonIndex === monthPay[m].dataset.month) {
+                                monthPay[m].classList.add('show')
+                            }
+                            if (tabButtonIndex === popupSelect[pS].dataset.index) {
+                                popupSelect[pS].classList.add('itc-select__option_selected')
+                                popupTitle.textContent = child.textContent
+                                popupTitle.dataset.value = child.textContent
+                            }
+                        })
+                    }
+
                 }
             }
-            for (const tabsButtonElement of tabsButton) {
-                let tabsButtonIndex = tabsButtonElement.dataset.index
-                tabsButtonElement.classList.remove('tabs-active')
-                if (childTargetIndex === tabsButtonIndex) {
-                    tabsButtonElement.classList.add('tabs-active')
-                }
-            }
-        })
-        for (const tabButton of tabsButton) {
-            tabButton.addEventListener('click', function (event) {
-                let tabButtonIndex = event.currentTarget.dataset.index
-                child.classList.remove('itc-select__option_selected')
-                if (tabButtonIndex === childrenIndex) {
-                    child.classList.add('itc-select__option_selected')
-                    titleSelect.textContent = child.textContent
-                    titleSelect.value = child.textContent
-                    priceCurrently.textContent = event.currentTarget.dataset.priceNow
-                    priceBe.textContent = event.currentTarget.dataset.priceNext
-                }
-            })
         }
+
     }
+
+
 }
+
 
 let selectChange = document.querySelector('[data-select-change]')
 if (selectChange) {
@@ -585,26 +695,184 @@ if (selectChange) {
 
 let reviewsParent = document.querySelectorAll('[data-review-parent]')
 
-reviewsParent.forEach(function (reviewParent) {
-    let hiddenReview = reviewParent.querySelector('[data-hidden-review]')
-    let contentReview = reviewParent.querySelector('[data-content-review]')
-    let buttonReview = reviewParent.querySelector('[data-button-review]')
-    buttonReview.setAttribute('data-status', 'false')
-    buttonReview.addEventListener('click', function () {
-        if (buttonReview.dataset.status === 'false') {
-            contentReview.style.display = 'block'
-            buttonReview.textContent = 'Спрятать'
-            buttonReview.setAttribute('data-status', 'true')
-            hiddenReview.classList.add('reviews__review-inner--active')
-        } else {
-            contentReview.style.display = 'none'
-            buttonReview.textContent = 'Читать полностью'
-            buttonReview.setAttribute('data-status', 'false')
-            hiddenReview.classList.remove('reviews__review-inner--active')
-        }
-    })
-})
+if (reviewsParent.length > 0) {
+    reviewsParent.forEach(function (reviewParent) {
+        let span = document.createElement('span') // Создаем span элемент для оболочки
+        span.classList.add('reviews__hidden')
+        let reviews = reviewParent.querySelector('[data-text-review]') // Находим параграф
+        let textLimit = reviews.dataset.limit // Делаем лимит по символам
+        let textReviews = reviews.textContent // Находим весь текст отзыва
+        let textShow = textReviews.substr(0, textLimit) // Разбиваем отзыв на части(Начальная часть)
+        let textHidden = textReviews.substr(textLimit) // Разбиваем отзыв на части(Конечная часть)
+        let buttonShow = reviewParent.querySelector('[data-button-review]') // Находим кнопку
+        let reviewInner = reviewParent.querySelector('.reviews__review-inner') // Находим враппер
 
+        reviews.textContent = textShow
+        span.textContent = textHidden
+        reviews.append(span)
+        if (textReviews.length < textLimit) {
+            buttonShow.style.display = 'none'
+        }
+        buttonShow.setAttribute('data-status', 'false')
+        buttonShow.addEventListener('click', function (event) {
+            let buttonParent = buttonShow.closest('.reviews__review-wrapper')
+            let reviewsHeight = buttonParent.offsetHeight
+            if (buttonShow.dataset.status === 'false') {
+                buttonShow.textContent = 'Скрыть'
+                buttonShow.setAttribute('data-status', 'true')
+                reviewInner.classList.add('reviews__review-inner--active')
+                span.classList.add('reviews__hidden--show')
+                buttonParent.style.minHeight = reviewsHeight + 'px'
+            } else {
+                buttonShow.textContent = 'Читать полностью'
+                buttonShow.setAttribute('data-status', 'false')
+                span.classList.remove('reviews__hidden--show')
+                reviewInner.classList.remove('reviews__review-inner--active')
+                buttonParent.style.minHeight = 'auto'
+            }
+        })
+    })
+}
+
+function openPopup(buttons, popup) {
+    buttons.forEach(function (button) {
+        const html = document.querySelector('html')
+        let body = popup.querySelector('.popup__body')
+        let close = popup.querySelector('[data-close]')
+        let documentBody = document.querySelector('body');
+        let widthBefore = documentBody.offsetWidth;
+        button.addEventListener('click', function (e) {
+            e.preventDefault()
+            popup.classList.add('open')
+            html.style.overflowY = 'hidden'
+        })
+        close.addEventListener('click', function () {
+            if (popup.classList.contains('open')) {
+                html.style.overflowY = 'visible'
+                popup.classList.remove('open')
+            }
+
+        })
+        popup.addEventListener('click', function (e) {
+            if (popup.classList.contains('open')) {
+                if (!body.contains(e.target)) {
+                    popup.classList.remove('open')
+                    html.style.overflowY = 'visible'
+                }
+            }
+        });
+    })
+}
+
+
+let callBackOpenButtons = document.querySelectorAll('[data-callback-open]')
+let callBackHouseOpenButtons = document.querySelectorAll('[data-house-open]')
+let callBackCreditOpenButtons = document.querySelectorAll('[data-credit-open]')
+let stocksOpenButtons = document.querySelectorAll('[data-stocks-open]')
+let callBackPopup = document.querySelector('[data-callback]')
+let callBackHousePopup = document.querySelector('[data-house]')
+let callBackCreditPopup = document.querySelector('[data-credit]')
+let stocksPopup = document.querySelector('[data-stocks]')
+let closeButton = document.querySelectorAll('[data-close]')
+
+if (callBackOpenButtons) {
+    openPopup(callBackOpenButtons, callBackPopup)
+}
+
+if (callBackHouseOpenButtons) {
+    openPopup(callBackHouseOpenButtons, callBackHousePopup)
+}
+
+if (callBackCreditOpenButtons) {
+    openPopup(callBackCreditOpenButtons, callBackCreditPopup)
+}
+
+if (stocksOpenButtons) {
+    openPopup(stocksOpenButtons, stocksPopup)
+}
+
+
+/*
+* ====================================
+*   Устанавливаем cookie
+* =========================================
+* */
+
+
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+function checkCookies() {
+    let cookieNote = document.querySelector('[data-cookie]');
+    let cookieBtnAccept = cookieNote.querySelector('[data-cookie-accept]');
+
+    // Если куки cookies_policy нет или она просрочена, то показываем уведомление
+    if (!getCookie('cookies_policy')) {
+        cookieNote.classList.add('show');
+    }
+
+    // При клике на кнопку устанавливаем куку cookies_policy на время
+    cookieBtnAccept.addEventListener('click', function () {
+        setCookie('cookies_policy', 'true', 365);
+        cookieNote.classList.remove('show');
+    });
+}
+
+checkCookies();
+
+let vacancyButton = document.querySelectorAll('[data-vacancy-button]')
+let vacancyPopup = document.querySelectorAll('[data-vacancy]')
+
+if (vacancyButton && vacancyPopup) {
+    for (let i = 0; i < vacancyButton.length; i++) {
+        vacancyButton[i].setAttribute('id', `vacancy-${i}`);
+        for (let j = 0; j < vacancyPopup.length; j++) {
+            let closeButton = vacancyPopup[i].querySelector('[data-close]')
+            let body = vacancyPopup[i].querySelector('.popup__body')
+            let html = document.getElementsByTagName('html')
+            vacancyPopup[j].setAttribute('data-id', `${`vacancy-${j}`}`)
+            vacancyButton[i].addEventListener('click', function () {
+                if (vacancyButton[i].id === vacancyPopup[j].dataset.id) {
+                    vacancyPopup[j].classList.add('open')
+                    html[0].style.overflowY = 'hidden'
+                }
+            })
+            closeButton.addEventListener('click', function () {
+                vacancyPopup[j].classList.remove('open')
+                html[0].style.overflowY = 'visible'
+            })
+            vacancyPopup[j].addEventListener('click', function (e) {
+                if (vacancyPopup[j].classList.contains('open')) {
+                    if (!body.contains(e.target)) {
+                        vacancyPopup[j].classList.remove('open')
+                        html[0].style.overflowY = 'visible'
+                    }
+                }
+            });
+        }
+    }
+
+}
+
+
+// if (callBackPopup) {
+//     openPopup(callBackOpenButtons, callBackPopup, '.popup__body')
+//     openPopup(callBackHouseOpenButtons, callBackHousePopup, '.popup__body')
+//     openPopup(callBackCreditOpenButtons, callBackCreditPopup, '.popup__body')
+// }
 
 // const options = {separator: ' ',suffix: ' ₽',};
 // let number = event.target.dataset.priceNow.replace(/\s/g, '')

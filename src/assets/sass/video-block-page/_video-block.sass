@@ -3,6 +3,15 @@
 
   &__title
     @extend .review-joint__title
+    &--show
+      text-align: center
+      font-size: 40px
+      margin-bottom: 40px
+      @media #{$tablet}
+        font-size: 32px
+      @media #{$mobile}
+        font-size: 24px
+        margin-bottom: 30px
 
   &__swiper-inner
     position: relative
@@ -107,6 +116,10 @@
     line-height: 1.2
     background: rgba(122, 160, 75, 0.30)
     backdrop-filter: blur(10px)
+    margin-bottom: 0!important
+    overflow: hidden
+    border-bottom-right-radius: 12px
+    border-bottom-left-radius: 12px
     @media #{$tablet}
       font-size: 16px
     @media #{$tablet-small}
@@ -128,3 +141,5 @@
     @include button-transparent
     padding: 20px 40px
     margin: 50px auto 0 auto
+    &--show
+      @include button

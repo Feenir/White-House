@@ -1,0 +1,40 @@
+.other-sections
+  @include section-indent-margin
+
+  &__title
+    @include section-title
+    text-align: center
+
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    @media #{$tablet-small}
+      flex-direction: column
+
+  &__item
+    display: flex
+    align-items: flex-end
+    width: calc(50% - 10px)
+    min-height: 378px
+    background-image: url("../images/other-section/1.jpg")
+    @supports (background-image: url("../images/other-section/1.webp"))
+      background-image: url("../images/other-section/1.webp")
+    background-repeat: no-repeat
+    background-size: cover
+    border-radius: 12px
+    overflow: hidden
+    @media #{$tablet-small}
+      width: 100%
+      min-height: 228px
+
+  &__text
+    color: #FFF
+    font-size: 18px
+    font-weight: 600
+    line-height: 1
+    background: rgba(122, 160, 75, 0.30)
+    backdrop-filter: blur(10px)
+    padding: 20px 30px
+    width: 100%
+        

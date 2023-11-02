@@ -2,13 +2,17 @@
   position: relative
   background: linear-gradient(180deg, #FCF7F4 0%, #EFE3DB 100%)
   border-bottom-left-radius: $border-radius
-  border-bottom-right-radius: $border-radius
+  border-bottom-right-radius: 50px
   max-width: 2560px
   margin: 0 auto
   overflow: hidden
   @include section-indent-margin
   @media #{$tablet}
     min-height: 782px
+  @media #{$mobile}
+    border-bottom-right-radius: 40px
+  @media #{$mobile-small}
+    border-bottom-left-radius: 0
   &:before
     position: absolute
     content: ''
@@ -41,12 +45,16 @@
     @media #{$mobile}
       padding-bottom: 0
 
-
-
   &__title
     margin-bottom: 36px
     @media #{$tablet}
       margin-bottom: 28px
+    &--small
+      font-size: 40px
+      @media #{$notebook}
+        font-size: 28px
+      @media #{$tablet}
+        font-size: 28px
 
   &__list
     margin-bottom: 36px
@@ -76,7 +84,7 @@
     position: absolute
     right: 0
     bottom: 0
-    max-width: 788px
+    max-width: 828px
     max-height: 716px
     height: 50vw
     width: 55vw
@@ -84,8 +92,8 @@
     min-height: 280px
     @supports (height: clamp(280px,50vw,716px))
       height: clamp(280px,50vw,716px)
-    @supports (width: clamp(320px, 55vw, 788px))
-      width: clamp(320px, 55vw, 788px)
+    @supports (width: clamp(320px, 55vw, 828px))
+      width: clamp(320px, 55vw, 828px)
 
 
 
@@ -102,12 +110,16 @@
   &__round-inner
     position: absolute
     bottom: -17px
-    right: max(15px, calc((100% - 1250px)/2))
-    z-index: 100
+    right: max(30px, calc((100% - 1600px)/2))
+    z-index: 1
+    @media #{$mobile}
+      bottom: -24px
 
   &__round
     min-width: 380px
-    max-height: 80px
+    max-height: 91px
+    @media #{$mobile}
+      min-width: 300px
 
   &__round-text-inner
     position: absolute
@@ -126,6 +138,11 @@
       transform: translateY(-50%)
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42' fill='none'%3E%3Ccircle cx='21' cy='21' r='21' fill='%237AA04B'/%3E%3Cpath d='M28 20.5L16.75 26.9952L16.75 14.0048L28 20.5Z' fill='white'/%3E%3C/svg%3E")
       background-repeat: no-repeat
+      background-position: center
+      @media #{$mobile}
+        width: 32px
+        height: 32px
+        left: -26px
 
 
   &__round-subtitle
@@ -142,6 +159,30 @@
     position: relative
     max-width: 592px
     margin-bottom: 30px
+
+  &__video
+    position: relative
+    display: block
+    border-radius: 12px
+    overflow: hidden
+    margin-left: 34px
+    cursor: pointer
+    max-width: 590px
+    @media #{$tablet}
+      margin-left: 0
+    &:before, &:after
+      position: absolute
+      content: ''
+      inset: 0
+      pointer-events: none
+    &:before
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%)
+    &:after
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42' fill='none'%3E%3Ccircle cx='21' cy='21' r='21' fill='%237AA04B'/%3E%3Cpath d='M28 20.5L16.75 26.9952L16.75 14.0048L28 20.5Z' fill='white'/%3E%3C/svg%3E")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: 42px
+
 
   &--job
     background-size: 600px, cover
@@ -185,14 +226,61 @@
       position: absolute
       content: ''
       inset: 0
-      background-position: right 200px bottom
+      background-position: right 25% bottom
       background-repeat: no-repeat
       background-image: url("../images/hero/hero-welcome.png")
       @supports (background-image: url("../images/hero/hero-welcome.webp"))
         background-image: url("../images/hero/hero-welcome.webp")
-      background-size: 23%
+      background-size: min(23%,423px)
       width: 100%
       height: 100%
+      @media #{$tablet-small}
+        background-size: 220px
+        background-position: right bottom
     & .hero__wrapper
       padding-bottom: 92px
+      @media #{$tablet-small}
+        padding-bottom: 270px
+
+  &--build
+    @media #{$tablet}
+      min-height: unset
+    &:before
+      display: none
+
+    & .hero__wrapper
+      display: flex
+      align-items: center
+      gap: 24px
+      @media #{$tablet}
+        flex-direction: column
+        padding-bottom: 50px
+        align-items: flex-start
+        & br
+          display: none
+    & .hero__text
+      margin-bottom: 0
+
+  &--show
+    &:before
+      display: none
+    & .hero__wrapper
+      display: flex
+      align-items: center
+      gap: 24px
+      padding-bottom: 80px
+      @media #{$tablet}
+        flex-direction: column
+        padding-bottom: 50px
+        align-items: flex-start
+        & br
+          display: none
+    & p
+      position: relative
+      max-width: 592px
+      margin-bottom: 30px
+
+
+
+
 

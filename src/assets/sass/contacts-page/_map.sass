@@ -86,14 +86,17 @@
     margin-bottom: 40px
     @media #{$notebook}
       margin-bottom: 30px
-    &--color
-      color: $title-second-color
     &--city
+      text-transform: capitalize!important
+      text-align: center
+      @include section-title
       @media #{$notebook}
         margin-bottom: 30px
       @media #{$tablet}
         margin-bottom: 20px
         text-align: center
+    &--color
+      color: $title-second-color
 
   &__icon-inner
     display: flex

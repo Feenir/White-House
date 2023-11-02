@@ -22,6 +22,10 @@
 			
 			
 			
+			
+			
+			
+			
 			<meta name="theme-color" content="#ffffff">
 			<title>WhiteHouse</title>
 	</head>
@@ -30,10 +34,23 @@
 <header class="header">
   <div class="container">
     <div class="header__top">
-      <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img src="./assets/images/similar/logo.png" alt="Логотип" class="logo"></picture>
-      <button class="header__dropdown-city">Нижний Новгород
+      <a class="header__top-link" href="#">
+        <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img src="./assets/images/similar/logo.png" alt="Логотип" class="logo"></picture>
+      </a>
+      <div class="header__dropdown-city">Нижний Новгород
         <svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg>
-      </button>
+        <div class="dropdown-city">
+         <div class="dropdown-city__inner">
+           <h3 class="dropdown-city__title">Выберите ваш город</h3>
+           <ul class="dropdown-city__list">
+             <li class="dropdown-city__item dropdown-city__item--active"><a class="dropdown-city__link" href="#">Нижний Новгород</a></li>
+             <li class="dropdown-city__item"><a class="dropdown-city__link" href="#">Нижний Новгород</a></li>
+             <li class="dropdown-city__item"><a class="dropdown-city__link" href="#">Нижний Новгород</a></li>
+             <li class="dropdown-city__item"><a class="dropdown-city__link" href="#">Нижний Новгород</a></li>
+           </ul>
+         </div>
+        </div>
+      </div>
       <div class="header__info-inner header__info-inner--mail">
         <a class="header__info header__info--mail" href="info@beli-dom.ru">info@beli-dom.ru</a>
         <p class="header__info-text">Напишите нам</p>
@@ -71,7 +88,7 @@
             <use xlink:href="./assets/images/svg/set.svg#favourites"></use>
           </svg>
         </a>
-        <button class="header__callback" type="button">Заказать звонок</button>
+        <button class="header__callback" type="button" data-callback-open>Заказать звонок</button>
         <div class="header__mobile-icon">
           <a class="header__mobile-phone" href="#">
             <svg class="header__mobile-phone-icon">
@@ -86,17 +103,191 @@
     </div>
     <nav class="header__nav">
       <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a class="header__nav-item-link" href="catalog-project.html">Каталог<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+        <li class="header__nav-item header__nav-item--submenu">
+          <a class="header__nav-item-link" href="catalog-project.html">Каталог<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg>
+            <div class="category category--submenu">
+              <div class="container">
+                <div class="category__wrapper category__wrapper--submenu" data-tabs>
+                  <div class="category__sub-inner">
+                    <div class="category__trigger-inner category__trigger-inner--submenu">
+                      <button class="category__trigger tabs-active" type="button" data-tabs-btn>По технологии</button>
+                      <button class="category__trigger" type="button" data-tabs-btn>По типу</button>
+                      <button class="category__trigger" type="button" data-tabs-btn>По метражу</button>
+                      <button class="category__trigger" type="button" data-tabs-btn>По этажности</button>
+                    </div>
+                    <a class="category__sub-link" href="#">В каталог</a>
+                  </div>
+                  <div class="category__content-inner tabs-pane-show technologies" data-tabs-pane>
+                    <a class="category__item" href="categories-single.html" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-1.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-1.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-1"></use>
+                        </svg>
+
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Каркасные дома</h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a> <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-2.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-2.webp">
+                    <div class="category__item-icon-inner">
+                      <svg class="category__item-icon">
+                        <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-2"></use>
+                      </svg>
+
+                    </div>
+                    <div class="category__item-text-inner">
+                      <h4 class="category__item-subtitle">Каменные дома</h4>
+                      <p class="category__item-fake-link">Перейти</p>
+                    </div>
+                  </a>
+                  </div>
+                  <div class="category__content-inner type" data-tabs-pane>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-3.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-3.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                        </svg>
+
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Загородные дома</h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a> <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-4.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-4.webp">
+                    <div class="category__item-icon-inner">
+                      <svg class="category__item-icon">
+                        <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                      </svg>
+
+                    </div>
+                    <div class="category__item-text-inner">
+                      <h4 class="category__item-subtitle">Дачные дома</h4>
+                      <p class="category__item-fake-link">Перейти</p>
+                    </div>
+                  </a> <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-5.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-5.webp">
+                    <div class="category__item-icon-inner">
+                      <svg class="category__item-icon">
+                        <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-4"></use>
+                      </svg>
+
+                    </div>
+                    <div class="category__item-text-inner">
+                      <h4 class="category__item-subtitle">Бани</h4>
+                      <p class="category__item-fake-link">Перейти</p>
+                    </div>
+                  </a> <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-6.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-6.webp">
+                    <div class="category__item-icon-inner">
+                      <svg class="category__item-icon">
+                        <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                      </svg>
+                    </div>
+                    <div class="category__item-text-inner">
+                      <h4 class="category__item-subtitle">Барнхаусы</h4>
+                      <p class="category__item-fake-link">Перейти</p>
+                    </div>
+                  </a>
+                  </div>
+                  <div class="category__content-inner metre" data-tabs-pane>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-7.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-7.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Площадь до 120 м<sup>2</sup></h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-8.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-8.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Площадь более 180 м<sup>2</sup></h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-8.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-8.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-3"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Площадь до 180 м<sup>2</sup></h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="category__content-inner floor" data-tabs-pane>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-9.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-9.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-7"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Одноэтажные дома</h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+                    <a class="category__item" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-10.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-10.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-8"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Одноэтажные дома</h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+                    <a class="category__item category__item--overlay" href="#" data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-11.png" data-bg-webp="<?php echo get_template_directory_uri(); ?>/assets/images/category/categori-11.webp">
+                      <div class="category__item-icon-inner">
+                        <svg class="category__item-icon">
+                          <use class="category-icon-color" xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/svg/set.svg#category-9"></use>
+                        </svg>
+                      </div>
+                      <div class="category__item-text-inner">
+                        <h4 class="category__item-subtitle">Одноэтажные дома</h4>
+                        <p class="category__item-fake-link">Перейти</p>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
         </li>
-        <li class="header__nav-item">
+        <li class="header__nav-item header__nav-item--submenu">
           <a class="header__nav-item-link" href="#">Услуги<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+          <div class="submenu-wrapper">
+            <ul class="submenu">
+              <li class="submenu__item"><a class="submenu__link" href="#">Услуга</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Услуга</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Услуга</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Услуга</a></li>
+            </ul>
+          </div>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-item-link" href="#">Рассчитать стоимость</a>
         </li>
-        <li class="header__nav-item">
+        <li class="header__nav-item header__nav-item--submenu">
           <a class="header__nav-item-link" href="#">О компании<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+          <div class="submenu-wrapper">
+            <ul class="submenu">
+              <li class="submenu__item"><a class="submenu__link" href="#">О компании</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">О компании</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">О компании</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">О компании</a></li>
+            </ul>
+          </div>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-item-link" href="#">Проекты</a>
@@ -107,8 +298,16 @@
         <li class="header__nav-item">
           <a class="header__nav-item-link" href="#">Акции</a>
         </li>
-        <li class="header__nav-item">
+        <li class="header__nav-item header__nav-item--submenu">
           <a class="header__nav-item-link" href="#">Клиентам<svg class="header__arrow"><use xlink:href="./assets/images/svg/set.svg#arrow-down"></use></svg></a>
+          <div class="submenu-wrapper">
+            <ul class="submenu">
+              <li class="submenu__item"><a class="submenu__link" href="#">Клиентам</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Клиентам</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Клиентам</a></li>
+              <li class="submenu__item"><a class="submenu__link" href="#">Клиентам</a></li>
+            </ul>
+          </div>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-item-link" href="contacts-page.html">Контакты</a>
@@ -120,7 +319,7 @@
 
 <aside class="mobile-menu" data-mobile-menu>
     <div class="mobile-menu__body" data-menu>
-      <picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img class="logo" src="./assets/images/similar/logo.png" alt="Логотип"></picture>
+      <a class="mobile-menu__logo-inner" href="#"><picture><source srcset="./assets/images/similar/logo.webp" type="image/webp"><img class="logo" src="./assets/images/similar/logo.png" alt="Логотип"></picture></a>
       <button class="mobile-menu__city-trigger" type="button">Нижний Новгород <svg class="mobile-menu__button-icon"><use href="./assets/images/svg/set.svg#arrow-down"></use></svg></button>
       <ul class="mobile-menu__city-body">
         <li class="mobile-menu__city-item"><a class="mobile-menu__city-link" href="#">Нижний Новгород</a></li>
@@ -773,7 +972,7 @@
 
 <footer class="footer">
   <div class="container">
-    <picture class="footer__logo-wrapper logo-white-picture"><source srcset="./assets/images/similar/logo-white.webp" type="image/webp"><img class="footer__logo logo-white" src="./assets/images/similar/logo-white.png" alt="Логотип белый" ></picture>
+    <a class="footer__logo-inner" href="#"><picture class="footer__logo-wrapper logo-white-picture"><source srcset="./assets/images/similar/logo-white.webp" type="image/webp"><img class="footer__logo logo-white" src="./assets/images/similar/logo-white.png" alt="Логотип белый" ></picture></a>
     <div class="footer__wrapper">
       <div class="footer__list-inner">
         <p class="footer__list-title">Каталог</p>
@@ -886,6 +1085,81 @@
       <a class="footer__bottom-link" href="#">Сайт создан в CrazyStudio</a>
     </div>
   </div>
-</footer></body>
+</footer>
+
+<div class="cookie" data-cookie>
+  <p class="cookie__text">Мы используем файлы «cookies» и похожие технологии на нашем веб-сайте, чтобы улучшить работу и повысить эффективность сайта. Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий."</p>
+  <button class="cookie__button" data-cookie-accept>Хорошо</button>
+</div>
+
+<div class="popup popup--callback" data-callback>
+  <div class="popup__body popup__body--callback">
+    <div class="popup__item popup__item--img"></div>
+    <div class="popup__item popup__item--form popup__item--form-callback">
+      <h2 class="popup__title">Хотите увидеть наши дома вживую?</h2>
+      <p class="popup__text">Записывайтесь на ближайший просмотр строящегося дома! Мы расскажем о всех этапах строительства, копмлектаций и стоимости</p>
+      <form class="popup__form popup__form--callback">
+        <fieldset class="popup__form-wrapper">
+          <label class="popup__label"><input class="popup__input" type="text" name="Name" placeholder="Ваше имя"></label> <label class="popup__label"><input class="popup__input" type="tel" name="Phone" placeholder="+7 ХХХ ХХХ ХХ ХХ"></label>
+          <button class="popup__button" type="button">Записаться</button>
+        </fieldset>
+        <label class="popup__checkbox-inner"> <input class="popup__checkbox" type="checkbox" hidden checked> <span class="popup__fake-checkbox"></span> <span class="popup__politic-inner">Я согласен на обработку <a class="popup__politic" href="#">персональных данных</a></span> </label>
+      </form>
+    </div>
+    <svg class="popup__close" data-close>
+      <use href="./assets/images/svg/set.svg#close-popup"></use>
+    </svg>
+  </div>
+</div>
+
+
+
+
+
+<div class="show-home">
+  <div class="show-home__body">
+    <div class="show-home__wrapper">
+      <div class="show-home__link-inner">
+        <a class="show-home__link" href="#">Выставка домов</a>
+      </div>
+      <div class="show-home__icon-inner">
+        <svg class="show-home__icon">
+          <use href="./assets/images/svg/set.svg#show-home"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-down">
+  <div class="mobile-down__body">
+    <a class="mobile-down__item" href="#">
+      <svg class="mobile-down__icon">
+        <use class="mobile-down__icon-color" href="./assets/images/svg/menu-set.svg#catalog"></use>
+      </svg>
+      <p class="mobile-down__text">Каталог</p>
+    </a> <a class="mobile-down__item" href="#">
+    <svg class="mobile-down__icon">
+      <use class="mobile-down__icon-color" href="./assets/images/svg/menu-set.svg#contacts"></use>
+    </svg>
+    <p class="mobile-down__text">Контакты</p>
+  </a> <a class="mobile-down__item" href="#">
+    <svg class="mobile-down__icon">
+      <use class="mobile-down__icon-color" href="./assets/images/svg/menu-set.svg#search"></use>
+    </svg>
+    <p class="mobile-down__text">Поиск</p>
+  </a> <a class="mobile-down__item" href="#">
+    <svg class="mobile-down__icon">
+      <use class="mobile-down__icon-color" href="./assets/images/svg/menu-set.svg#about"></use>
+    </svg>
+    <p class="mobile-down__text">О компании</p>
+  </a> <a class="mobile-down__item" href="#">
+    <svg class="mobile-down__icon">
+      <use class="mobile-down__icon-color" href="./assets/images/svg/menu-set.svg#catalog"></use>
+    </svg>
+    <p class="mobile-down__text">Отзывы</p>
+  </a>
+  </div>
+</div></body>
 
 </html>

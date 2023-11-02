@@ -6,7 +6,7 @@
 
   &__wrapper
     display: flex
-    align-items: stretch
+    align-items: flex-start
     gap: 20px
     flex-wrap: wrap
 
@@ -20,6 +20,8 @@
       opacity: 1
       visibility: visible
       position: static
+    &:hover .advantages__text-dots
+      display: none
     @media #{$tablet}
       width: calc(50% - 10px)
     @media #{$mobile}

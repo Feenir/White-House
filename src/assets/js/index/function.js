@@ -112,3 +112,5 @@ const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
     breakpoint.addEventListener('change', checker);
     checker();
 }
+
+

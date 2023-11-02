@@ -1,0 +1,71 @@
+.info
+  background-color: #FCF7F4
+  padding: 80px 0
+  @include section-indent-margin
+  @media #{$notebook-small}
+    padding: 50px 0
+  @media #{$tablet}
+    padding: 30px 0
+
+  &__wrapper
+    display: flex
+    flex-direction: column
+
+
+  &__item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    & > *
+      width: calc(50% - 61px)
+      @media #{$notebook-small}
+        width: calc(50% - 20px)
+      @media #{$tablet-small}
+        width: 100%
+        justify-content: flex-start
+    &:first-child
+      margin-bottom: 80px
+      @media #{$tablet-small}
+        margin-bottom: 60px
+
+
+  &__picture
+    border-radius: 12px
+    overflow: hidden
+    @media #{$tablet-small}
+      display: none
+    &--mob
+      display: none
+      @media #{$tablet-small}
+        display: block
+        & img
+          max-height: 228px
+          border-radius: 12px
+
+  &__title
+    color: #535353
+    font-size: 40px
+    font-weight: 600
+    line-height: 100%
+    margin-bottom: 30px
+    @media #{$notebook-small}
+      font-size: 32px
+    @media #{$tablet}
+      font-size: 24px
+
+  &__text
+    margin-bottom: 40px
+
+  &__link
+    @include button
+    @include button-padding
+
+  &__item-img
+    max-width: 487px
+    @media #{$tablet-small}
+      display: none
+    &--mob
+      display: none
+      @media #{$tablet-small}
+        display: block
+        margin-bottom: 20px

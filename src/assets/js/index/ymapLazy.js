@@ -166,6 +166,7 @@ let ymap = function() {
             loadScript("https://api-maps.yandex.ru/2.1?apikey=2bc17e88-f416-4b38-9838-1b659083564b&lang=ru", function(){
                 // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;contacts-page-yandex&#34;
                 ymaps.load(init);
+
             });
         }
 }

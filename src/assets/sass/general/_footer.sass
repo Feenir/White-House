@@ -66,17 +66,24 @@
     &--last
       color: $title-second-color
       text-decoration: underline
+      &:hover
+        text-decoration: none
       & > .footer__link
         color: $title-second-color
+
   &__link
     @extend .footer__item
     padding-bottom: 20px
+    transition: color .3s
+    &:hover
+      color: $title-second-color
     @media #{$mobile}
       padding-bottom: 12px
 
   &__list-title
     @include text-custom(14px, 400, $title-second-color)
     margin-bottom: 22px
+    text-transform: uppercase
 
   &__info-inner
     position: relative
@@ -106,13 +113,16 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M19 5.00024L11 12.3336L3 5.00024' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 5.00024H19V16.3336C19 16.5104 18.9298 16.68 18.8047 16.805C18.6797 16.93 18.5101 17.0002 18.3333 17.0002H3.66667C3.48986 17.0002 3.32029 16.93 3.19526 16.805C3.07024 16.68 3 16.5104 3 16.3336V5.00024Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.54545 11.0002L3.20557 16.8118' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18.7946 16.8119L12.4546 11.0002' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
 
   &__info-text
-    @include text-custom(12px)
+    @include text-custom(10px)
     color: #FFFFFF
 
   &__info
     color: #FFFFFF
     margin-bottom: 6px
     white-space: nowrap
+    transition: color .3s
+    &:hover
+      color: $title-second-color
 
   &__social-list
     display: flex
@@ -135,6 +145,9 @@
     width: 30px
     height: 30px
     border-radius: 50%
+    transition: opacity .4s
+    &:hover
+      opacity: .6
     &:first-child
       background: #7CB3E5
     &:nth-child(2)

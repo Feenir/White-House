@@ -2,8 +2,12 @@
   @include section-indent-margin
 
   &__title
+    font-size: 40px
+    @media #{$notebook-small}
+      font-size: 32px
     @media #{$tablet-small}
       margin-bottom: 16px
+      font-size: 24px
 
   &__title-wrapper
     display: flex
@@ -19,7 +23,7 @@
     display: flex
     align-items: stretch
     flex-wrap: wrap
-    gap: 20px
+    gap: 40px 20px
 
   &__card-video
     position: relative

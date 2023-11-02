@@ -1,0 +1,411 @@
+.popup
+  position: fixed
+  display: none
+  align-items: center
+  justify-content: center
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100000
+  opacity: 0
+  &:before
+    position: absolute
+    content: ''
+    width: 200vw
+    height: calc(100vh + 100%)
+    background-color: rgba(83, 83, 83, .5)
+    left: -100vw
+    top: -100%
+    z-index: -1
+    pointer-events: none
+  &.open
+    display: flex
+    opacity: 1
+  &--credit, &--house
+    min-height: 424px
+    & .popup__item--space
+      width: 40%
+    & .popup__item--form
+      width: 60%
+      @media #{$tablet}
+        width: 100% !important
+  &--house
+    & .popup__item--space
+      width: 30%
+    & .popup__item--form
+      width: 70%
+      @media #{$tablet}
+        width: 100% !important
+
+
+
+  &__body
+    position: relative
+    display: flex
+    align-items: stretch
+    border-radius: 12px
+    box-shadow: 0px 4px 51px 0px rgba(0, 0, 0, 0.25)
+    backdrop-filter: blur(7.5px)
+    min-height: 448px
+    overflow: hidden
+    max-width: 760px
+    @media #{$tablet-small}
+      flex-direction: column
+      min-height: unset
+    &--callback
+      max-width: 630px
+    &--stocks
+      flex-direction: column
+      padding: 50px
+      background-color: white
+      min-width: 1200px
+      overflow-y: auto
+      @media #{$notebook-small}
+        min-width: auto
+        width: 100%
+        padding: 40px
+      @media #{$tablet}
+        padding: 30px
+      @media #{$mobile}
+        padding: 20px
+
+  &__item
+    display: flex
+    flex-direction: column
+    width: 50%
+    background-color: rgba(122, 160, 75, .7)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    @media #{$tablet-small}
+      width: 100%
+    &--form
+      padding: 30px
+      background: linear-gradient(180deg, #96BB69 0%, #7AA04B 100%), #FFF
+      min-width: 380px
+      @media #{$tablet-small}
+        order: 1
+      @media #{$mobile}
+        min-width: auto
+    &--img
+      background-image: url("../images/popup/1.png")
+      @media #{$tablet-small}
+        min-height: 200px
+        order: 2
+    &--space
+      padding: 30px
+      width: 30%
+      background-image: url("../images/popup/2.png")
+      background-size: contain
+      background-position: bottom
+    &--house
+      display: flex
+      justify-content: flex-end
+      background-image: url("../images/popup/1.jpg")
+      padding: 30px 22px 30px 30px
+      min-width: 314px
+      position: relative
+      &:before
+        position: absolute
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%)
+        content: ''
+        inset: 0
+        pointer-events: none
+        opacity: 1
+        transition: opacity .4s
+
+
+  &__subtext
+    color: #FFF
+    font-size: 22px
+    font-weight: 700
+    line-height: 1.4
+
+  &__title, &__text
+    color: #FFF
+    text-align: center
+
+  &__title
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.2
+    margin-bottom: 10px
+    &--stocks
+      font-size: 30px
+      color: #151417
+      margin-bottom: 30px
+      @media #{$tablet}
+        font-size: 22px
+        margin-bottom: 20px
+
+  &__text
+    font-size: 12px
+    font-weight: 400
+    line-height: 1.4
+    margin-bottom: 20px
+
+  &__label
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+    border-radius: 60px
+    background: rgba(255, 255, 255, 0.10)
+    max-height: 50px
+    &:not(:last-child)
+      margin-bottom: 16px
+
+  &__input
+    padding: 20px 24px
+    color: #FFF
+    font-size: 14px
+    font-weight: 400
+    line-height: 100%
+    width: 100%
+    &::placeholder
+      opacity: 1
+
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    color: #535353
+    font-size: 16px
+    font-weight: 400
+    line-height: 1
+    border-radius: 60px
+    background: #FFF
+    padding: 18px
+    &--other
+      max-width: 240px
+
+  &__checkbox-inner
+    display: flex
+    align-items: center
+    margin-top: 16px
+    cursor: pointer
+
+  &__politic-inner
+    @extend .commercial__politic-inner
+
+  &__fake-checkbox
+    @extend .commercial__fake-checkbox
+
+  &__politic
+    @extend .commercial__politic
+
+  &__checkbox
+    &:checked + .popup__fake-checkbox:before
+      opacity: 1
+
+  &__close
+    position: absolute
+    max-width: 24px
+    max-height: 24px
+    top: 10px
+    right: 10px
+
+  &__answer-inner
+    display: flex
+    align-items: center
+    padding: 26px 0
+
+  &__answer-text
+    color: #FFF
+    font-size: 14px
+    font-weight: 400
+    line-height: 1
+    margin-right: 18px
+
+  &__stocks-item
+    @media #{$tablet}
+      font-size: 14px
+
+  &__answer-label
+    cursor: pointer
+    &:first-of-type
+      margin-right: 8px
+
+  &__fake-input
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 600px
+    background: rgba(255, 255, 255, .1)
+    padding: 8px 20px
+    color: white
+
+  &__answer-input
+    position: absolute
+    left: -999px
+    top: -999px
+    opacity: 0
+    width: 1px
+    height: 1px
+    &:checked + .popup__fake-input
+      color: #535353
+      background-color: white
+
+
+
+  &__text-height
+    max-height: 330px
+    overflow: auto
+    &::-webkit-scrollbar
+      width: 2px              /* ширина scrollbar */
+
+    &::-webkit-scrollbar-track
+      background: rgba(83, 83, 83, .3)
+      border-radius: 12px
+
+    &::-webkit-scrollbar-thumb
+      background-color: #7AA04B   /* цвет плашки */
+      border-radius: 20px      /* закругления плашки */
+      border: 2px solid #7AA04B /* padding вокруг плашки */
+
+
+  &__stocks-list
+    padding-right: 100px
+    counter-reset: popup-stocks
+    max-height: 335px
+    overflow-y: auto
+    @media #{$notebook}
+      padding-right: 80px
+    @media #{$notebook-small}
+      padding-right: 60px
+    @media #{$tablet}
+      padding-right: 40px
+    @media #{$mobile}
+      padding-right: 20px
+    &::-webkit-scrollbar
+      width: 2px            /* ширина scrollbar */
+    &::-webkit-scrollbar-track
+      background: rgba(83, 83, 83, .1)     /* цвет дорожки */
+    &::-webkit-scrollbar-thumb
+      background-color: #7AA04B   /* цвет плашки */
+      border-radius: 20px      /* закругления плашки */
+
+
+  &__stocks-item
+    counter-increment: popup-stocks
+    color: #151417
+    font-size: 16px
+    font-weight: 400
+    line-height: 1.4
+    &:before
+      content: counter(popup-stocks)'. '
+
+  &__link
+    margin-top: 30px
+    @include button
+    @include button-padding
+
+  &__select
+    margin-bottom: 16px
+    & button
+      padding: 9px 24px
+
+    & .itc-select__toggle
+      border-radius: 60px
+      background: rgba(255, 255, 255, 0.10)
+      color: #FFF
+      font-size: 14px
+      font-weight: 400
+      line-height: 1
+      border: none
+      &:after
+        width: 32px
+        height: 32px
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='16' transform='rotate(-90 16 16)' fill='white'/%3E%3Cpath d='M12.1602 14.7205L15.2931 17.8534C15.6836 18.244 16.3167 18.244 16.7073 17.8534L19.8402 14.7205' stroke='%23535353' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")
+
+.show-home
+  position: fixed
+  right: 36px
+  bottom: 88px
+  z-index: 5000
+  &:hover
+    & .show-home__link-inner
+      opacity: 1
+
+  &__wrapper
+    display: flex
+    align-items: stretch
+
+  &__icon-inner
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 58px
+    height: 58px
+    border-radius: 50%
+    background-color: #7AA04B
+    position: relative
+
+  &__icon
+    max-width: 42px
+    max-height: 20px
+
+  &__link-inner
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    background-color: #F2F6ED
+    border-radius: 60px
+    min-width: 220px
+    transform: translateX(58px)
+    opacity: 0
+    transition: opacity .2s
+
+  &__link
+    display: block
+    padding: 20px
+    color: #535353
+    font-size: 16px
+    font-weight: 500
+    line-height: 1
+
+.mobile-down
+  display: none
+  position: fixed
+  width: 100%
+  bottom: 0
+  z-index: 1000
+  border-top: 1px solid rgba(0, 0, 0, .1)
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+  background: #FFF
+  box-shadow: 0px -1px 7px 0px rgba(0, 0, 0, 0.05)
+  @media #{$tablet}
+    display: block
+
+  &__icon
+    width: 20px
+    height: 20px
+
+  &__body
+    display: flex
+    justify-content: space-between
+
+  &__item
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 16px 12px 12px 12px
+    width: 25%
+    @media #{$mobile-small}
+      padding: 12px 8px 8px 8px
+    
+  &__text
+    color: #535353
+    text-align: center
+    font-feature-settings: 'clig' off, 'liga' off
+    font-size: 10px
+    font-weight: 400
+    line-height: 1
+    margin-top: 6px
+    white-space: nowrap
+
+
+

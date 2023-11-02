@@ -7,6 +7,16 @@
     @include section-title
     @include text-position
 
+  &--exhibition
+    & .job-reviews__review
+      margin-bottom: 0!important
+
+    & .job-reviews__swiper
+      padding-bottom: 120px
+
+    & .job-reviews__slider-button
+      top: calc(50% - 106px)
+
   &__wrapper
     display: flex
     align-items: flex-start
@@ -52,6 +62,7 @@
       flex-wrap: wrap
       gap: 20px
       max-height: 100%
+      overflow: visible
 
   &__big-slide, &__thumb-slide
     border-radius: 6px
@@ -156,6 +167,11 @@
       background-color: #fcf7f4
       z-index: 100
       padding: 30px
+      &.reviews__review-inner--single
+        padding: 20px 40px 26px 20px
+    &--general
+      position: static!important
+      padding: 0!important
   &__head
     display: flex
     @media #{$tablet}
@@ -190,6 +206,7 @@
   &__project-text
     @include text
     margin-bottom: 12px
+    padding-right: 30px
 
   &__project-link
     @include text
@@ -279,6 +296,8 @@
 
   &__hidden
     display: none
+    &--show
+      display: inline
 
   &__filter-inner
     @media #{$mobile}

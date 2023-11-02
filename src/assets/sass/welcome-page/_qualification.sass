@@ -1,0 +1,55 @@
+.qualification
+  position: relative
+  display: flex
+  align-items: center
+  @include section-indent-margin
+  background-image: url("../images/qualification/1.png")
+  background-repeat: no-repeat
+  background-position: left bottom
+  background-size: contain
+  min-height: 480px
+  @media #{$notebook-small}
+    background-size: 50%
+  @media #{$tablet}
+    min-height: unset
+    background-size: 390px 170px
+    background-position: bottom left
+    align-items: flex-start
+
+  &:before
+    position: absolute
+    content: ''
+    inset: 0
+    background: linear-gradient(180deg, rgba(122, 160, 75, 0.00) 0%, rgba(122, 160, 75, .1) 100%)
+
+  & .container
+    width: 100%
+
+  &__wrapper
+    display: flex
+    justify-content: flex-end
+    @media #{$tablet}
+      justify-content: flex-start
+      padding-bottom: 200px
+
+  &__item
+    max-width: 508px
+    
+  &__title
+    font-size: 40px
+    font-weight: 600
+    margin-bottom: 30px
+    @media #{$notebook-small}
+      font-size: 32px
+      margin-bottom: 20px
+    @media #{$tablet}
+      font-size: 24px
+
+  &__text
+    &--bold
+      font-weight: 600
+    &:not(:last-child)
+      margin-bottom: 18px
+
+
+
